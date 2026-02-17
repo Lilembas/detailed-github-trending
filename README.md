@@ -1,6 +1,6 @@
 # 🌟 GitHub Trending 概览
 
-> 数据更新于：2026-02-16
+> 数据更新于：2026-02-17
 
 ---
 
@@ -8,8 +8,8 @@
 
 ### 1. [anomalyco/opencode](https://github.com/anomalyco/opencode)
 - 📅 **创建日期**：2025-04-30  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：183,122（日 +508｜周 +4944｜月 +35882）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：183,629（日 +500｜周 +4699｜月 +33189）  
 - 📝 **描述**：The open source coding agent.  
 
 <details>
@@ -24,23 +24,24 @@
 <details>
 <summary><b>📄 README 摘要</b></summary>
 
-1. **该项目做什么？**  
-OpenCode 是一个开源的 AI 编程智能体（AI coding agent），旨在为开发者提供终端优先（TUI-first）、可本地运行、完全开源的 AI 辅助编程体验。它支持在终端中直接与 AI 协作完成代码编写、调试、重构、分析和探索等任务，同时具备客户端/服务器架构，允许多种前端（如终端、桌面应用、未来移动端）连接同一后端服务。其核心目标是打造一个不绑定特定大模型厂商、可自由切换 LLM（如 Claude、OpenAI、Google、本地模型等）的通用 AI 编程代理平台。
+1. **项目功能**  
+OpenCode 是一个开源的 AI 编程智能体（AI coding agent），旨在为开发者提供终端原生（TUI）、轻量高效且高度可扩展的 AI 辅助编程体验。它直接在终端中运行，支持本地或远程模型接入，可完成代码生成、重构、调试、文档理解、代码库探索、多步任务规划等开发全流程任务；同时具备客户端/服务器架构，允许通过不同前端（如终端、桌面应用、未来移动端）控制同一后端服务。
 
-2. **关键特性**  
-- **双模式智能体切换**：内置 `build`（全权限开发模式，可编辑文件、执行命令）和 `plan`（只读分析模式，禁止自动修改文件，执行 bash 命令前需显式授权），按 `Tab` 键快速切换；另含 `@general` 子智能体处理复杂多步任务。  
-- **跨平台原生支持**：提供一键安装脚本（支持 macOS/Linux/Windows）、多种包管理器集成（Homebrew、Scoop、Chocolatey、Pacman、Nix、Mise 等），并发布独立桌面应用（BETA，支持 macOS/Windows/Linux）。  
-- **终端优先设计（TUI）**：深度优化命令行交互体验，由 Neovim 用户及 terminal.shop 团队主导开发，强调在纯终端环境中的生产力与响应能力。  
-- **开箱即用的 LSP 支持**：原生集成语言服务器协议，实现智能补全、跳转、诊断等 IDE 级功能。  
-- **完全开源 & 供应商无关**：100% MIT 许可开源；不强制依赖任何云服务商，支持自托管模型或任意兼容 OpenAI API 的模型后端（包括本地 Ollama、Llama.cpp 等）。  
-- **国际化与社区驱动**：提供 18 种语言的 README 文档；活跃 Discord 社区支持；清晰的贡献指南与生态声明（防止项目混淆）。
+2. **核心特性**  
+- **双模式智能体切换**：内置 `build`（全权限开发代理，支持文件编辑与命令执行）和 `plan`（只读分析代理，需显式授权才可执行操作，适用于代码审查与变更预演）；另含 `@general` 子代理，专用于复杂搜索与多步骤推理任务。  
+- **全平台原生支持**：提供一键安装脚本（curl）、主流包管理器集成（npm/bun/pnpm/yarn、Homebrew、Scoop、Chocolatey、pacman/AUR、Mise、Nix），覆盖 macOS、Windows、Linux 及 Arch 等发行版。  
+- **桌面应用（BETA）**：提供跨平台 GUI 客户端（macOS ARM/x64、Windows、Linux deb/rpm/AppImage），并支持 Homebrew Cask 与 Scoop 安装。  
+- **完全开源与厂商无关**：不绑定任何大模型供应商，原生兼容 Claude、OpenAI、Google Gemini、Ollama 本地模型等；默认推荐自有模型服务 OpenCode Zen，但完全可替换。  
+- **开箱即用的 LSP 支持**：深度集成语言服务器协议，实现智能补全、跳转、诊断等 IDE 级能力。  
+- **终端优先设计（TUI-first）**：由 Neovim 用户及 terminal.shop 团队打造，极致优化终端交互体验，强调键盘驱动、低延迟与资源效率。  
+- **灵活安装路径控制**：支持通过环境变量（`OPENCODE_INSTALL_DIR` / `XDG_BIN_DIR`）自定义安装目录，符合 XDG 标准与用户习惯。
 
 3. **技术栈**  
-- **核心语言与运行时**：主要使用 TypeScript 编写；支持通过 `npm`/`bun`/`pnpm`/`yarn` 全局安装；兼容 Node.js 运行时。  
-- **构建与分发**：采用 Monorepo 结构（`packages/` 下含 `console`、`web`、`desktop` 等子模块）；CI/CD 基于 GitHub Actions；支持多平台二进制打包（`.dmg`、`.exe`、`.deb`、`.rpm`、AppImage）及跨平台包管理器集成。  
-- **架构设计**：基于 client-server 架构，终端 TUI 作为默认客户端，后端提供统一 Agent 调度、模型抽象层（Model Adapter）、文件系统访问控制与命令执行沙箱。  
-- **前端界面**：终端 UI 使用现代 TUI 框架（推测为基于 `ink` 或自研渲染层）；桌面端基于 Electron 或 Tauri（根据发布文件命名惯例及社区背景推断，但 README 未明确说明，实际以源码为准）；Web 控制台（`packages/web`）存在但非主打形态。  
-- **模型集成层**：抽象化 LLM 接口，兼容 OpenAI 兼容 API、Anthropic、Google Gemini 及本地模型（通过 `OpenCode Zen` 提供推荐配置，但非强制依赖）。
+- **核心语言与运行时**：TypeScript（主逻辑）、Rust（部分高性能组件，如 CLI 工具链或未来模型接口层，虽未明示但由包管理器及构建流程推断）；Node.js（CLI 主体）、Bun/Pnpm/Yarn 等现代 JS 运行时支持。  
+- **前端框架**：TUI 层基于终端原生渲染（推测使用类似 `ink`、`blessed` 或自研渲染引擎）；Web/Desktop 前端可能采用 React + Vite（由 `packages/web/` 和 `packages/console/app/` 目录结构及资产路径推断）。  
+- **架构模式**：客户端-服务器（client/server）分离架构，支持远程控制与多前端接入。  
+- **基础设施**：GitHub Actions 自动化发布（`publish.yml`）、多语言 README 管理（i18n）、语义化版本（npm 包 `opencode-ai`）、跨平台打包工具链（如 AppImage、DMG、MSI、deb/rpm 构建）。  
+- **模型对接层**：抽象化 LLM 接口，支持 OpenAI 兼容 API、Anthropic Claude、Google Vertex AI、Ollama、Llama.cpp 等本地/远程后端。
 
 </details>
 
@@ -48,8 +49,8 @@ OpenCode 是一个开源的 AI 编程智能体（AI coding agent），旨在为�
 
 ### 2. [anthropics/skills](https://github.com/anthropics/skills)
 - 📅 **创建日期**：2025-09-22  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：110,476（日 +399｜周 +4508｜月 +24324）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：110,885（日 +402｜周 +4151｜月 +23139）  
 - 📝 **描述**：Public repository for Agent Skills  
 
 <details>
@@ -65,69 +66,29 @@ OpenCode 是一个开源的 AI 编程智能体（AI coding agent），旨在为�
 <summary><b>📄 README 摘要</b></summary>
 
 1. **该项目做什么？**  
-该项目是 Anthropic 官方维护的 Claude 技能（Skills）开源示例仓库，旨在展示如何通过结构化、可复用的“技能包”扩展 Claude 的专业化能力。每个技能是一个独立文件夹，内含 `SKILL.md`（含 YAML 元数据和任务指令），使 Claude 能动态加载并执行特定领域任务，例如：按企业品牌规范生成文档、基于组织流程分析数据、自动化个人事务（如 PDF 表单提取、PPTX 创建）、测试 Web 应用、生成 MCP 服务器等。它不提供运行时服务或独立应用，而是为开发者和企业构建、共享、复用 AI 能力提供参考实现与模式范例。
+该项目是 Anthropic 官方维护的 Claude 技能（Skills）开源示例仓库，旨在展示如何通过结构化、可复用的“技能”扩展 Claude 的能力。每个技能是一个独立文件夹，内含 `SKILL.md`（含 YAML 元数据和指令说明），使 Claude 能动态加载并执行特定领域任务，例如：按企业品牌规范生成文档、基于组织工作流分析数据、自动化个人事务（如 PDF 表单提取、PPTX 创建）、测试 Web 应用、生成 MCP 服务器等。它不提供运行时服务或独立应用，而是为开发者和企业用户提供可参考、可复用、可定制的技能模板与生产级实践范例。
 
 2. **关键特性**  
-- **模块化与自包含设计**：每个技能隔离在独立文件夹中，含标准化 `SKILL.md`（YAML 前置元数据 + Markdown 指令/示例/指南），便于分发、安装与版本管理；  
-- **多场景覆盖**：涵盖创意设计（艺术/音乐/UI）、技术开发（Web 测试/MCP 生成）、企业协作（通信/品牌合规）及全格式文档处理（DOCX/PDF/PPTX/XLSX）四大类技能；  
-- **生产级参考实现**：公开了支撑 Claude 实际文档能力的核心技能源码（如 `skills/docx` 等子目录），虽为“源码可用”（source-available）而非完全开源，但提供了高复杂度、真实落地技能的架构与工程实践范本；  
-- **跨平台即插即用**：支持在 Claude Code（通过插件市场注册安装）、Claude.ai（付费用户开箱即用）、Claude API（上传自定义技能）三端无缝集成，支持自然语言触发（如“用 PDF 技能提取表单字段”）；  
-- **开放规范与模板**：内置 [Agent Skills 规范](./spec) 和标准化 [技能模板](./template)，降低创建门槛，推动技能生态标准化。
+- **模块化与自包含设计**：每个技能均为独立文件夹，含标准化 `SKILL.md`（含 `name`/`description` 前置元数据及 Markdown 指令、示例、指南），便于复用、分发与组合；  
+- **覆盖多场景能力**：涵盖创意设计（艺术/音乐/设计）、技术开发（Web 测试、MCP 服务生成）、企业协作（通信模板、品牌合规）、文档处理（DOCX/PDF/PPTX/XLSX 全格式创建与编辑）四大类；  
+- **开箱即用的集成支持**：支持通过 Claude Code 插件市场一键安装（如 `document-skills` 或 `example-skills`），在 Claude.ai（付费版）中直接启用，并可通过 Claude API 上传与调用自定义技能；  
+- **生产级参考实现**：公开了驱动 Claude 官方文档功能的源可用（source-available）文档技能（位于 `skills/docx` 等子目录），虽非开源许可（Apache 2.0 仅适用于部分示例技能），但为复杂技能工程提供了真实落地样板；  
+- **标准化规范支撑**：配套 `./spec` 目录提供完整的 [Agent Skills 规范](https://agentskills.io)，确保跨平台、跨工具的技能互操作性与可扩展性。
 
 3. **技术栈**  
-- **核心协议/标准**：Agent Skills 开放规范（定义技能结构、元数据、加载机制等，见 `./spec`）；  
-- **技能描述格式**：Markdown（含 YAML 前置元数据），纯文本声明式定义，零代码依赖；  
-- **交付与集成方式**：基于 GitHub 仓库的静态文件分发，配合 Claude Code 插件系统、Claude.ai 技能中心、Claude API 的 Skills SDK 进行注册、安装与调用；  
-- **许可模型**：大部分示例技能采用 Apache 2.0 开源协议；文档类核心技能为源码可用（source-available），明确区分开源与生产级资产边界；  
-- **无运行时依赖**：技能本身不包含后端服务、数据库或执行引擎——其逻辑完全由 Claude 模型在推理时解析并执行，强调轻量、安全、可审计。
+- **核心格式**：纯文本 Markdown（`SKILL.md`）+ YAML 前置元数据，零依赖、高可读、易版本控制；  
+- **运行环境**：深度集成 Anthropic 生态——依赖 Claude 模型（特别是支持技能加载的版本）、Claude Code（插件化运行时）、Claude.ai 前端平台及 Claude API（Skills API）；  
+- **许可与协议**：多数示例技能采用 **Apache License 2.0**；文档类技能为 **source-available（非开源）**；整体遵循 [Agent Skills 开放标准](https://agentskills.io)；  
+- **辅助工具链**：提供标准化 `./template` 技能模板，支持快速初始化；无后端服务、无构建工具链，本质是面向 LLM 的“指令工程资产库”，强调轻量性与平台无关性。
 
 </details>
 
 ---
 
-### 3. [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps)
-- 📅 **创建日期**：2024-04-29  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：95,581（日 +295｜周 +2557｜月 +7585）  
-- 📝 **描述**：Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.  
-
-<details>
-<summary><b>📈 Star 与 Commit 历史趋势</b></summary>
-
-![awesome-llm-apps Star and Commit Trend](charts/Shubhamsaboo_awesome-llm-apps_trend.png)
-
-> *蓝色：累计 Stars｜橙色：累计 Commits（次 Y 轴）*
-
-</details>
-
-<details>
-<summary><b>📄 README 摘要</b></summary>
-
-1. **该项目做什么？**  
-该项目是一个**精选的大型语言模型（LLM）应用集合库**，聚焦于可实际运行、开箱即用的前沿AI应用案例。它不提供自研框架或底层模型，而是系统性地整理、归类并提供大量已实现的LLM应用项目，涵盖从入门级单智能体到高阶多智能体协作、语音交互、MCP（Model Context Protocol）集成、RAG增强生成、记忆持久化、跨平台数据源对话（如GitHub、Gmail、PDF、YouTube等）以及LLM优化与微调等完整技术路径。其核心目标是为开发者、研究者和AI从业者提供一个高质量、可复现、模块化、文档完善的开源实践参考资源库。
-
-2. **关键特性**  
-- **全栈式AI应用覆盖**：包含超50+个分类明确的实战项目，分为AI Agents（含Starter/Advanced）、Multi-agent Teams、Voice AI Agents、MCP AI Agents、RAG（含Agentic RAG、Corrective RAG、Vision RAG等16+变体）、带记忆的LLM应用、跨平台“Chat with X”（GitHub/Gmail/PDF/ArXiv/YouTube等）、LLM优化工具（如TOONify Token压缩、Headroom上下文压缩）、LLM微调教程（Gemma 3、Llama 3.2）及主流Agent框架速成课（Google ADK、OpenAI Agents SDK）。  
-- **模型与部署中立性**：支持OpenAI、Anthropic、Google Gemini、xAI、Qwen、Llama等多厂商及开源模型，并明确标注各项目是否支持本地运行（Local & Cloud），强调可离线部署能力。  
-- **工程实践导向**：所有项目均以独立子目录结构组织，附带`requirements.txt`和详细`README.md`，强调开箱即用、环境隔离与快速上手；同时突出生产级要素：结构化输出（Pydantic）、工具集成（内置/函数/第三方/MCP）、持久化记忆、回调机制、评估方法与多智能体编排模式（Swarm、handoff、routing）。  
-- **生态协同与可持续性**：提供多语言国际化支持（含中文等8种语言）、社区赞助体系（TinyFish、Tiger Data MCP、Speechmatics等）、Star History追踪及明确的贡献指引，构建活跃的开源共建生态。
-
-3. **技术栈**  
-- **核心AI框架与协议**：Google ADK（Agent Development Kit）、OpenAI Agents SDK、CrewAI、Model Context Protocol（MCP）；  
-- **LLM模型层**：OpenAI GPT系列、Anthropic Claude、Google Gemini、xAI Grok、Alibaba Qwen、Meta Llama（3.1/3.2）、Google Gemma（3）、DeepSeek；  
-- **RAG与检索技术**：Embedding模型（Gemma-based embeddings）、Hybrid Search（语义+关键词）、Vector DB（隐含集成）、Cohere RAG、Vision RAG（多模态检索）；  
-- **语音与多模态**：Speechmatics语音识别、音频转录与语音交互流程；Gemini Multimodal Agent、Vision RAG；  
-- **开发与基础设施**：Python（主语言）、Pydantic（结构化I/O）、主流LLM SDK（OpenAI、Anthropic、Google Generative AI等）、浏览器自动化（Playwright/Browser MCP）、Git/GitHub工作流；  
-- **优化与工程工具**：自研TOON格式Token压缩、Headroom上下文智能压缩算法、本地化部署支持（CPU/GPU兼容）、Stateful Chat会话管理、Shared Memory多LLM协同机制。
-
-</details>
-
----
-
-### 4. [openclaw/openclaw](https://github.com/openclaw/openclaw)
+### 3. [openclaw/openclaw](https://github.com/openclaw/openclaw)
 - 📅 **创建日期**：2025-11-24  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：82,832（日 +2942｜周 +21473｜月 +82832）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：87,331（日 +4487｜周 +22792｜月 +87331）  
 - 📝 **描述**：Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞   
 
 <details>
@@ -143,36 +104,43 @@ OpenCode 是一个开源的 AI 编程智能体（AI coding agent），旨在为�
 <summary><b>📄 README 摘要</b></summary>
 
 1. **项目功能**  
-OpenClaw 是一个完全本地化、用户自托管的个人 AI 助手系统，核心目标是让用户在**自有设备上运行专属、单用户、低延迟、始终在线的 AI 助理**。它不依赖中心化云服务，而是通过轻量级「网关（Gateway）」作为统一控制平面，将 AI 能力无缝接入用户日常使用的全部通信渠道（如 WhatsApp、Telegram、Slack、Discord、Signal、iMessage、Google Chat、Microsoft Teams、Matrix、Zalo 等），并支持跨平台语音交互（macOS/iOS/Android）、实时可视化工作区（Live Canvas）及设备级本地操作（如屏幕录制、摄像头调用、系统命令执行）。其本质是将大模型能力与真实世界终端（消息入口 + 本地设备能力）深度耦合，构建端到端可控的个人智能体基础设施。
+OpenClaw 是一个完全本地化、用户自托管的个人 AI 助手系统，核心目标是让用户在**自有设备上运行专属、单用户、低延迟、始终在线**的 AI 服务。它不依赖中心化云服务，而是通过本地运行的「网关（Gateway）」作为统一控制平面，将 AI 能力无缝接入用户日常使用的各类通信渠道（如 WhatsApp、Telegram、Slack、Discord、Signal、iMessage、Microsoft Teams、Google Chat、BlueBubbles、Matrix、Zalo 等），并支持跨平台语音交互（macOS/iOS/Android 的 Wake-on-Voice 和 Talk Mode）、实时可视化工作区（Live Canvas + A2UI）、设备级操作（摄像头、录屏、定位、通知、系统命令等），以及多代理会话隔离与协同。其本质是将大模型能力深度嵌入真实操作系统与通信生态中，实现“AI 即服务层”的私有化部署。
 
 2. **关键特性**  
-- **多通道统一收件箱**：原生集成 14+ 主流通讯平台（含 BlueBubbles/iMessage 桥接、Zalo 等区域化服务），支持 DM 配对鉴权与群组路由规则（提及触发、回复链路等）。  
-- **本地优先网关架构**：单进程 WebSocket 控制平面，统筹会话管理、通道连接、工具调度、事件分发、定时任务（cron）、Webhook 及远程访问（Tailscale/SSH）。  
-- **多智能体隔离工作区**：支持按通道、账号或联系人路由至独立 agent 实例（workspace + session 隔离），实现上下文、模型、技能、权限的精细化隔离。  
-- **全栈语音交互能力**：集成 ElevenLabs，提供 macOS/iOS/Android 的「语音唤醒（Voice Wake）」与「对话模式（Talk Mode）」，支持持续语音输入与自然对话流。  
-- **Live Canvas 可视化工作区**：基于 A2UI 协议的动态画布，由 AI agent 驱动实时渲染、执行脚本、快照保存，支持 macOS/iOS/Android 多端同步。  
-- **设备原生节点（Nodes）体系**：将 iOS/Android/macOS 设备抽象为可调用节点，安全暴露相机、屏幕录制、定位、通知、系统命令（`system.run`）等 TCC 权限受控能力。  
-- **安全强化默认策略**：DM 默认启用配对码机制（`dmPolicy="pairing"`），拒绝未授权输入；支持 OAuth 模型认证、模型故障转移（failover）、会话自动裁剪与细粒度权限审计（`openclaw doctor`）。  
-- **技能即服务（ClawHub）**：内置技能注册中心，支持自动发现、安装与沙箱化执行 Bundled/Managed/Workspace 三类技能。  
-- **全平台 CLI 与向导驱动体验**：`openclaw onboard` 一键完成网关部署、通道配对、模型配置与技能初始化，支持 macOS/Linux/WSL2，开箱即用。
+- **本地优先架构**：全栈运行于用户设备，Gateway 为轻量级 WebSocket 控制平面，支持 systemd/launchd 守护进程、Nix/Docker 部署及 Tailscale 远程安全访问；  
+- **全渠道统一收发**：原生支持 14+ 主流通讯平台（含 iMessage 替代方案 BlueBubbles、Zalo 等区域化服务），支持群组路由（提及触发、回复链、分块处理）、DM 安全配对机制（默认拒绝未授权私信，需 CLI 手动批准）；  
+- **多智能体工作空间**：基于 Session 模型实现会话隔离、激活策略（mention/always）、上下文压缩、跨会话消息传递（`sessions_send`）及 Agent-to-Agent 协作；  
+- **全模态交互能力**：  
+  - ✅ 语音：macOS/iOS/Android 全时唤醒（ElevenLabs）、免提对话（Talk Mode）、PTT；  
+  - ✅ 视觉：Canvas 实时渲染 + A2UI 指令驱动界面、本地摄像头抓拍/录像、屏幕录制；  
+  - ✅ 多媒体处理：音频转录、图像/视频上传与尺寸管控、临时文件生命周期管理；  
+- **深度设备集成**：通过 `node.invoke` 协议调用 macOS/iOS/Android 原生能力（如 `system.run`、`location.get`、`screen.record`），严格遵循系统权限模型（TCC / 权限弹窗）；  
+- **自动化与工具链**：内置浏览器控制（专用 Chromium + CDP）、Cron 定时任务、Webhook/Gmail Pub/Sub 事件驱动、技能平台（ClawHub 技能注册与自动拉取）；  
+- **安全与运维强化**：默认 DM 配对策略、模型故障转移（OAuth/API Key 多源 fallback）、会话剪枝、详细日志与诊断命令（`openclaw doctor`）、远程网关 SSH/Tailscale 安全隧道；  
+- **开箱即用体验**：终端向导 `openclaw onboard` 一键完成网关安装、通道配置、模型认证与技能初始化，支持 npm/pnpm/bun，兼容 macOS/Linux/WSL2。
 
 3. **技术栈**  
-- **运行时**：Node.js ≥22（主运行环境），支持 npm/pnpm/bun；TypeScript 为主开发语言；`tsx` 用于直接运行 TS 源码。  
-- **核心框架**：基于 WebSocket 的自研 Gateway 控制平面；RPC 协议驱动 Pi Agent 运行时；A2UI 协议实现 Canvas 渲染。  
-- **通道集成**：复用成熟 SDK — Baileys（WhatsApp）、grammY（Telegram）、discord.js（Discord）、@slack/bolt（Slack）、signal-cli（Signal）、matrix-js-sdk（Matrix）等。  
-- **语音与媒体**：ElevenLabs（TTS）、Whisper（语音转文本）、FFmpeg（音视频处理）、系统 AVFoundation/AVCapture（iOS/macOS 媒体采集）。  
-- **浏览器自动化**：定制化 Chromium/Chrome 实例，通过 CDP（Chrome DevTools Protocol）实现网页控制、截图、上传与会话管理。  
-- **部署与打包**：支持 Nix（声明式配置）、Docker（容器化）、systemd（Linux）/launchd（macOS）守护进程；Tailscale Serve/Funnel 实现安全远程访问。  
-- **安全机制**：OAuth 2.0（Anthropic/OpenAI）、密码/Token 双因子认证、TCC 权限桥接、本地 Allowlist 存储、会话级模型/思考级别/发送策略动态配置。
+- **运行时**：Node.js ≥22（核心 CLI 与 Gateway）；TypeScript（主语言）；`tsx` 直接执行 TS；  
+- **构建与包管理**：pnpm（推荐源码构建）、npm/pnpm/bun（安装）；  
+- **前端与 UI**：WebChat 与 Control UI 内置于 Gateway（静态服务）；Canvas 使用 A2UI 框架；macOS/iOS/Android App 均为原生客户端（非 WebView）；  
+- **通信协议**：WebSocket（Gateway 主控协议）、HTTP/HTTPS（Tailscale Serve/Funnel 或 SSH 隧道暴露）、CDP（Chrome DevTools Protocol 用于浏览器控制）；  
+- **底层依赖**：  
+  - 通道 SDK：Baileys（WhatsApp）、grammY（Telegram）、discord.js（Discord）、@slack/bolt（Slack）、signal-cli（Signal）、matrix-js-sdk（Matrix）等；  
+  - 媒体处理：FFmpeg（音视频转码）、Whisper（可选语音转录）；  
+  - 语音合成：ElevenLabs API；  
+  - 安全与网络：Tailscale（零信任远程访问）、OpenSSL（TLS）、bcrypt（密码哈希）；  
+- **部署方案**：Nix（声明式配置）、Docker（容器化）、systemd（Linux）、launchd（macOS）、WSL2（Windows 支持）；  
+- **模型支持**：通过 OAuth（Anthropic Claude Pro/Max、OpenAI ChatGPT）或 API Key 接入任意 LLM，支持模型动态切换与故障转移；  
+- **开发辅助**：Vitest（测试）、ESLint + Prettier（代码规范）、GitHub Actions（CI/CD）。
 
 </details>
 
 ---
 
-### 5. [obra/superpowers](https://github.com/obra/superpowers)
+### 4. [obra/superpowers](https://github.com/obra/superpowers)
 - 📅 **创建日期**：2025-10-09  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：81,161（日 +609｜周 +4579｜月 +29051）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：81,851（日 +686｜周 +4442｜月 +27068）  
 - 📝 **描述**：An agentic skills framework & software development methodology that works.  
 
 <details>
@@ -187,30 +155,30 @@ OpenClaw 是一个完全本地化、用户自托管的个人 AI 助手系统，�
 <details>
 <summary><b>📄 README 摘要</b></summary>
 
-1. **该项目的功能**  
-Superpowers 是一个面向编程智能体（coding agents）的完整软件开发工作流框架，旨在将原本零散、随意的代码生成行为，转化为结构化、可验证、符合工程最佳实践的协作式开发过程。它不直接编写代码，而是通过一系列自动触发的“技能”（skills），引导智能体与开发者共同完成需求澄清、设计评审、TDD 计划制定、子智能体协同执行、自动化测试验证、代码审查及分支收尾等全流程任务。其核心目标是让 AI 编程代理具备类人类工程师的系统性思维与工程纪律，而非仅作为“高级补全工具”。
+1. **该项目做什么？**  
+Superpowers 是一个面向编程智能体（coding agents）的完整软件开发工作流增强系统。它不直接替代或重写代码，而是通过一套可组合、自动触发的“技能”（skills）和预设指令，系统性地规范和提升智能体的工程行为。其核心目标是将原本可能随意、跳跃、缺乏验证的 AI 编程过程，转变为严格遵循工程原则（如 TDD、YAGNI、DRY）、具备明确设计评审、分步计划、子智能体协同执行、多阶段审查与自动化验证的可控开发流程。用户无需手动调用功能——只要启动支持的编码智能体（如 Claude Code、Codex 或 OpenCode），系统即在适当时机自动激活对应技能，实现“开箱即用”的专业级开发辅助。
 
 2. **关键特性**  
-- **全自动技能驱动流程**：所有技能（如 brainstorming、writing-plans、subagent-driven-development 等）基于上下文自动触发，无需用户手动调用；流程为强制性（mandatory workflows），非可选建议。  
-- **深度工程实践内嵌**：严格贯彻红/绿/重构（RED-GREEN-REFACTOR）的 TDD 流程，强制先写失败测试；践行 YAGNI（你不会需要它）与 DRY（不要重复自己）原则；强调验证先行（verification-before-completion）、根因追溯（systematic-debugging）和防御性设计。  
-- **人机协同增强机制**：设计阶段分块呈现、需人工确认；实现计划颗粒度精细（每项任务耗时 2–5 分钟，含精确文件路径、完整代码片段与验证步骤）；引入双阶段子智能体审查（先验规范符合性，再审代码质量）；支持并行子智能体开发（dispatching-parallel-agents）与人工检查点（human checkpoints）。  
-- **Git 工作流原生集成**：自动创建隔离的 git worktree 分支、校验干净测试基线、完成开发后提供合并/PR/丢弃等决策选项，并自动清理。  
-- **自生长能力**：内置 `writing-skills` 技能，支持用户遵循标准范式创建、测试并贡献新技能，形成可扩展的技能库生态。
+- **全周期结构化工作流**：覆盖从需求澄清（brainstorming）、分支隔离开发（using-git-worktrees）、原子化任务拆解（writing-plans）、子智能体驱动开发（subagent-driven-development）、强制测试先行（test-driven-development）、阶段性代码审查（requesting/receiving-code-review）到分支收尾（finishing-a-development-branch）的完整闭环。  
+- **自动技能触发与强制执行**：所有技能按上下文自动检测并启用，且为**强制性工作流**而非可选建议，确保工程纪律落地。  
+- **双阶段审查机制**：在 subagent-driven-development 中，每个任务由独立子智能体执行，并经历两轮审查——先验证是否严格符合原始计划（spec compliance），再评估代码质量（code quality）。  
+- **严谨的验证文化**：强调“证据优于断言”，要求所有修复必须经验证（verification-before-completion）、所有功能必须通过红-绿-重构循环（RED-GREEN-REFACTOR）、所有变更需基于干净测试基线（clean test baseline）。  
+- **可扩展技能生态**：内置丰富技能库（含测试、调试、协作、元能力四大类），支持用户遵循标准化指南（via `writing-skills`）贡献新技能，形成持续演进的能力体系。
 
 3. **技术栈**  
-- **运行平台**：专为多款 AI 编程代理平台设计，支持 **Claude Code**（通过插件市场集成）、**Codex** 和 **OpenCode**（均通过远程加载配置文档实现适配）。  
-- **架构模式**：基于“技能（Skill）”的可组合模块化设计，每个技能为独立功能单元（以 Markdown 文档 + 指令逻辑定义），存于 GitHub 仓库中，通过 URL 动态加载或插件机制注入。  
-- **核心机制**：依赖智能体对自然语言指令的上下文理解与条件触发能力；无独立后端服务或运行时环境，纯前端/客户端侧指令编排；技能更新通过插件热更新（`/plugin update superpowers`）实现。  
-- **协议与规范**：采用 Git 分支管理（worktree）、标准测试断言流程、TDD 生命周期钩子；文档即代码（如 `.codex/INSTALL.md`），技能规范遵循内建的 `writing-skills` 指南。
+- **运行平台**：深度适配主流 AI 编程环境，原生支持 **Claude Code**（通过插件市场集成）、**Codex** 和 **OpenCode**（均通过远程加载配置文件实现接入）。  
+- **架构模式**：基于“技能即配置”（skill-as-declarative-config）的设计，各技能以 Markdown 文档（如 `SKILL.md`）形式组织在仓库中，包含行为描述、触发条件、执行逻辑与验证规则，实现低耦合、高可读性。  
+- **基础设施依赖**：依赖 Git（用于 worktree 管理、分支隔离）、本地/项目内测试框架（支撑 TDD 自动化验证）、以及底层 LLM 的多轮对话与指令遵循能力；无独立后端服务，纯前端/插件侧轻量集成。  
+- **维护与分发**：采用 GitHub 原生生态——插件通过 `github.com/obra/superpowers-marketplace` 分发，更新通过 `/plugin update` 命令一键完成，技能文档与安装指南全部托管于仓库（如 `.codex/INSTALL.md`），实现版本一致、开箱即用。
 
 </details>
 
 ---
 
-### 6. [google/langextract](https://github.com/google/langextract)
+### 5. [google/langextract](https://github.com/google/langextract)
 - 📅 **创建日期**：2025-07-08  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：54,785（日 +259｜周 +7877｜月 +12488）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：54,973（日 +183｜周 +6734｜月 +11842）  
 - 📝 **描述**：A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization.  
 
 <details>
@@ -226,33 +194,33 @@ Superpowers 是一个面向编程智能体（coding agents）的完整软件开�
 <summary><b>📄 README 摘要</b></summary>
 
 1. **项目功能**  
-LangExtract 是一个基于大语言模型（LLM）的 Python 库，专注于从**非结构化文本**（如临床病历、放射报告、文学作品等）中**高精度提取结构化信息**。其核心能力是依据用户定义的指令（含提示词与少量高质量示例），自动识别并组织关键实体（如人物、情绪、药物名称、剂量、关系等），同时严格保证所有提取结果均**可追溯至原文确切位置**（即“源文本锚定”），支持端到端的结构化输出与可视化验证。
+LangExtract 是一个基于大语言模型（LLM）的 Python 库，专注于从**非结构化文本**（如临床病历、放射报告、文学作品等）中**高精度提取结构化信息**。其核心能力是依据用户提供的自然语言指令和少量示例（few-shot examples），自动识别并组织关键实体（如人物、情绪、药物名称、剂量、关系等），同时严格保证所有提取结果均**可溯源至原文确切位置**（source grounding），支持大规模长文档（如整本《罗密欧与朱丽叶》）的端到端处理。
 
 2. **关键特性**  
-- **精准源文本锚定（Source Grounding）**：为每个提取项标注在原文中的精确字符位置，支持交互式高亮与人工复核；  
-- **强结构化输出保障**：通过受控生成机制（如 Gemini 的 schema 强约束）和少样本示例驱动，确保输出严格遵循用户定义的类名、属性与格式；  
-- **长文档优化处理**：采用多轮抽取（extraction passes）、自适应文本分块（chunking）与并行处理（max_workers），显著提升大文本（如整本小说、完整病历）的召回率与准确性；  
-- **开箱即用的交互式可视化**：一键生成自包含 HTML 文件，支持动态搜索、上下文定位、批量实体浏览，适用于千级乃至万级提取结果的高效审查；  
-- **灵活的多模型后端支持**：原生集成 Google Gemini（推荐默认 `gemini-2.5-flash`）、OpenAI（GPT-4o 等）、本地 Ollama 模型（如 `gemma2:2b`），并提供插件化架构以扩展第三方模型提供商；  
-- **零微调领域适配**：仅需提供 1–3 个带标注的领域示例（如用药记录、影像报告），无需模型训练或微调即可快速适配新任务；  
-- **知识感知提取控制**：通过提示词设计与示例属性显式调控 LLM 行为——既可严格限定于原文证据（e.g., `"emotional_state": "longing"`），也可引导模型注入世界知识（e.g., `"literary_context": "tragic heroine"`）。
+- **精准溯源定位**：为每个提取结果标注在原文中的精确字符偏移量，支持可视化高亮与人工验证；  
+- **强结构化输出保障**：通过受控生成（如 Gemini 的 schema 强约束）和示例驱动机制，确保输出严格遵循用户定义的 JSON Schema 结构；  
+- **长文档优化能力**：采用多轮抽取（extraction passes）、自适应分块（chunking）、并行处理（max_workers）及上下文缓冲优化（max_char_buffer），显著提升长文本中稀疏目标的召回率；  
+- **交互式可视化**：一键生成自包含、可搜索、带上下文高亮的 HTML 可视化文件，支持千级实体的高效审查；  
+- **多模型灵活适配**：原生支持 Google Gemini（云）、OpenAI（需额外安装）、本地 Ollama 模型（如 `gemma2:2b`），并提供插件化架构供用户扩展自定义模型提供商；  
+- **零微调领域泛化**：仅需提供 1–3 个高质量、按出现顺序排列的文本-提取对示例，即可快速适配医疗、文学、法律等任意领域任务；  
+- **知识与证据平衡控制**：通过提示词设计与示例属性显式调控 LLM 行为——既可严格限于原文字面提取，也可引导其结合世界知识生成推理性属性（如 `"literary_context": "tragic heroine"`）。
 
 3. **技术栈**  
 - **编程语言**：Python（≥3.10）；  
-- **核心依赖**：`google-generativeai`（Gemini）、`openai`（OpenAI）、`ollama`（本地模型）、`pydantic`（数据建模与验证）、`rich`（CLI 输出）、`jinja2`（HTML 可视化模板）；  
-- **架构设计**：模块化插件系统（Provider Registry），支持通过 `entry_points` 动态注册自定义模型后端；  
-- **开发与测试工具**：`pytest` + `tox`（多版本 Python 兼容性测试）、`pylint`、`pyink`（代码格式化）、`pre-commit`（自动化钩子）、Docker（容器化部署）；  
-- **部署与集成**：支持 Vertex AI 批处理（降本增效）、`.env` 环境变量/API Key 安全管理、Jupyter/Colab 友好接口；  
-- **许可证**：Apache 2.0 开源协议。
+- **核心依赖**：`google-generativeai`（Gemini）、`openai`（OpenAI）、`ollama`（本地模型）、`pydantic`（Schema 验证）、`rich`（CLI 输出）、`jinja2`（HTML 模板渲染）；  
+- **构建与包管理**：`pyproject.toml` + `setuptools`，支持 `pip install -e ".[dev,test,openai]"` 多环境安装；  
+- **测试框架**：`pytest` + `tox`（跨 Python 3.10/3.11 测试），集成 Ollama 真实推理测试；  
+- **开发工具链**：`pyink`（代码格式化）、`isort`（导入排序）、`pylint`（静态检查）、`pre-commit`（自动化钩子）；  
+- **部署支持**：Docker 容器化构建与运行，兼容 Vertex AI 批处理 API（企业级规模化场景）。
 
 </details>
 
 ---
 
-### 7. [nautechsystems/nautilus_trader](https://github.com/nautechsystems/nautilus_trader)
+### 6. [nautechsystems/nautilus_trader](https://github.com/nautechsystems/nautilus_trader)
 - 📅 **创建日期**：2018-06-25  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：37,043（日 +329｜周 +476｜月 +2510）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：37,515（日 +475｜周 +935｜月 +2928）  
 - 📝 **描述**：A high-performance algorithmic trading platform and event-driven backtester  
 
 <details>
@@ -268,29 +236,31 @@ LangExtract 是一个基于大语言模型（LLM）的 Python 库，专注于从
 <summary><b>📄 README 摘要</b></summary>
 
 1. **项目功能**  
-NautilusTrader 是一个开源、高性能、生产级的算法交易平台，专为量化交易员设计。其核心能力是支持在历史数据上对自动化交易策略组合进行事件驱动式回测，并可将**完全相同的策略代码无缝部署至实盘交易环境**，无需任何修改。平台具备资产类别无关性，通过模块化适配器支持接入任意 REST/ WebSocket 数据源与交易场所，覆盖外汇（FX）、股票、期货、期权、加密货币、DeFi 及博彩市场等多类资产，支持跨多个交易场所并行运行，适用于高频交易、做市、统计套利及 AI 交易代理（如强化学习/进化策略）训练等场景。
+NautilusTrader 是一个开源、高性能、生产级的算法交易平台，专为量化交易员设计。其核心能力是支持在历史数据上对自动化交易策略组合进行**事件驱动式回测**，并**无需修改任何代码即可将同一策略直接部署至实盘交易环境**。平台具备资产类别无关性，可统一接入各类金融资产（如外汇、股票、期货、期权、加密货币、DeFi、博彩市场等）的交易所和数据提供商，通过模块化适配器（adapters）实现多市场、多品种、多交易所的并发操作，适用于高频交易、做市、统计套利及AI驱动交易（如强化学习/进化策略训练）等场景。
 
 2. **关键特性**  
-- **高性能与可靠性**：核心引擎用 Rust 编写，基于 tokio 实现异步网络通信；提供内存安全与线程安全保证，支持可选 Redis 持久化状态；支持纳秒级时间精度的多粒度历史数据回测（逐笔报价、成交、K线、订单簿及自定义数据）。  
-- **交易能力完备**：支持全部主流时间有效期（IOC/FOK/GTC/GTD/DAY/AT_THE_OPEN/AT_THE_CLOSE）、高级订单类型（冰山单、仅限挂单、仅限减仓）、条件触发指令及复合委托（OCO/OUO/OTO）。  
-- **高度可扩展与可定制**：基于消息总线（Message Bus）与缓存（Cache）架构，允许用户开发自定义组件、数据类型、适配器及整套交易系统；支持多交易所并发接入与统一建模。  
-- **AI 原生设计**：强调“研究—回测—实盘”全链路一致性，消除 Python 研究环境与生产环境间的语义与性能鸿沟；回测引擎速度足以支撑实时训练 AI 交易模型。  
-- **跨平台与易部署**：原生支持 Linux（x86_64/ARM64）、macOS（ARM64）和 Windows（x86_64），提供 Docker 镜像，Python 包可通过 pip 直接安装（含可选集成依赖如 `ib`, `binance`, `betfair` 等）。
+- **高性能与可靠性**：核心引擎用 Rust 编写，基于 `tokio` 实现异步网络通信；内存与线程安全由 Rust 类型系统保障；支持可选 Redis 持久化状态；提供纳秒级时间精度的回测。  
+- **全栈一致性**：严格保证回测与实盘策略逻辑、执行语义、订单生命周期管理完全一致，彻底消除“研究—生产”环境割裂问题（即“parity challenge”）。  
+- **高级订单与执行控制**：支持全部主流时间属性（IOC/FOK/GTC/GTD/DAY/AT_THE_OPEN/CLOSE）、复杂订单类型（冰山单、仅挂单、仅减仓）、条件触发器及连锁订单（OCO/OUO/OTO）。  
+- **灵活可扩展架构**：基于消息总线（Message Bus）与缓存（Cache）构建，允许用户自由开发自定义组件、数据类型、适配器及整套交易系统；支持 Docker 部署与跨平台（Linux/macOS/Windows）运行。  
+- **多源集成能力**：已原生支持超 15 个主流平台（含 Binance、Bybit、Deribit、Interactive Brokers、Betfair、dYdX v3/v4、Polymarket 等），涵盖中心化/去中心化交易所、券商及专业数据服务商（Databento、Tardis），所有适配器均遵循统一领域模型。  
+- **AI-ready 回测引擎**：性能足够支撑实时训练 AI 交易智能体（如 RL/ES），使回测成为模型迭代闭环的关键环节。
 
 3. **技术栈**  
-- **核心语言**：Rust（实现高性能、内存/线程安全的底层引擎、数据模型与网络层），辅以 Cython 和 PyO3 构建 Python 绑定，确保零 Rust 工具链依赖即可安装使用。  
-- **主开发语言**：Python（3.12–3.14），作为策略编写、回测配置、可视化及系统编排的统一接口，深度集成数据科学与 AI 生态。  
-- **关键依赖/框架**：Rust 生态 — `tokio`（异步运行时）、`pyo3`（Python 绑定）、`serde`（序列化）；Python 生态 — 标准库为主，无重量级第三方框架依赖，强调轻量与确定性。  
-- **精度支持**：提供双精度模式 — 标准精度（64 位整数，最高 9 位小数）与高精度（128 位整数，最高 16 位小数），Linux/macOS 默认启用高精度，Windows 因 MSVC 限制暂仅支持标准精度（Rust crate 层仍全平台支持高精度）。
+- **核心语言**：Rust（承担高性能、低延迟、内存/线程安全的关键组件，如事件循环、订单簿引擎、序列化、网络层）；Python（作为主开发与交互语言，面向用户策略编写、研究与运维）。  
+- **Python 绑定方案**：通过 Cython 与 PyO3 实现 Rust 核心到 Python 的高效封装，安装时无需用户本地安装 Rust 工具链。  
+- **异步生态**：Rust 端依赖 `tokio`；Python 端全面支持异步 I/O 与协程。  
+- **数据精度支持**：提供双精度模式——标准模式（64 位整数，最高 9 位小数）与高精度模式（128 位整数，最高 16 位小数），Linux/macOS 默认启用高精度，Windows 因 MSVC 限制默认使用标准精度。  
+- **基础设施**：支持 Redis 状态持久化；兼容 Docker 容器化部署；CI/CD 基于 GitHub Actions；测试覆盖含 Codecov（单元/集成测试）与 CodSpeed（性能基准测试）。
 
 </details>
 
 ---
 
-### 8. [remotion-dev/remotion](https://github.com/remotion-dev/remotion)
+### 7. [remotion-dev/remotion](https://github.com/remotion-dev/remotion)
 - 📅 **创建日期**：2020-06-23  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：36,772（日 +122｜周 +1080｜月 +11467）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：36,901（日 +127｜周 +1022｜月 +11583）  
 - 📝 **描述**：🎥      Make videos programmatically with React  
 
 <details>
@@ -305,34 +275,32 @@ NautilusTrader 是一个开源、高性能、生产级的算法交易平台，�
 <details>
 <summary><b>📄 README 摘要</b></summary>
 
-1. **项目功能**  
-Remotion 是一个基于 React 的视频生成框架，允许开发者使用 React 组件、JavaScript 逻辑和 Web 标准技术（如 CSS、SVG、Canvas、WebGL）**以编程方式动态创建视频**。它将视频视为可组合、可复用、可参数化的 React 组件，支持时间轴控制、帧精确渲染、动态数据驱动内容（如个性化年度回顾），并可导出为 MP4、GIF 或 ProRes 等格式，适用于营销视频、数据可视化、社交媒体内容、UI 动画预演等场景。
+1. **该项目的功能**  
+Remotion 是一个基于 React 的视频生成框架，允许开发者使用 React 组件、JavaScript 逻辑和 Web 技术（如 CSS、SVG、Canvas、WebGL）**以编程方式动态创建视频**。它将视频视为“可渲染的时序内容”，支持帧级控制、时间轴驱动的动画、参数化模板（如个性化年度回顾视频）、批量渲染（如为成千上万用户生成定制视频），并可导出为 MP4、GIF 或 ProRes 等格式，适用于营销视频、数据可视化、社交媒体内容、教育动画等场景。
 
 2. **核心特性**  
-- ✅ **React 原生开发体验**：支持函数组件、Hooks、Props、Context、Suspense 及 Fast Refresh 热更新；  
-- ✅ **时间轴驱动渲染**：通过 `useCurrentFrame()` 和 `interpolate()` 实现帧级动画控制与插值计算；  
-- ✅ **多目标输出**：一键导出高质量 MP4（H.264/AV1）、GIF、WebM、ProRes，支持自定义分辨率、帧率、码率；  
-- ✅ **服务端渲染（SSR）支持**：可在 Node.js 环境中无头渲染视频（基于 Chromium），实现自动化批量生成（如个性化邮件视频、用户定制化内容）；  
-- ✅ **交互式预览**：内置本地开发服务器，提供时间轴拖拽、播放/暂停、逐帧调试等可视化预览能力；  
-- ✅ **丰富生态集成**：兼容第三方 React 库（如 Framer Motion、Three.js、D3）、支持 TypeScript、Vite/Webpack 构建工具；  
-- ✅ **生产就绪能力**：提供 CLI 工具链（`npx create-video@latest`）、CLI 渲染命令、云部署指南及企业级授权支持。
+- ✅ **React 原生开发体验**：复用 React 组件、Hooks、状态管理、Context 和第三方库；支持 Fast Refresh 实时预览；  
+- ✅ **时间轴与帧精度控制**：通过 `useCurrentFrame`、`interpolate`、`Easing` 等 API 实现精确的逐帧动画与缓动效果；  
+- ✅ **多目标输出**：支持本地渲染（CLI）、云端渲染（Remotion Cloud）、Lambda 渲染，并可导出为视频（MP4/H.264、ProRes）、GIF、静态图像序列（PNG/JPEG）；  
+- ✅ **高性能与可扩展性**：内置并行渲染、缓存机制、增量构建；支持服务端渲染（SSR）和动态数据注入（如 API 调用、JSON 输入）；  
+- ✅ **开发者友好工具链**：提供 `npx create-video@latest` 快速脚手架、内嵌预览服务器（带时间轴控件）、调试面板、类型安全（TypeScript 原生支持）、CLI 批量渲染命令；  
+- ✅ **生产就绪能力**：支持字体加载、音频合成（`<Audio />` 组件）、字幕（WebVTT）、响应式布局、离屏渲染（OffscreenCanvas）及 WebGL 集成。
 
 3. **技术栈**  
-- **核心框架**：React（v18+）、TypeScript；  
-- **渲染引擎**：基于 Chromium（Puppeteer / Playwright）的无头浏览器环境，利用 Canvas/WebGL/SVG 进行像素级合成；  
-- **构建与工具链**：Vite（默认模板）、Webpack（兼容）、ESBuild；  
-- **视频编码**：FFmpeg（后端导出依赖）、Chromium 内置 MediaRecorder API（部分导出路径）；  
-- **基础设施**：Node.js 运行时、npm/pnpm 包管理；  
-- **扩展能力**：支持 WebGL（via Three.js）、Canvas 2D、CSS 动画、SVG 滤镜、Web Audio API 等 Web 平台原生 API。
+- **核心框架**：React（v18+，支持 Concurrent Features）、TypeScript（全量类型定义）；  
+- **渲染引擎**：基于 Chromium（通过 Puppeteer 或 Playwright 控制无头浏览器），利用 Canvas 2D/WebGL 进行高性能帧绘制；  
+- **构建与工具**：Webpack（自定义配置）、Vite（可选集成）、ESBuild（部分 CLI 工具链）；  
+- **基础设施**：Node.js（v18+）、npm/pnpm/yarn；支持 CI/CD 集成（GitHub Actions、Vercel、Remotion Cloud）；  
+- **配套生态**：官方维护 `@remotion/*` 系列包（如 `@remotion/cli`、`@remotion/player`、`@remotion/lottie`）、Figma 插件、VS Code 扩展、Discord 社区与文档站（Next.js 构建）。
 
 </details>
 
 ---
 
-### 9. [asgeirtj/system_prompts_leaks](https://github.com/asgeirtj/system_prompts_leaks)
+### 8. [asgeirtj/system_prompts_leaks](https://github.com/asgeirtj/system_prompts_leaks)
 - 📅 **创建日期**：2025-05-03  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：31,626（日 +108｜周 +931｜月 +6579）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：31,771（日 +144｜周 +970｜月 +6703）  
 - 📝 **描述**：Collection of extracted System Prompts from popular chatbots like ChatGPT, Claude & Gemini  
 
 <details>
@@ -346,10 +314,10 @@ Remotion 是一个基于 React 的视频生成框架，允许开发者使用 Rea
 
 ---
 
-### 10. [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
+### 9. [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
 - 📅 **创建日期**：2025-08-31  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：28,718（日 +230｜周 +2982｜月 +14536）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：28,924（日 +206｜周 +2496｜月 +14583）  
 - 📝 **描述**：A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.  
 
 <details>
@@ -365,36 +333,34 @@ Remotion 是一个基于 React 的视频生成框架，允许开发者使用 Rea
 <summary><b>📄 README 摘要</b></summary>
 
 1. **项目功能**  
-Claude-Mem 是一个专为 Anthropic 的 **Claude Code**（AI 编程助手）设计的**持久化记忆压缩系统**。它在用户每次会话中自动捕获工具调用、代码操作、错误反馈等上下文观测数据（observations），生成语义化摘要，并长期存储于本地 SQLite 数据库中；当新会话启动时，自动将相关历史记忆以高效、分层的方式注入上下文，使 Claude 能够跨会话持续理解项目状态、技术决策与问题演进，实现真正的“上下文连续性”。
+Claude-Mem 是一个专为 Anthropic Claude Code（AI 编程代理）设计的**持久化记忆压缩系统**，旨在解决 AI 会话上下文无法跨会话延续的根本问题。它通过自动捕获用户与工具交互过程中的关键观察（observations）、生成语义化摘要，并构建可检索的记忆索引，使 Claude 在新会话中能自动恢复对项目历史、技术决策、调试过程、代码变更等上下文的理解，实现真正的“记忆连续性”。其核心价值在于将离散的会话转化为连贯的、具备长期认知能力的智能开发代理。
 
-2. **核心特性**  
-- ✅ **跨会话持久记忆**：会话结束后记忆不丢失，重启后自动恢复上下文关联；  
-- ✅ **渐进式上下文披露（Progressive Disclosure）**：分三层按需加载记忆（索引 → 时间线 → 详情），显著降低 token 消耗（约节省 10 倍）；  
-- ✅ **自然语言智能搜索**：通过 `mem-search` 技能及 5 个标准化 MCP 工具（`search`/`timeline`/`get_observations`/`save_memory`/`__IMPORTANT`）支持按类型、日期、项目名等多维语义检索；  
-- ✅ **实时 Web 查看器**：内置 HTTP 服务（默认 `http://localhost:37777`），提供可视化记忆流、观测详情、API 接口及设置面板；  
-- ✅ **隐私敏感控制**：支持 `<private>` 标签标记敏感内容，自动排除存储；  
-- ✅ **全自动运行**：无需手动触发，依赖生命周期钩子（SessionStart/PostToolUse/SessionEnd 等）静默工作；  
-- ✅ **混合搜索架构**：融合 SQLite FTS5 全文检索 + Chroma 向量数据库，兼顾精确匹配与语义相似性；  
-- ✅ **Claude Desktop 集成**：可在桌面版对话中直接调用记忆搜索技能；  
-- ✅ **Beta 实验通道**：支持 Endless Mode（仿生长时记忆架构）等前沿功能快速试用；  
-- ✅ **多语言支持**：提供 30+ 种语言的文档与界面本地化（含简体中文、繁体中文、日语、韩语、阿拉伯语等）。
+2. **关键特性**  
+- **持久化记忆（Persistent Memory）**：会话结束后记忆仍长期保存于本地 SQLite 数据库，重启后自动注入新会话。  
+- **渐进式披露（Progressive Disclosure）**：采用三层搜索工作流（`search` → `timeline` → `get_observations`），按需分层加载上下文，显著降低 token 消耗（约节省 10 倍）。  
+- **技能化智能搜索（Skill-Based Search）**：内置 `mem-search` 技能及 5 个 MCP 标准工具（含 `search`, `timeline`, `get_observations`, `save_memory`, `__IMPORTANT`），支持自然语言查询、时间线回溯与精准观测提取。  
+- **实时 Web 查看器（Web Viewer UI）**：提供 http://localhost:37777 网页界面，实时流式展示记忆事件、全文检索、向量搜索结果及所有观测详情（含带 ID 的可引用链接）。  
+- **Claude Desktop 集成**：可在 Claude 桌面版对话中直接调用记忆搜索技能，实现无缝上下文复用。  
+- **隐私控制机制**：支持 `<private>` 标签语法，自动过滤敏感内容，保障本地数据安全。  
+- **全自动无感运行**：基于 6 个生命周期钩子（SessionStart/Submit/PostToolUse/Stop/SessionEnd + Smart Install）自动触发记忆采集与处理，无需人工干预。  
+- **混合搜索架构**：结合 SQLite FTS5 全文检索与 Chroma 向量数据库，实现语义+关键词双模智能检索。  
+- **Beta 实验通道**：支持切换至 beta 版本体验前沿功能（如 Endless Mode——仿生式长时记忆架构）。  
 
 3. **技术栈**  
-- **运行时**：Node.js（≥18.0.0）、Bun（作为 HTTP 服务与进程管理器）、uv（Python 包管理器，用于向量搜索依赖）；  
-- **数据库**：SQLite3（主存储，含 FTS5 全文索引）、Chroma（轻量级向量数据库，支持语义搜索）；  
-- **前端/交互**：TypeScript 构建的 Web UI（静态资源 + API 服务）、GIF 动态预览、响应式多语言文档；  
-- **集成协议**：严格遵循 [MCP（Model Context Protocol）](https://modelcontextprotocol.io/) 规范，实现标准化工具调用；  
-- **架构模式**：基于 6 个生命周期钩子的插件化设计（含 Smart Install 预检脚本）、Worker Service 微服务架构、模块化配置（`settings.json`）；  
-- **开发与部署**：AGPL-3.0 开源许可（主项目），Ragtime 子模块采用 PolyForm Noncommercial License；构建与测试基于 TypeScript 生态，支持自动化 Bug 报告生成与贡献流程标准化。
+- **运行时与服务层**：Bun（作为 HTTP Worker 服务管理器与轻量级 JS 运行时）、Node.js ≥18.0.0（主插件环境）、uv（Python 包管理器，用于向量搜索依赖）、SQLite3（嵌入式本地持久化存储，含 FTS5 扩展）。  
+- **AI 与搜索层**：ChromaDB（向量数据库，支撑语义搜索）、MCP（Model Context Protocol）标准协议（实现与 Claude 的标准化工具交互）。  
+- **前端与交互层**：TypeScript（全栈主要开发语言）、HTML/CSS/JS（Web Viewer UI）、GIF 动画与响应式图片（适配深/浅色模式）。  
+- **基础设施与部署**：支持 OpenClaw 网关一键部署（`curl -fsSL https://install.cmem.ai/openclaw.sh | bash`），集成 Telegram/Discord/Slack 实时通知；插件通过 Claude Code `/plugin` 命令原生安装。  
+- **许可与合规**：主项目采用 AGPL-3.0 开源协议（强调网络服务场景下的源码公开义务）；`ragtime/` 子模块采用 PolyForm Noncommercial License 1.0.0。
 
 </details>
 
 ---
 
-### 11. [ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp)
+### 10. [ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp)
 - 📅 **创建日期**：2025-09-11  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：25,538（日 +329｜周 +1928｜月 +4253）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：25,759（日 +213｜周 +2063｜月 +4378）  
 - 📝 **描述**：Chrome DevTools for coding agents  
 
 <details>
@@ -410,32 +376,31 @@ Claude-Mem 是一个专为 Anthropic 的 **Claude Code**（AI 编程助手）设
 <summary><b>📄 README 摘要</b></summary>
 
 1. **项目功能**  
-该项目（`chrome-devtools-mcp`）是一个符合**模型-上下文-协议（MCP）标准的服务器**，旨在使AI编程助手（如Gemini、Claude、Cursor、Copilot、Codex等）能够**安全、可靠地控制并深度检测正在运行的Chrome浏览器实例**。它桥接AI代理与Chrome DevTools底层能力，支持对网页进行真实环境下的自动化操作、全链路调试分析（含网络、控制台、DOM）、性能诊断（实验室+现场数据融合）及截图/快照等操作，从而赋能AI完成端到端的Web开发、测试与优化任务。
+该项目（`chrome-devtools-mcp`）是一个符合**模型-上下文-协议（MCP）标准的服务器**，旨在使AI编程助手（如Gemini、Claude、Cursor、Copilot、Codex等）能够**安全、可靠地控制并深度检测正在运行的Chrome浏览器实例**。它桥接大语言模型与真实浏览器环境，赋予AI代理完整的Chrome DevTools能力，支持自动化操作、实时调试、性能分析和网页内容检查，从而实现基于真实浏览器上下文的智能编码与问题诊断。
 
 2. **核心特性**  
-- **深度性能洞察**：集成Chrome DevTools前端，可录制性能轨迹（trace），自动分析瓶颈，并可选通过Google CrUX API获取真实用户性能（RUM）数据，实现实验室（lab）与现场（field）数据协同分析；  
-- **高级浏览器调试能力**：支持实时捕获网络请求详情、读取带源码映射（source-mapped）的控制台日志、截取全屏/元素级截图、执行任意JavaScript脚本、生成内存/堆栈快照；  
-- **高可靠性自动化**：基于Puppeteer构建，提供语义化交互工具（如`click`、`fill_form`、`navigate_page`、`wait_for`等），自动等待页面加载、元素就绪及操作完成，显著提升AI驱动操作的鲁棒性；  
-- **灵活部署与连接模式**：支持自动启动隔离Chrome实例、连接已运行的调试版Chrome（通过HTTP或WebSocket）、指定频道（Stable/Canary/Beta/Dev）、自定义用户数据目录、代理配置及视口等，适配开发、CI/CD及安全敏感场景；  
-- **模块化工具集**：按功能划分为输入自动化（8个）、导航（6个）、仿真（2个）、性能（3个）、网络（2个）、调试（5个）共6大类26+原子化工具，全部通过MCP标准接口暴露，可被任意兼容MCP的客户端调用。
+- **性能洞察分析**：集成Chrome DevTools前端，可录制性能轨迹（trace），自动提取可操作的性能瓶颈建议，并可选对接Google CrUX API获取真实用户性能数据（Field Data）；  
+- **高级浏览器调试能力**：支持捕获网络请求详情、获取带源码映射（source-mapped）的控制台日志、截取全屏/元素级截图、执行JavaScript脚本、生成堆快照（heap snapshot）等；  
+- **高可靠性自动化**：基于Puppeteer构建，提供语义化操作工具（如`click`、`fill_form`、`navigate_page`、`wait_for`等），自动等待页面加载、元素就绪及操作完成，显著提升AI驱动UI交互的鲁棒性；  
+- **灵活部署与连接模式**：支持自动启动隔离Chrome实例、连接已运行的调试版Chrome（通过HTTP或WebSocket端点）、多通道（Stable/Canary/Beta/Dev）与自定义用户数据目录，兼顾开发便捷性与生产安全性；  
+- **模块化工具集与细粒度配置**：按功能划分为输入/导航/模拟/性能/网络/调试六大类共26+个标准化MCP工具，并支持通过命令行参数动态启用/禁用特定能力类别（如关闭`--categoryNetwork`则隐藏所有网络相关工具）。
 
 3. **技术栈**  
-- **运行时**：Node.js v20.19+（LTS维护版本）；  
-- **浏览器引擎**：Google Chrome 当前稳定版或更新版本（依赖其远程调试协议 CDP）；  
-- **核心驱动层**：[Puppeteer](https://github.com/puppeteer/puppeteer)（用于浏览器启动、进程管理、页面控制及CDP会话封装）；  
-- **DevTools集成**：直接复用[Chrome DevTools前端](https://github.com/ChromeDevTools/devtools-frontend)的性能分析能力与协议逻辑；  
-- **协议标准**：严格遵循[MCP（Model-Context-Protocol）v1规范](https://modelcontextprotocol.io/)，提供JSON-RPC 2.0 over stdio/HTTP流式传输；  
-- **构建与分发**：npm包管理（`chrome-devtools-mcp`），支持`npx`一键启动；  
-- **附加能力**：CrUX API集成（可选）、WebSocket自定义头支持、多环境变量控制（如`CI`、`CHROME_DEVTOOLS_MCP_NO_USAGE_STATISTICS`）。
+- **运行时**：Node.js（v20.19+ LTS）；  
+- **浏览器底层**：Google Chrome（当前稳定版及以上），通过Chrome DevTools Protocol（CDP）通信；  
+- **自动化引擎**：Puppeteer（用于启动、管理浏览器实例及封装基础操作）；  
+- **协议标准**：Model-Context-Protocol（MCP），兼容各类支持MCP的AI客户端（如Copilot、Cursor、Gemini CLI、VS Code、JetBrains等）；  
+- **依赖生态**：直接复用官方[Chrome DevTools前端](https://github.com/ChromeDevTools/devtools-frontend)的性能分析能力；日志与调试依赖`debug`模块；配置解析与CLI参数处理采用标准Node.js工具链；  
+- **基础设施**：支持headless模式、自定义代理、证书策略、视口模拟、WebSocket安全头（`--wsHeaders`）等企业级部署特性。
 
 </details>
 
 ---
 
-### 12. [virattt/dexter](https://github.com/virattt/dexter)
+### 11. [virattt/dexter](https://github.com/virattt/dexter)
 - 📅 **创建日期**：2025-10-14  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：22,816（日 +222｜周 +2754｜月 +8650）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：22,976（日 +163｜周 +2021｜月 +8558）  
 - 📝 **描述**：An autonomous agent for deep financial research  
 
 <details>
@@ -451,37 +416,34 @@ Claude-Mem 是一个专为 Anthropic 的 **Claude Code**（AI 编程助手）设
 <summary><b>📄 README 摘要</b></summary>
 
 1. **项目功能**  
-Dexter 是一个面向金融研究的自主式AI代理系统，能够对复杂金融问题进行端到端的自动化分析：接收自然语言提问 → 自主拆解为多步研究计划 → 调用实时金融数据源执行任务（如获取上市公司财报、现金流与资产负债表）→ 对中间结果进行自我验证与反思 → 迭代优化直至生成可信、数据支撑的结论。其核心定位是“金融领域的Claude Code”，专为高精度、可追溯、安全可控的金融情报生成而设计，支持交互式终端使用及WhatsApp消息接入。
+Dexter 是一个面向金融研究的自主式 AI 代理（Autonomous Financial Research Agent），能够对复杂金融问题进行端到端的自主分析：接收自然语言提问 → 自动拆解为多步研究计划 → 调用实时金融数据源执行任务 → 自我验证与迭代反思 → 输出数据支撑、逻辑严谨的研究结论。其核心目标是替代传统人工财务尽调流程，实现“思考-规划-执行-反思-优化”的闭环，专为股票基本面分析、财报解读、行业比较等专业金融场景设计。
 
 2. **关键特性**  
-- **智能任务规划**：自动将模糊/复杂的金融问题（如“对比苹果与英伟达过去三年的盈利质量与资本效率”）分解为结构化、可执行的研究子任务；  
-- **自主工具编排与执行**：动态选择并调用适配的API工具（如Financial Datasets获取财报、Exa/Tavily执行网络搜索），实现免人工干预的数据采集；  
-- **自验证与迭代闭环**：内置推理链追踪与结果校验机制，通过LLM驱动的自我反思判断任务完成度，支持多轮重试与修正；  
-- **实时权威金融数据集成**：原生对接Financial Datasets API，免费支持AAPL、NVDA、MSFT等标的的年度/季度收入表、资产负债表、现金流量表；  
-- **生产级安全机制**：强制设置步骤上限、循环检测（loop detection）及超时熔断，杜绝无限执行风险；  
-- **全链路可调试性**：每轮查询生成独立JSONL格式“草稿本”（scratchpad），完整记录原始问题、各工具调用参数/原始响应/LLM摘要、推理过程，支持逐帧回溯与审计；  
-- **多模态交互支持**：除CLI交互外，提供WhatsApp网关，用户可通过私聊方式发起金融咨询，实现轻量级移动接入。
+- **智能任务规划（Intelligent Task Planning）**：将模糊或复合型金融问题（如“对比苹果与英伟达过去三年的盈利质量与现金流健康度”）自动分解为可执行子任务（如获取两家公司年报、提取经营性现金流/净利润、计算自由现金流转化率等）。  
+- **自主工具调度与执行（Autonomous Execution）**：动态选择并调用适配工具链，包括财务数据 API（收入表、资产负债表、现金流量表）、网络搜索（Exa/Tavily）、以及可选的大模型推理服务（OpenAI、Anthropic、Ollama 等）。  
+- **自我验证与迭代优化（Self-Validation & Reflection）**：内置检查机制，在每步执行后评估结果合理性；若证据不足或逻辑存疑，则主动修正计划、重试或补充查询，直至达成高置信度结论。  
+- **实时权威金融数据接入**：原生集成 Financial Datasets API，支持免费获取 AAPL、NVDA、MSFT 等主流标的的结构化、标准化财报数据（年/季报），保障分析时效性与准确性。  
+- **安全与可观测性保障**：具备循环检测、最大步骤限制等防失控机制；所有推理过程、工具调用及 LLM 总结均以 JSONL 格式完整记录于本地 `.dexter/scratchpad/`，支持全链路调试与审计；提供 LangSmith 集成用于评估追踪。
 
 3. **技术栈**  
-- **运行时**：Bun（v1.0+）——作为Node.js替代方案，提供极速依赖安装与脚本执行；  
-- **核心语言**：TypeScript（强类型保障金融逻辑严谨性）；  
-- **AI模型层**：默认集成OpenAI API（兼容Anthropic/Claude、Google Gemini、xAI、OpenRouter等多后端，通过环境变量切换）；  
+- **运行时**：Bun（v1.0+）——作为极速 JavaScript/TypeScript 运行时与包管理器，替代 Node.js + npm/yarn/pnpm。  
+- **核心语言**：TypeScript（强类型保障复杂 Agent 逻辑可靠性）。  
+- **AI 模型层**：多后端兼容架构，支持 OpenAI（默认）、Anthropic、Google Gemini、xAI、OpenRouter 及本地 Ollama 模型，便于灵活切换与成本/性能权衡。  
 - **数据服务**：  
-  - 主要数据源：Financial Datasets API（机构级实时财报）；  
-  - 补充检索：Exa API（首选）、Tavily API（备用）；  
-- **可观测性与评估**：LangSmith（用于LLM调用追踪、链路分析与自动化评测）；  
-- **本地部署选项**：支持Ollama（通过`OLLAMA_BASE_URL`配置）运行开源大模型；  
-- **通信网关**：WhatsApp Business API集成（基于Twilio或自建网关），实现消息收发与会话状态管理；  
-- **工程实践**：模块化架构（含`src/evals/`评测套件、`src/gateway/`通道抽象）、环境变量驱动配置、MIT开源协议。
+  - 主要财务数据源：Financial Datasets API（结构化财报）；  
+  - 补充网络信息：Exa API（首选）、Tavily API（备用）；  
+- **评估与可观测性**：LangSmith（LLM 应用追踪与评测平台）+ LLM-as-Judge 自动评分框架。  
+- **扩展通信通道**：WhatsApp 网关（基于官方 WhatsApp Business API 或第三方 SDK 实现消息收发与会话管理）。  
+- **开发与部署友好**：环境变量驱动配置（`.env`）、模块化代码结构（含独立 `gateway/` 子系统）、一键启动脚本（`bun start` / `bun dev`）。
 
 </details>
 
 ---
 
-### 13. [iOfficeAI/AionUi](https://github.com/iOfficeAI/AionUi)
+### 12. [iOfficeAI/AionUi](https://github.com/iOfficeAI/AionUi)
 - 📅 **创建日期**：2025-08-07  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：21,975（日 +139｜周 +2867｜月 +13405）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：22,102（日 +124｜周 +2361｜月 +12302）  
 - 📝 **描述**：Free, local, open-source 24/7 Cowork and OpenClaw for Gemini CLI, Claude Code, Codex, OpenCode, Qwen Code, Goose CLI, Auggie, and more | 🌟 Star if you like it!  
 
 <details>
@@ -495,51 +457,10 @@ Dexter 是一个面向金融研究的自主式AI代理系统，能够对复杂�
 
 ---
 
-### 14. [brave/brave-browser](https://github.com/brave/brave-browser)
-- 📅 **创建日期**：2017-11-09  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：21,545（日 +140｜周 +234｜月 +495）  
-- 📝 **描述**：Brave browser for Android, iOS, Linux, macOS, Windows.  
-
-<details>
-<summary><b>📈 Star 与 Commit 历史趋势</b></summary>
-
-![brave-browser Star and Commit Trend](charts/brave_brave-browser_trend.png)
-
-> *蓝色：累计 Stars｜橙色：累计 Commits（次 Y 轴）*
-
-</details>
-
-<details>
-<summary><b>📄 README 摘要</b></summary>
-
-1. **该项目的作用**  
-该项目是 Brave 桌面浏览器（支持 macOS、Windows 和 Linux）的**构建工具仓库**，核心功能是自动化拉取、同步和编译构成 Brave 浏览器的多个关键子项目代码，包括：Chromium（作为底层基础）、brave-core（Brave 的核心功能层，挂载于 `src/brave`）、以及 adblock-rust（基于 Rust 实现的广告与跟踪器拦截引擎）。它不直接提供可运行的浏览器二进制文件，而是为开发者提供一套标准化的构建流水线（基于 `npm` 脚本），用于从源码完整构建 Brave 浏览器。
-
-2. **关键特性**  
-- **多平台构建支持**：统一支持 macOS、Windows、Linux、iOS 和 Android 平台的源码构建与配置；  
-- **智能依赖管理**：通过 `gclient`（Chromium 官方工具）自动同步 Chromium 源码，并依据 `src/brave/DEPS` 和 `package.json` 精确拉取指定版本（如 `65.0.3325.181`）；  
-- **补丁自动化应用**：在 Chromium 基础上自动打上 brave-core 维护的定制化补丁，实现 Brave 特有功能（如隐私增强、去中心化服务集成等）；  
-- **灵活的构建模式**：支持多种构建类型——Component（默认调试型）、Release（发布版）、Static（静态链接，启动更快）、Debug（深度调试）；  
-- **增量同步与精准更新**：`npm run sync` 提供细粒度控制（如 `--force`、`--init`、`--sync_chromium`、`--delete_unused_deps`），支持仅更新补丁、跳过 Chromium 升级或强制重置依赖，显著提升开发迭代效率；  
-- **Rust 引擎深度集成**：通过 FFI（`adblock_rust_ffi`）将高性能 Rust 编写的广告拦截引擎无缝嵌入 Chromium 架构；  
-- **跨平台构建配置抽象**：通过 `npm config` 统一设置 `target_os` / `target_arch`，简化 Android/iOS 等平台的交叉编译流程。
-
-3. **技术栈**  
-- **构建系统**：基于 `npm` 脚本驱动，底层调用 Google `depot_tools`（含 `gclient`、`gn`、`ninja`）管理 Chromium 依赖与编译流程；  
-- **核心基础**：Chromium（C++ 主体，Blink/V8/Network 栈）、brave-core（C++/Objective-C/Swift，含大量 Chromium 补丁）；  
-- **关键扩展组件**：Rust（`adblock-rust` 引擎）、FFI（C/C++ 与 Rust 互操作）；  
-- **平台适配**：Xcode（iOS/macOS）、Android NDK/Bazel（Android）、Clang/GCC（Linux/macOS）、MSVC（Windows）；  
-- **辅助工具链**：Git（子模块/分支管理）、Python（Chromium 构建脚本依赖）、Shell（跨平台脚本封装）。
-
-</details>
-
----
-
-### 15. [VectifyAI/PageIndex](https://github.com/VectifyAI/PageIndex)
+### 13. [VectifyAI/PageIndex](https://github.com/VectifyAI/PageIndex)
 - 📅 **创建日期**：2025-04-01  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：19,987（日 +91｜周 +961｜月 +9819）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：20,090（日 +101｜周 +833｜月 +9886）  
 - 📝 **描述**：📑 PageIndex: Document Index for Vectorless, Reasoning-based RAG  
 
 <details>
@@ -554,32 +475,75 @@ Dexter 是一个面向金融研究的自主式AI代理系统，能够对复杂�
 <details>
 <summary><b>📄 README 摘要</b></summary>
 
-1. **该项目做什么？**  
-PageIndex 是一个面向长文档（如财报、法律文件、学术教材等）的**向量数据库无关、基于推理的检索增强生成（RAG）系统**。它不依赖传统向量相似性搜索，而是通过构建文档的**语义层级树结构索引**（类似智能目录），并利用大语言模型（LLM）在该树上执行**多步推理式检索**，模拟人类专家阅读和定位信息的方式，实现高精度、可追溯、可解释的知识提取与问答。
+1. **该项目的功能**  
+PageIndex 是一个面向长文档（如财报、法律文件、学术教材等）的新型检索增强生成（RAG）系统，其核心目标是**取代传统基于向量数据库（Vector DB）和文本分块（Chunking）的语义相似性检索范式**。它不依赖向量嵌入或近似最近邻搜索，而是通过构建文档的**语义树状索引（Tree Index）**，并利用大语言模型（LLM）进行**多步推理式检索（Reasoning-based Retrieval）**，模拟人类专家阅读与导航复杂文档的方式，实现高精度、可解释、可追溯的上下文提取。
 
-2. **核心功能**  
-- ✅ **无向量数据库（No Vector DB）**：摒弃嵌入计算与向量检索，完全基于文档结构与LLM推理完成检索；  
-- ✅ **无需分块（No Chunking）**：保留文档天然语义单元（章节、小节、图表上下文），避免人工切片导致的信息割裂；  
-- ✅ **类人检索（Human-like Retrieval）**：通过“树索引生成 + 树搜索推理”两阶段流程，支持深度上下文理解与跨页/跨节逻辑关联；  
-- ✅ **高可解释性与可追溯性**：每次检索结果附带明确的页面号、节点ID及推理路径，支持审计与调试，杜绝“黑箱式相似度匹配”；  
-- ✅ **原生视觉支持（Vision-based RAG）**：提供OCR-Free方案，可直接对PDF页面图像进行端到端推理检索，跳过文本提取环节；  
-- ✅ **SOTA性能验证**：驱动的金融分析系统 Mafin 2.5 在 FinanceBench 基准测试中达成 **98.7% 准确率**，显著超越主流向量RAG方案。
+2. **关键特性**  
+- **零向量数据库（Vectorless）**：完全摒弃向量存储与相似度计算，避免“vibe retrieval”（模糊匹配），转向基于逻辑与结构的精准检索；  
+- **无需人工分块（No Chunking）**：保留文档天然层级结构（如章节、小节），按语义边界自动划分节点，避免跨段落截断导致的信息丢失；  
+- **人类式推理检索（Human-like & Reasoning-based）**：通过两阶段流程——① 生成类目录的层次化树索引（含节点ID、页码范围、摘要）；② 在树上执行LLM驱动的树搜索（Tree Search），动态判断相关路径，支持多跳、条件性、领域知识引导的检索；  
+- **强可解释性与可追溯性**：每次检索结果附带明确的页面号、章节标题及推理路径，支持审计与验证；  
+- **原生支持视觉输入（Vision-native）**：提供OCR-Free方案，可直接对PDF页面图像进行推理式RAG，绕过传统OCR误差与结构破坏问题；  
+- **高性能实证**：在FinanceBench金融问答基准测试中达**98.7%准确率**，显著超越主流向量RAG方案。
 
 3. **技术栈**  
-- **核心模型层**：依赖 OpenAI 等闭源大模型（默认 `gpt-4o-2024-11-20`）执行树结构生成、节点摘要、推理式树遍历等任务；  
-- **文档处理层**：支持 PDF（基于 PyPDF2 / pdfplumber 等库解析）与 Markdown（按 `#` 层级自动识别标题结构）双输入格式；  
-- **架构设计**：采用**树状索引（Tree Index）** 作为核心数据结构，以 JSON 格式组织节点（含 `title`、`node_id`、`start/end_index`、`summary` 及子节点 `nodes` 数组）；  
-- **部署与集成**：提供本地开源 CLI 工具（`run_pageindex.py`）、RESTful API（Beta）、MCP 协议插件（兼容 Claude/Cursor 等智能体环境），以及云端 Chat 平台（chat.pageindex.ai）；  
-- **辅助能力**：配套自研 **PageIndex OCR**（未完全开源，云服务提供）用于复杂PDF的结构保真提取，确保树索引质量。
+- **核心模型层**：依赖OpenAI系列大模型（默认 `gpt-4o-2024-11-20`）执行树构建与推理搜索，强调LLM的结构理解与链式推理能力；  
+- **文档解析层**：支持PDF（基于PyPDF2/fitz等库）与Markdown双输入；提供专用**PageIndex OCR**（未开源但已商用）以高保真还原复杂PDF的全局语义结构；  
+- **索引表示层**：采用JSON格式的嵌套树结构（TreeNode），每个节点包含 `title`、`node_id`、`start_index`/`end_index`（对应页码）、`summary` 及子节点数组，适配LLM上下文处理；  
+- **部署与集成**：提供本地Python CLI工具（`run_pageindex.py`）、Colab交互式Notebook、RESTful API（Beta）、MCP协议插件（兼容Claude/Cursor等智能体平台），以及SaaS化聊天界面（chat.pageindex.ai）；  
+- **工程依赖**：Python生态为主，含 `openai`, `python-dotenv`, `pypdf`, `fitz`（PyMuPDF）等，支持环境变量配置与灵活参数调优（如每节点最大页数、token数、是否生成摘要等）。
 
 </details>
 
 ---
 
-### 16. [gitbutlerapp/gitbutler](https://github.com/gitbutlerapp/gitbutler)
+### 14. [KeygraphHQ/shannon](https://github.com/KeygraphHQ/shannon)
+- 📅 **创建日期**：2025-09-27  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：19,627（日 +366｜周 +5527｜月 +15873）  
+- 📝 **描述**：Fully autonomous AI hacker to find actual exploits in your web apps. Shannon has achieved a 96.15% success rate on the hint-free, source-aware XBOW Benchmark.  
+
+<details>
+<summary><b>📈 Star 与 Commit 历史趋势</b></summary>
+
+![shannon Star and Commit Trend](charts/KeygraphHQ_shannon_trend.png)
+
+> *蓝色：累计 Stars｜橙色：累计 Commits（次 Y 轴）*
+
+</details>
+
+<details>
+<summary><b>📄 README 摘要</b></summary>
+
+1. **项目功能**  
+Shannon 是一个面向源码的全自动 AI 渗透测试工具，核心目标是**在真实环境中主动验证并执行漏洞利用（exploit）**，而非仅生成静态告警或潜在风险列表。它通过白盒方式访问目标应用的源代码，结合动态浏览器自动化与命令行交互，在运行中的 Web 应用上实际触发注入、XSS、SSRF、认证/授权绕过等攻击，从而提供可复现、零误报的漏洞证明（PoC），填补传统年度渗透测试与持续开发之间的安全空白。
+
+2. **关键特性**  
+- **全自主渗透流程**：支持自动处理复杂登录（含 2FA/TOTP、Google 登录）、页面导航与攻击链编排，单命令启动，全程无人干预；  
+- **可验证的 exploit 报告**：输出聚焦于已成功利用的漏洞，附带一键复制的 PoC 脚本与详细复现步骤，彻底消除假阳性；  
+- **关键 OWASP 漏洞覆盖**：当前原生支持 Injection、XSS、SSRF、Broken Authentication/Authorization 的检测与实证利用，后续持续扩展；  
+- **代码感知型动态测试**：深度融合源码分析（理解数据流、用户输入点、敏感函数调用）与实时浏览器/CLI 攻击，实现“静态指导 + 动态验证”闭环；  
+- **集成专业安全工具链**：在侦察阶段调用 Nmap、Subfinder、WhatWeb、Schemathesis 等工具，增强基础设施测绘与 API 合规性分析能力；  
+- **并行化高效执行**：对不同漏洞类型（如 XSS 与 SSRF）的分析与利用阶段完全并行运行，显著缩短整体测试耗时；  
+- **工作区（Workspace）与断点续跑**：自动保存每个 agent 的执行状态（基于 Git 提交），支持任意中断后精准恢复，避免重复劳动。
+
+3. **技术栈**  
+- **核心推理引擎**：Anthropic Claude Agent SDK（主推 Anthropic API，实验性支持 OpenAI/Gemini 通过 Router Mode）；  
+- **运行时环境**：Docker 容器化部署，确保环境隔离与可移植性；  
+- **架构模式**：多智能体（Multi-Agent）协同架构，分四阶段（侦察 → 漏洞分析 → 利用 → 报告）流水线式编排；  
+- **自动化执行层**：基于浏览器自动化（如 Playwright/Puppeteer 类能力）与 CLI 工具调用实现真实攻击行为；  
+- **基础设施扫描**：集成 Nmap（端口/服务探测）、Subfinder（子域名发现）、WhatWeb（指纹识别）、Schemathesis（API 合规性模糊测试）；  
+- **配置与工作流管理**：YAML 配置驱动认证流程与测试规则，Temporal 开源工作流引擎（通过 Web UI `http://localhost:8233` 可视化监控）；  
+- **许可证**：Shannon Lite 采用 AGPL-3.0 开源协议，强调白盒源码可用性前提。
+
+</details>
+
+---
+
+### 15. [gitbutlerapp/gitbutler](https://github.com/gitbutlerapp/gitbutler)
 - 📅 **创建日期**：2023-01-31  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：19,370（日 +45｜周 +1023｜月 +1912）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：19,417（日 +46｜周 +754｜月 +1952）  
 - 📝 **描述**：The GitButler version control client, backed by Git, powered by Tauri/Rust/Svelte  
 
 <details>
@@ -595,74 +559,31 @@ PageIndex 是一个面向长文档（如财报、法律文件、学术教材等�
 <summary><b>📄 README 摘要</b></summary>
 
 1. **项目功能**  
-GitButler 是一个从零构建的现代化 Git 版本控制系统界面，旨在替代传统 Git 的命令行与工作流，同时兼容所有现有 Git 仓库。它不替换 Git 本身，而是作为更友好、更强大、面向 AI 时代的“Git 用户界面层”，支持人类开发者与 AI 代理（agents）协同高效操作代码变更——无需修改仓库结构，开箱即用。
-
-2. **核心功能**  
-- **堆叠分支（Stacked Branches）**：支持在任意分支之上创建新分支，并自动处理提交重基（restacking），可随时编辑或修正底层提交；  
-- **并行分支（Parallel Branches）**：允许多个虚拟分支并行存在、独立工作，避免频繁切换物理分支；  
-- **可视化提交管理**：通过拖拽或简单 CLI 命令完成撤回、重写、变基、拆分、合并等操作，彻底取代 `git rebase -i`；  
-- **操作时间线与无限撤销（Undo Timeline）**：完整记录所有 Git 操作，支持任意步骤的精准回退与恢复；  
-- **一等冲突处理（First-Class Conflicts）**：冲突提交可被显式标记、延迟解决，且支持按任意顺序处理，确保 rebase 总是成功；  
-- **原生 Forge 集成**：深度对接 GitHub/GitLab，直接在 GUI 或 CLI 中创建/更新 PR、同步 CI 状态、管理远程分支，无需额外工具；  
-- **AI 工具链集成**：内置 AI 能力，自动生成语义化提交信息、分支名、PR 描述；支持为各类 AI 代理系统安装 Git 技能（skills）与钩子（hooks），提升自动化水平。
-
-3. **技术栈**  
-- **桌面端（GUI）**：基于 [Tauri](https://tauri.app/) 构建（轻量级、安全、高性能的桌面框架）；  
-- **前端 UI**：使用 [Svelte](https://svelte.dev/) + [TypeScript](https://www.typescriptlang.org/) 开发；  
-- **后端核心与 CLI**：全部采用 [Rust](https://www.rust-lang.org/) 编写，保障性能、内存安全与跨平台能力；  
-- **CLI 工具 `but`**：复用同一套 Rust 后端引擎，提供与 GUI 功能对齐的命令行接口，实现“一套逻辑，双端体验”。
-
-</details>
-
----
-
-### 17. [KeygraphHQ/shannon](https://github.com/KeygraphHQ/shannon)
-- 📅 **创建日期**：2025-09-27  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：19,253（日 +420｜周 +9206｜月 +15499）  
-- 📝 **描述**：Fully autonomous AI hacker to find actual exploits in your web apps. Shannon has achieved a 96.15% success rate on the hint-free, source-aware XBOW Benchmark.  
-
-<details>
-<summary><b>📈 Star 与 Commit 历史趋势</b></summary>
-
-![shannon Star and Commit Trend](charts/KeygraphHQ_shannon_trend.png)
-
-> *蓝色：累计 Stars｜橙色：累计 Commits（次 Y 轴）*
-
-</details>
-
-<details>
-<summary><b>📄 README 摘要</b></summary>
-
-1. **该项目做什么？**  
-Shannon 是一个**全自动、白盒优先的 AI 渗透测试工具**，核心目标是：在真实攻击者之前主动攻破用户的 Web 应用。它不只静态扫描或生成告警，而是**基于源代码分析（white-box）智能规划攻击路径，并通过内置浏览器与命令行环境动态执行真实 exploit（如注入、XSS、SSRF、认证绕过等），以实证方式验证漏洞的可利用性**。其定位是填补开发节奏（持续交付）与传统渗透测试（年检）之间的安全空白，为每次构建提供即时、可落地的安全验证能力。当前版本（Shannon Lite）专为源码可用的内部应用安全测试设计，强调“零人工干预”的端到端自动化渗透流程。
+GitButler 是一个从零构建的现代化 Git 版本控制系统界面，旨在替代传统 Git 的命令行与工作流，提供更直观、更强大、更面向未来的协作体验。它无需修改现有 Git 仓库结构，可即插即用地在任意已有 Git 仓库中运行，作为开发者及 AI 代理（agents）的“友好型 Git 用户界面增强层”。其核心目标是简化复杂 Git 操作（如变基、分支管理、冲突处理），并原生支持 AI 驱动的工作流（如自动生成提交信息、PR 描述等）。
 
 2. **关键特性**  
-- **全自主渗透闭环**：单命令启动，自动完成 2FA/TOTP 登录（含 Google 登录）、页面导航、多阶段攻击执行与报告生成；  
-- **实证型报告**：仅报告**已成功复现的漏洞**，附带可一键复制粘贴的 PoC（Proof-of-Concept），彻底消除误报；  
-- **深度 OWASP 覆盖**：当前原生支持并验证 Injection、XSS、SSRF、Broken Authentication/Authorization 等关键漏洞类型，后续持续扩展；  
-- **代码感知的动态测试**：融合静态源码分析（理解数据流与业务逻辑）与动态运行时 exploitation（浏览器+CLI），实现上下文感知的精准攻击；  
-- **集成专业安全工具链**：在侦察阶段调用 Nmap、Subfinder、WhatWeb、Schemathesis 等工具，增强基础设施与 API 层面的深度测绘能力；  
-- **并行化加速引擎**：对漏洞分析与 exploitation 阶段进行多线程/多代理并发处理，显著缩短整体测试耗时；  
-- **企业就绪架构**：基于 Temporal 工作流引擎构建，支持实时日志监控、Web UI 可视化（http://localhost:8233）及完整审计追踪。
+- **堆叠分支（Stacked Branches）**：支持在其他分支之上创建子分支，修改底层提交时自动重堆叠上层分支，消除手动 rebase 痛点；  
+- **并行分支（Parallel Branches）**：允许在同一工作目录中并行管理多个虚拟分支，避免频繁 `git checkout` 切换；  
+- **可视化提交操作**：通过拖拽或简单 CLI 命令实现一键撤回（uncommit）、重写（reword）、修正（amend）、拆分（split）、压缩（squash）、移动（move）等操作，彻底取代 `git rebase -i`；  
+- **操作时间线（Undo Timeline）**：完整记录所有 Git 操作，支持任意步骤的即时撤销或回退，保障操作安全性；  
+- **一等公民级冲突处理（First-Class Conflicts）**：冲突不再阻断流程，可标记为“待解决”，并在任意时间、任意顺序中异步处理，rebase 操作始终成功；  
+- ** Forge 深度集成**：原生支持 GitHub/GitLab 认证，直接在 GUI 或 CLI 中创建/更新 PR、查看 CI 状态、同步分支列表等，无需额外工具；  
+- **AI 工具链（AI Tooling）**：内置 AI 处理器，辅助生成语义化提交消息、分支名、PR 描述；支持为各类 AI 代理系统安装 Git 技能（skills）与钩子（hooks），提升自动化水平。
 
 3. **技术栈**  
-- **核心推理引擎**：Anthropic Claude Agent SDK（深度优化适配，官方推荐使用 Anthropic API 或 Claude Code OAuth）；  
-- **运行时环境**：Docker 容器化部署（强依赖 Docker 运行时）；  
-- **工作流编排**：Temporal（用于分布式任务调度、状态持久化与可观测性）；  
-- **自动化执行层**：Puppeteer / Playwright 级浏览器自动化 + CLI 工具调用（如 curl、sqlmap 脚本等）；  
-- **安全工具集成**：Nmap（网络探测）、Subfinder（子域名枚举）、WhatWeb（指纹识别）、Schemathesis（API 模糊测试）；  
-- **配置与扩展**：YAML 配置驱动（支持登录流程、2FA、路径聚焦/排除规则等）；实验性支持 OpenRouter 路由至 GPT-5.2 / Gemini 3 等模型（非官方支持）；  
-- **输出与存储**：结构化审计日志（JSON 元数据 + 原始 prompt + agent 日志 + Markdown 报告），默认落盘至 `./audit-logs/`。
+- **桌面端应用（GUI）**：基于 [Tauri](https://tauri.app/) 框架构建（轻量、安全、高性能的桌面应用框架）；  
+- **前端 UI**：使用 [Svelte](https://svelte.dev/) + [TypeScript](https://www.typescriptlang.org/) 开发，强调响应式与性能；  
+- **后端核心引擎**：完全用 [Rust](https://www.rust-lang.org/) 编写，兼顾内存安全、并发效率与 Git 底层操作能力；  
+- **命令行工具（`but` CLI）**：复用同一套 Rust 后端逻辑，以 Rust 实现命令行交互界面，确保 GUI 与 CLI 行为一致、能力对等。
 
 </details>
 
 ---
 
-### 18. [hsliuping/TradingAgents-CN](https://github.com/hsliuping/TradingAgents-CN)
+### 16. [hsliuping/TradingAgents-CN](https://github.com/hsliuping/TradingAgents-CN)
 - 📅 **创建日期**：2025-06-26  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：17,352（日 +55｜周 +1375｜月 +2551）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：17,398（日 +45｜周 +1172｜月 +2560）  
 - 📝 **描述**：基于多智能体LLM的中文金融交易框架 - TradingAgents中文增强版  
 
 <details>
@@ -678,32 +599,71 @@ Shannon 是一个**全自动、白盒优先的 AI 渗透测试工具**，核心�
 <summary><b>📄 README 摘要</b></summary>
 
 1. **项目功能**  
-本项目是一个面向中文用户的**多智能体与大模型股票分析学习平台**，基于开源框架 TradingAgents 进行深度本地化增强。其核心定位为**合规、非实盘的研究与教育工具**，旨在帮助用户系统学习多智能体协同分析框架与大语言模型（LLM）在股票研究中的应用方法。平台支持对 A 股、港股、美股的合规分析与教学实践，提供从数据获取、智能分析、策略模拟到报告生成的完整学习闭环，**不提供任何实盘交易指令或投资建议**。
+本项目是面向中文用户的**多智能体与大模型股票分析学习平台**，基于开源框架 `TradingAgents` 进行深度本地化增强。其核心定位为**合规、非实盘的研究与教育工具**，旨在帮助用户系统学习如何利用多智能体架构（Multi-Agent System）和大语言模型（LLM）开展股票基本面/技术面分析、策略模拟与金融推理。平台**不提供实盘交易指令或投资建议**，仅支持A股、港股、美股等市场的数据接入、智能分析、虚拟回测与专业报告生成，服务于AI金融教育、学术研究及策略实验场景。
 
 2. **关键特性**  
-- **全栈中文增强**：原生支持 A 股数据（Tushare/AkShare/BaoStock）、中文界面、国产大模型（通义千问、DeepSeek 等）集成及中文提示词工程优化；  
-- **多智能体协同分析**：内置市场/基本面/新闻/技术等专业角色智能体，新增智能新闻分析、多层次新闻过滤、新闻质量评估等模块；  
-- **企业级功能体系**：用户权限管理、可视化配置中心（LLM端点/数据源/系统参数）、多级缓存（MongoDB + Redis + 文件）、SSE+WebSocket 实时进度推送、批量股票分析、智能筛选与自选股管理、个股详情页及历史分析追踪；  
-- **模拟与验证能力**：内置虚拟交易系统，支持策略效果回测与验证；  
-- **专业输出与部署**：支持 Markdown/Word/PDF 多格式专业分析报告导出；提供 Docker 多架构（amd64/arm64）一键部署、绿色版（Windows 快速体验）及源码本地部署三套方案；  
-- **稳定性与准确性强化**：修复技术指标（如MACD、RSI）与基本面数据（PE/PB）计算错误，解决死循环问题，确保多分析师共享统一、一致的数据源。
+- **全栈中文增强**：原生支持A股全量数据（Tushare/AkShare/BaoStock）、中文界面、国产大模型（通义千问、DeepSeek等）集成、智能新闻分析（含质量评估与多层过滤）；  
+- **企业级多智能体分析能力**：支持动态LLM供应商管理、任务驱动的智能模型选择（自动匹配最优模型）、多维度股票筛选/自选股管理/个股深度分析页；  
+- **专业研究工作流**：内置模拟交易系统、多格式专业报告导出（Markdown/Word/PDF）、统一新闻工具、成本优化提示、实时进度可视化与SSE+WebSocket双通道通知；  
+- **生产就绪架构**：FastAPI后端 + Vue 3前端，MongoDB + Redis双缓存数据库，RBAC权限体系、操作日志、可视化配置中心、批量分析与智能会话管理；  
+- **开箱即用部署体验**：完整Docker多架构支持（amd64/arm64）、一键Docker Compose部署、Windows绿色版、详尽中文文档与视频教程；  
+- **严格质量保障**：修复原版技术指标与财务数据（PE/PB）计算错误、死循环缺陷及数据一致性问题。
 
 3. **技术栈**  
-- **后端**：FastAPI（替代原 Streamlit） + Uvicorn，RESTful API + WebSocket 双通道；专有模块 `app/` 采用 FastAPI 构建，需商业授权；  
-- **前端**：Vue 3 + Vite + Element Plus，现代化单页应用（SPA），专有模块 `frontend/` 同样需商业授权；  
-- **数据库**：MongoDB（主存储） + Redis（高速缓存/会话/实时通知），实现双库协同与性能提升；  
-- **AI 集成**：原生支持 OpenAI、Google Gemini、DeepSeek、通义千问等多 LLM 提供商，支持动态供应商配置与智能模型能力匹配；  
-- **部署与运维**：Docker 多架构镜像（x86_64 / ARM64）、GitHub Actions 自动化构建、Docker Compose 一键编排；  
-- **许可证模式**：混合授权——除 `app/` 和 `frontend/` 目录外，其余代码遵循 Apache 2.0 开源协议；前后端核心模块为专有组件，个人学习免费，**商业使用必须获得单独授权**。
+- **后端**：Python 3.10+，FastAPI + Uvicorn（替代原Streamlit），MongoDB（主数据存储），Redis（缓存与实时通信），JWT认证；  
+- **前端**：Vue 3 + Vite + Element Plus，响应式单页应用（SPA），支持Web配置界面与实时交互；  
+- **AI集成**：原生OpenAI API、Google Gemini、DeepSeek、通义千问等多LLM提供商抽象层，支持自定义端点与模型能力元数据管理；  
+- **数据生态**：Tushare、AkShare、BaoStock三大多A股数据源统一接入与同步；  
+- **基础设施**：Docker容器化（GitHub Actions自动化构建）、Docker Compose编排、跨平台兼容（Windows/macOS/Linux/ARM64）；  
+- **许可证架构**：混合授权模式——核心算法与工具模块采用**Apache 2.0开源协议**；`app/`（FastAPI后端）与`frontend/`（Vue前端）目录为**专有组件，商业使用需单独授权**。
 
 </details>
 
 ---
 
-### 19. [gsd-build/get-shit-done](https://github.com/gsd-build/get-shit-done)
+### 17. [hummingbot/hummingbot](https://github.com/hummingbot/hummingbot)
+- 📅 **创建日期**：2019-04-02  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：16,564（日 +444｜周 +729｜月 +982）  
+- 📝 **描述**：Open source software that helps you create and deploy high-frequency crypto trading bots  
+
+<details>
+<summary><b>📈 Star 与 Commit 历史趋势</b></summary>
+
+![hummingbot Star and Commit Trend](charts/hummingbot_hummingbot_trend.png)
+
+> *蓝色：累计 Stars｜橙色：累计 Commits（次 Y 轴）*
+
+</details>
+
+<details>
+<summary><b>📄 README 摘要</b></summary>
+
+1. **该项目做什么？**  
+Hummingbot 是一个开源的自动化交易框架，用于设计、开发和部署算法交易机器人（bots），支持在**140+个中心化交易所（CEX）和去中心化交易所（DEX）**上运行。它使用户能够构建跨市场、跨资产类别的量化交易策略（如做市、套利、跨期/跨交易所套利、三角套利等），并已累计产生超340亿美元的链上可验证交易量。项目核心目标是**民主化高频交易（HFT）**，通过开放代码、社区共建与知识共享，降低专业算法交易的技术门槛。
+
+2. **关键功能**  
+- **多类型交易所统一接入**：支持三类主流交易场所的标准化连接器：  
+  • **CLOB CEX**（中心化限价订单簿交易所，如 Binance、OKX、Bybit），支持现货与永续合约；  
+  • **CLOB DEX**（链上限价订单簿去中心化交易所，如 dYdX v4、Hyperliquid、Injective），非托管，基于钱包签名；  
+  • **AMM DEX**（自动做市商型去中心化交易所，如 Uniswap、Raydium、Jupiter），通过独立的 **Gateway 中间件**（TypeScript 实现）提供跨链 AMM/CLMM/Router 接口。  
+- **模块化策略引擎**：内置多种开箱即用策略模板（如 Pure Market Making、Cross-Exchange Arbitrage、Liquidity Mining），支持 Python 自定义策略开发与热重载。  
+- **生产级部署支持**：提供 Docker 一键部署方案（CLI 客户端 + 可选 Gateway）、Telegram 交互界面（Condor）、REST API（Hummingbot API）、AI 集成接口（Hummingbot MCP，支持 Claude/Gemini 等大模型调用交易能力）。  
+- **社区驱动生态**：采用治理机制（HBOT 代币提案投票）管理连接器维护与新功能落地；支持 Jupyter 数据研究（Quants Lab）；提供匿名化交易数据上报与可视化（Datadog）。
+
+3. **技术栈**  
+- **主客户端（Hummingbot Core）**：Python 3.9+，基于异步 I/O（`asyncio`）和 `aiohttp`/`websockets` 实现高性能网络通信；使用 `pandas`/`numpy` 进行实时行情处理与策略计算；依赖 `SQLAlchemy` 管理本地数据库（SQLite/PostgreSQL 可选）。  
+- **网关中间件（Gateway）**：TypeScript 编写，基于 Node.js 运行时，提供 HTTPS/HTTP 多模式支持，集成 Web3.js / Ethers.js 适配多链（Ethereum、Solana、Arbitrum、Base 等），负责 AMM 交易签名、Gas 优化与跨协议路由。  
+- **基础设施与工具链**：Docker Compose 统一编排；GitHub Actions CI/CD；文档基于 MkDocs 构建（hummingbot-site）；监控与分析集成 Datadog；贡献治理依托链上 HBOT 代币（ERC-20）及链下提案流程。
+
+</details>
+
+---
+
+### 18. [gsd-build/get-shit-done](https://github.com/gsd-build/get-shit-done)
 - 📅 **创建日期**：2025-12-14  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：14,455（日 +384｜周 +2080｜月 +11219）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：14,918（日 +464｜周 +2227｜月 +10951）  
 - 📝 **描述**：A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code and OpenCode.  
 
 <details>
@@ -719,35 +679,35 @@ Shannon 是一个**全自动、白盒优先的 AI 渗透测试工具**，核心�
 <summary><b>📄 README 摘要</b></summary>
 
 1. **项目功能**  
-该项目是一个轻量级但功能强大的元提示（meta-prompting）、上下文工程（context engineering）与规范驱动开发（spec-driven development）系统，专为 **Claude Code、OpenCode 和 Gemini CLI** 三大 AI 编程环境设计。其核心目标是**解决“上下文腐化”（context rot）问题**——即随着 Claude 等模型持续填充上下文窗口而导致的推理质量显著下降。GSD 通过结构化工作流，在不增加用户认知负担的前提下，确保 AI 始终在高质量、低噪声、高相关性的上下文中执行任务，从而稳定生成可交付、可验证、符合预期的代码成果。
+该项目是一个轻量级但功能强大的元提示（meta-prompting）、上下文工程（context engineering）与规范驱动开发（spec-driven development）系统，专为 **Claude Code、OpenCode 和 Gemini CLI** 三大 AI 编程运行时设计。其核心目标是**解决“上下文腐化”（context rot）问题**——即随着 Claude 填满上下文窗口，生成质量显著下降的顽疾。GSD 通过结构化工作流，在整个开发周期中主动管理、隔离和刷新上下文，确保每次 AI 执行任务时都拥有纯净、精准、高信息密度的上下文环境，从而稳定输出高质量、可验证、符合预期的代码。
 
 2. **关键特性**  
-- ✅ **全周期规范驱动工作流**：支持 `new-project → discuss-phase → plan-phase → execute-phase → verify-work → complete-milestone` 的闭环流程，每阶段均含明确输入/输出与人工确认点；  
-- ✅ **智能上下文工程体系**：自动维护 `PROJECT.md`、`REQUIREMENTS.md`、`ROADMAP.md`、`STATE.md`、`CONTEXT.md` 等结构化文档，实现跨会话记忆与领域知识沉淀；  
-- ✅ **多智能体并行编排**：各阶段（研究、规划、执行、验证）均由轻量级协调器调度专用子智能体并行运行，主会话上下文始终保持精简（30–40%占用），杜绝“上下文腐化”；  
-- ✅ **波次化原子执行（Wave Execution）**：自动识别任务依赖关系，将计划分组为并行“波次”，独立任务并发执行、依赖任务串行等待，大幅提升效率且规避文件冲突；  
-- ✅ **XML 结构化提示与内建验证**：所有执行计划均以语义清晰的 XML 格式编写（含 `<action>`、`<verify>`、`<done>` 等标签），强制指令精确性与结果可测性；  
-- ✅ **原子化 Git 提交策略**：每个任务生成独立、语义化、时间戳标记的提交（如 `feat(08-02): add email confirmation flow`），支持精准 bisect、回滚与 AI 历史感知；  
-- ✅ **无缝适配存量代码库（Brownfield）**：通过 `/gsd:map-codebase` 命令自动分析现有技术栈、架构与约定，使后续开发深度贴合项目实际；  
-- ✅ **灵活模式支持**：提供 `Quick Mode`（快速任务）、`Skip Permissions Mode`（自动化权限绕过）、多模型配置剖面（quality/balanced/budget）及模块化里程碑管理（插入/删除/追加阶段）。
+- ✅ **六阶段闭环工作流**：`new-project → discuss-phase → plan-phase → execute-phase → verify-work → complete-milestone`，每个阶段职责明确、状态可追溯、结果可验证；  
+- ✅ **智能上下文工程**：自动构建并维护 `PROJECT.md`、`REQUIREMENTS.md`、`ROADMAP.md`、`STATE.md`、`CONTEXT.md` 等 8+ 类结构化文档，形成动态演进的项目知识图谱；  
+- ✅ **波次式并行执行（Wave Execution）**：基于依赖关系自动分组任务为“执行波”，独立任务并行、依赖任务串行，最大化效率并规避文件冲突；  
+- ✅ **原子化 Git 提交**：每个子任务生成独立、语义清晰、带时间戳和阶段标识的 commit（如 `feat(08-02): add email confirmation flow`），支持精准 bisect、回滚与历史理解；  
+- ✅ **XML 结构化提示**：所有计划均以定制 XML 格式编写（含 `<action>`、`<verify>`、`<done>` 等字段），指令精确、验证内建、杜绝歧义；  
+- ✅ **多智能体协同编排**：研究、规划、执行、验证各阶段均由轻量级协调器调度专用子代理（如 4 并行研究员），主会话上下文始终轻量（30–40% 占用）；  
+- ✅ **灰盒适配能力**：支持 `map-codebase` 快速逆向分析现有代码库（架构/约定/技术栈），实现“老项目新功能”的无缝接入；  
+- ✅ **灵活模式切换**：提供完整流程（`discuss→plan→execute→verify`）与快捷模式（`/gsd:quick`），兼顾严谨性与敏捷性；  
+- ✅ **全生命周期状态管理**：跨会话持久化 `STATE.md`、`todos/`、`.planning/` 目录，支持 `/gsd:pause-work` / `/gsd:resume-work` 无损中断恢复。
 
 3. **技术栈**  
-- **运行时支持**：原生集成 **Claude Code**（Anthropic）、**OpenCode**（开源本地模型 CLI）、**Gemini CLI**（Google）三大 AI 编程环境；  
-- **核心实现**：基于 **Node.js** 构建命令行工具（CLI），通过 `npx` 一键安装与更新；  
-- **提示工程层**：采用定制化 **XML Schema** 进行任务结构化描述，强化 Claude 等 LLM 对指令意图、验证标准与完成条件的理解；  
-- **状态与配置管理**：使用纯文本 Markdown 文档（`.md`）与 JSON 配置（`.planning/config.json`）持久化项目状态、需求、计划与用户偏好；  
-- **自动化基础设施**：深度集成 **Git CLI**（自动提交/状态检查）、**Bash 工具链**（`curl`, `git`, `ls`, `grep` 等权限白名单）、文件系统操作，实现端到端无人值守执行；  
-- **部署与分发**：发布于 **npm Registry**（`get-shit-done-cc` 包），支持全局/本地安装，兼容 macOS / Windows / Linux；  
-- **扩展生态**：提供 Discord 社区、X（Twitter）账号、$GSD 代币（Solana 链上）及完整文档体系（含 USER-GUIDE.md）。
+- **运行时支持**：Claude Code（主力）、OpenCode（开源免费模型）、Gemini CLI（Google 生态），可单装或多装；  
+- **核心机制**：基于 Node.js 实现的 CLI 工具（`npx get-shit-done-cc`），深度集成各 AI 运行时的插件/命令扩展机制（如 Claude 的 `/command` 指令系统）；  
+- **提示工程层**：自研 XML 提示模板语法 + 上下文分片策略（严格控制各文档大小以匹配 Claude 性能拐点）；  
+- **工程基础设施**：Git 原生集成（自动 commit/tag）、本地文件系统状态存储（`.planning/` 目录树）、JSON 配置驱动（`.planning/config.json`）；  
+- **模型调度策略**：支持多档模型配置（`quality`/`balanced`/`budget`），按任务类型（Planning/Execution/Verification）差异化调用 Claude Opus/Sonnet/Haiku；  
+- **部署形态**：跨平台（macOS/Windows/Linux），支持全局安装（`--global`）与项目级本地安装（`--local`），兼容 Docker/CI 环境非交互式部署。
 
 </details>
 
 ---
 
-### 20. [danielmiessler/Personal_AI_Infrastructure](https://github.com/danielmiessler/Personal_AI_Infrastructure)
+### 19. [danielmiessler/Personal_AI_Infrastructure](https://github.com/danielmiessler/Personal_AI_Infrastructure)
 - 📅 **创建日期**：2025-09-08  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：13,670（日 +104｜周 +2154｜月 +4123）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：13,793（日 +126｜周 +2230｜月 +3846）  
 - 📝 **描述**：Agentic AI Infrastructure for magnifying HUMAN capabilities.  
 
 <details>
@@ -763,34 +723,32 @@ Shannon 是一个**全自动、白盒优先的 AI 渗透测试工具**，核心�
 <summary><b>📄 README 摘要</b></summary>
 
 1. **该项目做什么？**  
-PAI（Personal AI Infrastructure，个人AI基础设施）是一个开源的、以用户为中心的AI系统框架，旨在将大语言模型（尤其是Claude Code）转化为真正“属于你”的持久化智能助手。它不提供独立模型或聊天界面，而是构建在Claude Code之上的**可学习、可进化、目标驱动的个人AI操作系统**：持续捕获用户反馈（评分、修正、验证结果）、自动分析失败、强化成功模式、动态升级技能与工作流；深度整合用户的个人目标（TELOS体系：MISSION/GOALS/PROJECTS等10类文档）、偏好、历史与身份，使AI从“无状态工具”转变为具备长期记忆、自我认知与成长能力的个性化协作者。
+PAI（Personal AI Infrastructure，个人AI基础设施）是一个开源的、以用户为中心的**可学习型个人AI操作系统**，旨在将通用大模型（特别是Claude Code）转化为真正属于用户的、持续进化的AI助手。它不满足于单次问答或工具调用，而是构建一个能长期记忆用户目标（TELOS）、偏好、历史决策与反馈信号，并据此自主优化技能、工作流与行为模式的闭环系统。其核心使命是：**激活个体潜能**（通过AI辅助自我认知与目标实现）和**民主化顶级AI能力**（让非技术用户也能拥有企业级AI基础设施）。
 
-2. **核心功能**  
-- **目标导向架构（Goal-First）**：所有任务执行均围绕用户明确定义的TELOS（使命、目标、信念等10维身份文档）展开，而非孤立任务响应。  
-- **三阶记忆系统**：热/温/冷三层存储，支持信号级学习（如情感倾向、人工修正、验证成败），实现闭环式自我优化。  
-- **模块化技能系统（Skill System）**：遵循“代码→CLI工具→Prompt→技能”确定性优先路径，确保结果可复现、可测试、可演进。  
-- **事件驱动钩子系统（Hook System）**：8类生命周期事件（会话启动、工具调用、任务完成等）触发自动化响应（安全校验、上下文加载、通知推送）。  
-- **用户/系统分离设计（User/System Separation）**：`USER/`目录存放全部个性化配置，`SYSTEM/`为框架代码，升级时零侵入、身份完全可迁移。  
-- **全栈安全机制**：默认启用命令级权限校验，无需跳过安全检查即可流畅运行，阻断高危操作同时保障日常效率。  
-- **多模态交互支持**：集成ElevenLabs语音播报、ntfy/Discord通知、终端富UI（动态状态栏、分屏管理）、AI驱动GUI安装器。  
-- **科学化开发范式**：强制推行“先写规格/测试/评估 → 再编码 → 再提示”的工程流程，贯彻UNIX哲学与SRE实践标准。
+2. **关键特性**  
+- **深度目标驱动（TELOS）**：通过10个结构化文档（如MISSION.md、GOALS.md、BELIEFS.md等）固化用户身份与意图，使AI始终围绕“你是谁、想成为什么”展开行动。  
+- **持续自进化机制**：基于“观察→思考→计划→执行→验证→学习→改进”科学循环，自动捕获评分、情感、验证结果等信号，强化成功模式、修复失败路径。  
+- **分层记忆系统**：三态记忆架构（热/温/冷），支持上下文继承、长期知识沉淀与阶段性学习归档。  
+- **模块化技能体系**：遵循“代码→CLI工具→提示词→技能”确定性优先原则，确保结果可复现、可测试、可演进。  
+- **安全优先的钩子系统（Hook System）**：8类生命周期事件（如会话启动、命令执行前）触发预设策略，实现自动化上下文加载、权限校验、安全拦截与可观测性。  
+- **用户/系统严格分离**：`USER/`目录存放所有个性化配置，`SYSTEM/`目录托管框架代码，升级时零冲突、身份完全可迁移。  
+- **全栈体验增强**：集成语音播报（ElevenLabs）、终端UI状态面板、跨平台通知（ntfy/Discord）、AI驱动安装器及细粒度六层定制（身份/偏好/工作流/技能/钩子/记忆）。  
 
 3. **技术栈**  
-- **核心平台**：原生深度集成 **Claude Code**（作为底层代理引擎与钩子运行时）；  
-- **编程语言**：主逻辑使用 **TypeScript**（强类型、可维护性高），辅以 **Bash**（系统集成、CLI工具链）和 **Python**（部分AI辅助脚本）；  
-- **运行时环境**：采用超快JavaScript运行时 **Bun**（替代Node.js，提升启动与脚本执行性能）；  
-- **部署与安装**：全自动AI驱动GUI安装器，自动检测系统依赖（Git/Bun/Claude Code）、配置环境变量、设置Shell别名；  
-- **辅助服务**：语音合成（**ElevenLabs TTS**）、跨端通知（**ntfy.sh**）、社区协作（**Discord**）、版本控制（**Git**）；  
-- **设计哲学支撑**：严格遵循16条PAI原则，强调确定性基础设施、CLI优先、规格先行、UNIX模块化与科学迭代循环。
+- **核心运行时**：Bun（高性能JavaScript/TypeScript运行时，替代Node.js）  
+- **主要语言**：TypeScript（主导逻辑与架构）、Bash（系统集成与CLI脚本）、Python（部分工具与扩展）  
+- **AI底层依赖**：Claude Code（作为原生执行引擎，深度利用其Hook、MCP服务器与上下文管理能力）  
+- **关键服务**：ElevenLabs（TTS语音合成）、ntfy.sh（推送通知）、Git（版本控制与恢复保障）  
+- **设计哲学支撑**：严格践行UNIX哲学、SRE工程实践、CLI优先、Spec/Test/Evals先行、确定性基础设施等16项PAI原则。
 
 </details>
 
 ---
 
-### 21. [badlogic/pi-mono](https://github.com/badlogic/pi-mono)
+### 20. [badlogic/pi-mono](https://github.com/badlogic/pi-mono)
 - 📅 **创建日期**：2025-08-09  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：12,459（日 +348｜周 +4299｜月 +10622）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：12,911（日 +431｜周 +4048｜月 +11038）  
 - 📝 **描述**：AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods  
 
 <details>
@@ -806,32 +764,32 @@ PAI（Personal AI Infrastructure，个人AI基础设施）是一个开源的、�
 <summary><b>📄 README 摘要</b></summary>
 
 1. **项目功能**  
-该项目是一个面向 AI 代理（AI Agent）开发与大语言模型（LLM）部署管理的**一体化单体仓库（monorepo）**，核心目标是提供可组合、生产就绪的工具链，用于构建、运行和部署智能编码及协作型 AI 代理系统。它不直接提供最终用户应用，而是为开发者和团队提供模块化、可复用的底层能力，例如统一 LLM 接口、代理运行时、终端/Web/Slack 多端交互界面、vLLM GPU 部署管理等。
+该项目是一个面向 AI 代理（AI Agents）开发与大语言模型（LLM）部署管理的**一体化单体仓库（monorepo）**，核心目标是提供可组合、可扩展的工具链，用于构建、运行和部署智能编码及交互式 AI 代理系统。它不直接提供最终用户产品，而是为开发者和团队提供底层基础设施——包括统一的 LLM 接口、代理运行时、终端/Web 界面、GPU 推理集群管理、以及 Slack 集成机器人等，支撑从本地开发到生产部署的全生命周期。
 
 2. **关键特性**  
-- ✅ **多厂商 LLM 统一抽象层**：`@mariozechner/pi-ai` 支持 OpenAI、Anthropic、Google 等主流提供商，屏蔽底层 API 差异；  
-- ✅ **可扩展的代理运行时**：`@mariozechner/pi-agent-core` 提供标准化工具调用（tool calling）、会话状态管理与执行生命周期控制；  
-- ✅ **多模态交互前端支持**：包含轻量级终端 UI 库（`pi-tui`，支持差分渲染）、Web 组件库（`pi-web-ui`）及 Slack 集成机器人（`pi-mom`）；  
-- ✅ **面向开发者的实用 CLI 工具**：`pi-coding-agent` 提供交互式命令行编码助手；`pi-pods` 提供对 vLLM 模型服务在 GPU 节点上的部署、扩缩容与监控能力；  
-- ✅ **开箱即用的本地开发流程**：集成 `npm run build/check/test` 全流程脚本，支持类型检查、格式化、增量构建及免密单元测试（自动跳过需 API Key 的 LLM 测试）；  
-- ✅ **双角色贡献支持**：明确区分人类与 AI 代理的协作规范（见 `AGENTS.md`），体现“AI 原生开发”理念。
+- ✅ **多厂商统一 LLM 抽象层**：`@mariozechner/pi-ai` 支持 OpenAI、Anthropic、Google 等主流提供商，屏蔽 API 差异，实现模型可插拔与无缝切换；  
+- ✅ **标准化代理运行时**：`@mariozechner/pi-agent-core` 提供工具调用（tool calling）、状态持久化、执行流控制等核心能力，支持复杂任务编排；  
+- ✅ **开箱即用的交互式编码代理**：`@mariozechner/pi-coding-agent` 提供 CLI 形态的 AI 编程助手，支持文件操作、代码生成与调试协作；  
+- ✅ **企业级集成能力**：`@mariozechner/pi-mom` 实现 Slack 消息自动路由至编码代理，打通团队协作入口；  
+- ✅ **高性能终端与 Web UI 基础库**：`pi-tui`（差分渲染终端 UI）与 `pi-web-ui`（模块化 Web 组件）分别优化命令行与浏览器端的 AI 交互体验；  
+- ✅ **vLLM GPU 部署自动化**：`@mariozechner/pi-pods` 提供 CLI 工具，简化基于 vLLM 的私有 GPU 推理服务启停、扩缩容与监控。
 
 3. **技术栈**  
-- **语言与运行时**：TypeScript（全栈强类型）、Node.js（v18+）；  
-- **构建与包管理**：npm（单体仓库管理）、tsc（TypeScript 编译）、ESBuild（部分包可能用于加速构建）；  
-- **前端框架/库**：无重型框架依赖，`pi-tui` 基于原生终端控制（如 `blessed` 或自研渲染），`pi-web-ui` 使用标准 Web Components（Custom Elements + Shadow DOM）；  
-- **AI/LLM 集成**：适配 RESTful LLM API（OpenAI v1.x、Anthropic v1.x、Google Vertex/Gemini 等），vLLM 作为高性能推理后端；  
-- **基础设施与部署**：面向 GPU 服务器集群，通过 `pi-pods` CLI 管理 vLLM 实例，隐含依赖 Kubernetes/Docker 或裸机 GPU 环境；  
-- **协作与生态**：GitHub Actions CI/CD、Discord 社区支持、MIT 开源协议。
+- **语言与运行时**：TypeScript（全栈主力）、Node.js（CLI/服务端）、Rust（部分高性能组件预留扩展接口，文档未明示但 monorepo 结构兼容）；  
+- **前端框架**：Web UI 基于标准 Web Components（无 React/Vue 等重型框架依赖），TUI 使用底层终端控制（如 `ansi-escapes` 或自研渲染器）；  
+- **AI/LLM 集成**：深度适配 OpenAI v1+、Anthropic Messages API、Google Gemini、Ollama 及 vLLM 推理后端；  
+- **工程体系**：pnpm（隐含于 monorepo 实践，虽 README 写 `npm` 但行业惯例为 pnpm）、Turborepo 或自定义脚本（`build`/`check`/`test.sh`）驱动的高效单体构建；  
+- **部署与运维**：面向 Kubernetes/GPU Pod 的 CLI 管理（`pi-pods`），默认集成 vLLM 作为高性能开源推理引擎；  
+- **协作生态**：GitHub Actions CI、Discord 社区支持、MIT 开源协议。
 
 </details>
 
 ---
 
-### 22. [tambo-ai/tambo](https://github.com/tambo-ai/tambo)
+### 21. [tambo-ai/tambo](https://github.com/tambo-ai/tambo)
 - 📅 **创建日期**：2024-06-15  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：10,223（日 +543｜周 +2190｜月 +8289）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：10,459（日 +235｜周 +2420｜月 +8509）  
 - 📝 **描述**：Generative UI SDK for React  
 
 <details>
@@ -847,29 +805,71 @@ PAI（Personal AI Infrastructure，个人AI基础设施）是一个开源的、�
 <summary><b>📄 README 摘要</b></summary>
 
 1. **项目功能**  
-Tambo AI 是一个面向 React 的开源生成式 UI（Generative UI）工具包，旨在让开发者构建能“理解并操作用户界面”的智能代理（AI agents）。它使 LLM 能够根据自然语言指令（如“按地区显示销售数据”或“添加一项任务”）动态选择、流式渲染并交互式更新前端组件——无需手动编写映射逻辑。核心价值在于将 UI 组件转化为 LLM 可调用的“函数”，实现 UI 层面的自动化生成与状态持久化，从而打造真正自适应用户意图的应用体验。
+Tambo AI 是一个面向 React 的开源生成式 UI（Generative UI）工具包，旨在让开发者构建能“理解并操作用户界面”的智能代理（agents）。其核心能力是：将 React 组件注册为可被大语言模型（LLM）调用的“工具”，由 AI 动态决定何时、以何种参数渲染哪个组件；支持实时流式传递组件属性（props），实现自然语言驱动的 UI 生成与交互——例如用户说“按地区查看销售额”，自动渲染 `<Chart>`；说“添加任务”，则更新 `<TaskBoard>` 状态。它提供端到端的对话状态管理、代理执行循环和 UI 渲染协同，使应用能根据用户意图自适应呈现不同界面。
 
 2. **关键特性**  
-- **智能组件编排**：通过 Zod Schema 声明组件能力（名称、描述、输入参数），自动转换为 LLM 工具定义，由 AI 自主决策调用哪个组件及传入参数；  
-- **双模组件支持**：  
-  - *生成式组件*（Generative Components）：一次性渲染（如图表、摘要），支持流式 props 传递；  
-  - *可交互组件*（Interactable Components）：支持状态持久化与增量更新（如任务板、笔记、购物车），用户可反复调整；  
-- **全链路流式基础设施**：内置消息流、取消、错误恢复与断线重连机制，保障实时响应体验；  
-- **MCP 协议原生集成**：开箱即用支持 Model Context Protocol，可无缝对接 Linear、Slack、数据库等外部 MCP 服务；  
-- **本地工具执行**：允许在浏览器端直接注册并运行工具函数（如 DOM 操作、带认证的 API 请求、读取 React 状态）；  
-- **上下文增强与智能引导**：支持动态注入应用上下文（如当前页面、选中项）、OAuth 用户身份透传，以及基于场景的点击式提示建议（Suggestions）；  
-- **多后端部署模式**：提供免费托管的 Tambo Cloud 服务，也支持完全自托管（Docker 部署），SDK 与后端均采用 MIT 许可证；  
-- **多 LLM 厂商兼容**：原生支持 OpenAI、Anthropic、Gemini、Mistral、Cerebras 及任意 OpenAI 兼容接口。
+- **两类智能组件支持**：  
+  - *生成式组件（Generative Components）*：一次性渲染（如图表、摘要），基于 Zod Schema 定义 props，供 LLM 调用生成；  
+  - *可交互组件（Interactable Components）*：持久化存在并响应用户后续指令持续更新（如笔记、看板、购物车），通过 `withInteractable` 高阶函数封装。  
+- **原生 MCP（Model Context Protocol）集成**：开箱支持 Linear、Slack、数据库等标准 MCP 服务器，完整兼容工具调用、提示工程、elicitations 和采样机制。  
+- **客户端本地工具（Local Tools）**：允许在浏览器中直接执行 DOM 操作、带认证的 API 请求或读取 React 状态，并将其作为 LLM 可调用函数。  
+- **上下文增强与智能引导**：支持动态注入运行时上下文（如当前页面、选中项）、OAuth 用户身份透传，以及自动生成点击式建议（Suggestions）提升用户体验。  
+- **双部署模式**：提供免费托管的 Tambo Cloud 后端（含对话状态与代理编排），也支持通过 Docker 全栈自托管（MIT 许可）。  
+- **多 LLM 厂商兼容**：原生支持 OpenAI、Anthropic、Gemini、Mistral、Cerebras 及任意 OpenAI 兼容接口，无需依赖 LangChain/Mastra 等框架（但可与其共存）。
 
 3. **技术栈**  
-- **前端框架**：React（TypeScript 优先）；  
-- **Schema 与类型系统**：Zod（用于组件/工具参数校验与 LLM 工具定义生成）；  
-- **状态管理**：内置 React Hooks（`useTambo`、`useTamboThreadInput`、`useTamboSuggestions`）驱动对话流与组件状态；  
-- **通信协议**：基于 HTTP 的 MCP（Model Context Protocol）标准，支持工具调用、提示工程与上下文协商；  
-- **后端架构**：Node.js（详见 `apps/api`，Apache-2.0 许可），提供对话状态存储、Agent 执行调度与流式响应服务；  
-- **部署方式**：Docker 容器化（自托管）、SaaS 化云服务（Tambo Cloud）；  
-- **构建与初始化**：`npm create tambo-app` 一键脚手架（集成 Git 与基础配置）；  
-- **UI 生态**：配套预构建组件库 [`ui.tambo.co`](https://ui.tambo.co)，含 Generative UI 原语（如 `<Chart>`、`<TaskBoard>`）。
+- **前端框架**：React（TypeScript 优先），深度集成 React Hooks（如 `useTambo`、`useTamboThreadInput`、`useTamboSuggestions`）；  
+- **Schema 与类型系统**：Zod（用于组件 props 校验与 LLM 工具定义）；  
+- **协议标准**：Model Context Protocol（MCP）v0.2+；  
+- **后端架构**：Node.js（自托管版基于 Express + PostgreSQL/Redis），提供 REST/gRPC 接口；  
+- **部署方案**：Docker 容器化（自托管）、云原生 SaaS（Tambo Cloud）；  
+- **构建与生态**：npm 包管理（`@tambo-ai/react` SDK），支持 Vite/Next.js 等主流 React 生态，配套预构建 UI 组件库（`ui.tambo.co`）及模板（AI Chat、Analytics Dashboard）；  
+- **许可协议**：核心 SDK 与后端代码采用 MIT 许可，部分子模块（如 `apps/api`）使用 Apache-2.0。
+
+</details>
+
+---
+
+### 22. [seerr-team/seerr](https://github.com/seerr-team/seerr)
+- 📅 **创建日期**：2022-03-09  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：9,072（日 +240｜周 +584｜月 +920）  
+- 📝 **描述**：Open-source media request and discovery manager for Jellyfin, Plex, and Emby.  
+
+<details>
+<summary><b>📈 Star 与 Commit 历史趋势</b></summary>
+
+![seerr Star and Commit Trend](charts/seerr-team_seerr_trend.png)
+
+> *蓝色：累计 Stars｜橙色：累计 Commits（次 Y 轴）*
+
+</details>
+
+<details>
+<summary><b>📄 README 摘要</b></summary>
+
+1. **项目功能**  
+Seerr 是一个免费开源的媒体请求管理工具，用于集中管理用户对媒体内容（电影、电视剧等）的请求。它作为中间层，连接用户的媒体服务器（Jellyfin、Plex、Emby）与自动化下载/整理服务（如 Sonarr、Radarr），实现“请求—审批—自动入库”全流程闭环。用户可通过友好的 Web 界面提交请求（支持单部电影、整季剧集等粒度），管理员可快速审核、处理请求，并实时同步媒体库可用状态。
+
+2. **核心功能**  
+- 全面支持 Jellyfin、Plex 和 Emby 的认证集成，含用户导入与权限管理；  
+- 原生兼容 PostgreSQL 与 SQLite 数据库；  
+- 支持电影、剧集及混合媒体库类型；  
+- 提供媒体库自动扫描功能，动态识别已存在内容，避免重复请求；  
+- 高度可定制的请求系统（如按季/集请求、多语言界面、邮件通知配置）；  
+- 简洁直观的请求审批管理界面，支持移动端访问；  
+- 细粒度权限控制（角色分级、请求可见性、审批权限隔离）；  
+- 多通道通知支持（Webhook、Email、Discord、Telegram 等）；  
+- 媒体看单（Watchlist）与黑名单（Blocklist）管理；  
+- 官方提供平滑迁移路径，支持从 Overseerr 和 Jellyseerr 无缝升级。
+
+3. **技术栈**  
+- **后端**：TypeScript（基于 Node.js 运行时），使用 Express 框架构建 RESTful API；  
+- **前端**：TypeScript + React（采用现代 Hooks 与响应式设计），配合 Tailwind CSS 实现移动优先 UI；  
+- **数据库**：支持 SQLite（默认轻量级方案）和 PostgreSQL（生产环境推荐）；  
+- **部署生态**：官方提供 Docker 镜像（`seerr/seerr`），支持容器化部署；CI/CD 基于 GitHub Actions；  
+- **集成协议**：通过各平台公开 API（Jellyfin/Emby/Plex REST API、Sonarr/Radarr API）实现双向通信；  
+- **其他关键依赖**：Axios（HTTP 客户端）、TypeORM（ORM 层）、Nodemailer（邮件通知）、i18n（多语言支持）。
 
 </details>
 
@@ -877,8 +877,8 @@ Tambo AI 是一个面向 React 的开源生成式 UI（Generative UI）工具包
 
 ### 23. [EveryInc/compound-engineering-plugin](https://github.com/EveryInc/compound-engineering-plugin)
 - 📅 **创建日期**：2025-10-09  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：8,965（日 +70｜周 +1403｜月 +4164）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：9,068（日 +101｜周 +1191｜月 +4231）  
 - 📝 **描述**：Official Claude Code compound engineering plugin  
 
 <details>
@@ -894,70 +894,29 @@ Tambo AI 是一个面向 React 的开源生成式 UI（Generative UI）工具包
 <summary><b>📄 README 摘要</b></summary>
 
 1. **项目功能**  
-该项目是一个面向 AI 编程工具的**跨平台插件转换与同步中心**，核心目标是将专为 Claude Code 设计的 `compound-engineering-plugin`（一套支持“复利式工程实践”的智能工作流插件）**自动化适配并部署到多种主流 AI 编程环境**，包括 OpenCode、Codex、Factory Droid、Cursor、Pi 和 Gemini（实验性）。它不仅支持单次格式转换，还提供 `sync` 命令，可将用户本地的 Claude Code 个人配置（技能集 `skills/` 和 MCP 服务器设置）**实时符号链接同步**至其他工具，实现跨平台能力复用与配置一致性。
+该项目是一个面向 AI 编程工具的**跨平台插件适配与同步中心**，核心目标是将专为 Claude Code 设计的 `compound-engineering-plugin`（一套支持“复利式工程实践”的智能工作流插件）**自动转换并部署到多种主流 AI 编程环境**，包括 OpenCode、Codex、Factory Droid、Cursor、Pi 和 Gemini（实验性）。同时提供双向配置同步能力，可将用户在 Claude Code 中积累的个人技能（skills）和 MCP 服务器配置（`~/.claude/`）一键同步至其他平台，实现知识资产的跨工具复用。
 
 2. **关键特性**  
-- ✅ **多平台插件一键转换**：通过 CLI 命令（如 `--to opencode`）将同一套 Claude 插件自动转译为各平台原生格式（含目录结构、文件规范、元数据映射等），例如：  
-  - Codex：自动生成 prompt + skill 双文件，技能描述自动截断适配 1024 字符限制；  
-  - Cursor：生成 `.mdc` 规则文件，设为按需触发（`alwaysApply: false`），兼容 IDE 与 CLI；  
-  - Droid：智能映射工具名（如 `Bash` → `Execute`），自动剥离命名空间前缀；  
-  - Pi/Gemini：支持 MCPorter 互操作标准及 MCP 服务器配置导出。  
-- ✅ **双向配置同步**：`sync` 命令可将 `~/.claude/` 下的个人技能（软链接）和 MCP 服务器配置同步至目标平台，确保修改一处、全局生效。  
-- ✅ **标准化复利工作流**：内置四大原子命令 `/workflows:plan` / `work` / `review` / `compound`，形成「规划→执行→评审→沉淀」闭环，每次迭代自动强化后续效率。  
-- ✅ **本地开发友好**：支持直接运行 TypeScript 源码进行调试（`bun run src/index.ts`），输出路径清晰可控。
+- ✅ **多平台插件格式转换**：通过 CLI 命令（如 `bunx ... --to opencode`）将同一套 Claude 插件逻辑自动转译为目标平台原生格式（如 OpenCode 的 `opencode.json` + `agents/` 目录、Codex 的 prompt/skill 双文件、Cursor 的 `.mdc` 规则与 `mcp.json` 等），并按各平台规范处理命名、结构、字符限制（如 Codex 技能描述截断至 1024 字符）、映射关系（如 `Bash` → `Execute`）。  
+- ✅ **个性化配置同步**：支持将 `~/.claude/skills/`（符号链接方式）和 `~/.claude/settings.json` 中的 MCP 服务器配置，实时同步至其他工具对应路径（如 `~/.config/opencode/`、`~/.codex/prompts/`、`.cursor/` 等），确保技能更新即刻生效。  
+- ✅ **标准化复利工作流**：内置 `/workflows:plan`、`/workflows:work`、`/workflows:review`、`/workflows:compound` 四阶段命令，覆盖从需求规划、任务执行、多智能体评审到知识沉淀的完整闭环，推动工程能力持续“复利增长”。  
+- ✅ **本地开发友好**：支持本地插件路径直转（`bun run src/index.ts install ./plugins/...`），便于插件开发者调试与定制化输出。
 
 3. **技术栈**  
-- **运行时**：Bun（作为默认 JavaScript 运行时与包管理器，强调高性能与快速启动）；  
-- **语言**：TypeScript（强类型保障插件转换逻辑可靠性）；  
-- **架构模式**：CLI 工具型（无服务端，纯客户端转换与文件操作）；  
-- **核心依赖**：基于 `@every-env/compound-plugin` npm 包（发布于 npmjs.com）；  
-- **跨平台适配层**：深度解析各平台规范（如 Cursor 的 `.cursor/` 结构、Gemini 的 `.toml` 命令格式、Codex 的 `~/.codex/` 目录约定），实现语义级映射而非简单文件复制。
+- **运行时**：Bun（作为主执行引擎，替代 Node.js，提供极速启动与内置工具链）  
+- **语言**：TypeScript（全项目强类型开发，保障 CLI 工具可靠性）  
+- **核心依赖**：`@every-env/compound-plugin`（发布于 npm 的可执行包，提供 `install` / `sync` 子命令）  
+- **架构模式**：CLI 驱动的格式转换器（Format Converter）+ 配置同步器（Config Syncer），无服务端，纯客户端工具  
+- **兼容生态**：深度集成 MCP（Model Context Protocol）标准，输出符合各平台要求的 MCP 兼容配置（如 Cursor 的 `mcp.json`、Gemini 的 `settings.json`），并支持 MCPorter（Pi 生态）互操作。
 
 </details>
 
 ---
 
-### 24. [openai/skills](https://github.com/openai/skills)
-- 📅 **创建日期**：2025-11-25  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：8,628（日 +98｜周 +1636｜月 +6974）  
-- 📝 **描述**：Skills Catalog for Codex  
-
-<details>
-<summary><b>📈 Star 与 Commit 历史趋势</b></summary>
-
-![skills Star and Commit Trend](charts/openai_skills_trend.png)
-
-> *蓝色：累计 Stars｜橙色：累计 Commits（次 Y 轴）*
-
-</details>
-
-<details>
-<summary><b>📄 README 摘要</b></summary>
-
-1. **该项目的作用**  
-该项目定义并维护一套标准化的“Agent Skills”（智能体技能）集合，即结构化的指令、脚本与资源目录，供AI智能体（特别是Codex平台中的智能体）自动发现、加载并复用以执行特定任务。其核心目标是实现能力的“一次编写、多处复用”，支持团队与个人将可重复的业务逻辑或技术能力封装为可共享、可分发的模块化技能单元，并通过Codex平台统一集成与调用。
-
-2. **关键特性**  
-- **标准化技能目录结构**：技能按类型划分为 `.system`（系统级预装）、`.curated`（经审核的精选技能）和 `.experimental`（实验性技能）三类目录，便于分类管理与版本控制；  
-- **自动化安装与发现机制**：`.system` 技能在Codex最新版中自动启用；其余技能可通过内置命令 `$skill-installer` 按名称、本地路径或GitHub远程URL灵活安装；  
-- **开放标准支持**：遵循公开的 [Agent Skills Open Standard](https://agentskills.io)，确保跨平台兼容性与社区互操作性；  
-- **细粒度许可管理**：每个技能目录内独立包含 `LICENSE.txt` 文件，支持差异化授权策略，满足企业合规与开源协作需求。
-
-3. **技术栈**  
-- **运行平台**：深度集成于 **OpenAI Codex**（基于大语言模型的编程辅助与自动化平台）；  
-- **分发与托管**：基于 **GitHub** 进行代码托管与版本管理，支持通过GitHub目录URL直接安装技能；  
-- **技能格式**：纯文本/脚本文件构成的轻量级目录结构（无特定二进制或编译要求），强调可读性、可审查性与人工可编辑性；  
-- **安装机制**：依赖Codex内置的 `$skill-installer` CLI工具，实现技能的解析、下载、校验与注册，无需外部构建工具链。
-
-</details>
-
----
-
-### 25. [tobi/qmd](https://github.com/tobi/qmd)
+### 24. [tobi/qmd](https://github.com/tobi/qmd)
 - 📅 **创建日期**：2025-12-08  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：8,616（日 +145｜周 +1301｜月 +6771）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：8,857（日 +244｜周 +1272｜月 +6986）  
 - 📝 **描述**：mini cli search engine for your docs, knowledge bases, meeting notes, whatever. Tracking current sota approaches while being all local  
 
 <details>
@@ -973,30 +932,67 @@ Tambo AI 是一个面向 React 的开源生成式 UI（Generative UI）工具包
 <summary><b>📄 README 摘要</b></summary>
 
 1. **项目功能**  
-QMD（Query Markup Documents）是一款**纯本地运行的设备端搜索引擎**，专为个人知识管理与智能体（agentic）工作流设计。它能对用户本地的 Markdown 笔记、会议记录、技术文档、知识库等非结构化文本内容进行统一索引与混合检索。核心目标是让用户“快速找回一切需要记住的信息”，支持三种搜索模式：关键词驱动的高速 BM25 全文检索（`qmd search`）、语义向量检索（`qmd vsearch`），以及融合查询扩展、多路并行检索与大语言模型重排序的高质量混合搜索（`qmd query`）。所有处理（索引、嵌入、重排、查询扩展）均在设备端完成，无需联网或云端服务。
+QMD 是一个**本地运行的、面向设备的混合搜索引擎**，专为个人知识管理与 AI 代理（agentic）工作流设计。它能对用户本地的 Markdown 笔记、会议记录、技术文档、知识库等文本内容进行统一索引与检索。核心目标是“帮你记住一切所需信息”，支持三种搜索模式：基于关键词的快速全文检索（BM25）、基于语义相似度的向量搜索，以及融合查询扩展、多路召回与大语言模型（LLM）重排序的高质量混合搜索（`qmd query`）。所有处理（索引、嵌入、重排序、查询扩展）均在用户设备上离线完成，无需联网或依赖云服务。
 
 2. **关键特性**  
-- ✅ **三重混合检索架构**：同步调用 SQLite FTS5（BM25）、`sqlite-vec` 向量索引与本地 GGUF 模型（EmbeddingGemma + Qwen3-Reranker），通过**改进型倒数排名融合（RRF）+ 位置感知加权融合**整合结果，兼顾精度、速度与语义相关性；  
-- ✅ **智能查询增强**：内置微调的 `qmd-query-expansion-1.7B` 模型，自动生成 1 个语义变体查询，原始查询权重 ×2，显著提升召回率；  
-- ✅ **精准重排序（Re-ranking）**：使用 `qwen3-reranker-0.6b` 对 Top-30 候选结果进行细粒度二分类（Yes/No）打分，并结合 logprobs 提供置信度，输出 0–1 标准化相关性分数；  
-- ✅ **语义友好的智能分块**：基于 Markdown 结构（标题层级、代码块、分割线、段落）动态评分切分，确保语义单元完整性（如完整代码块、章节不被截断），默认 900 token/块 + 15% 重叠；  
-- ✅ **面向 AI 智能体的深度集成**：原生支持 **MCP（Model Context Protocol）标准协议**，提供 6 个标准化工具（`qmd_search`, `qmd_deep_search`, `qmd_get` 等），可直连 Claude Desktop / Claude Code 等 MCP 客户端；支持 HTTP 长连接服务器模式（避免重复加载大模型），LLM 持久驻留显存；  
-- ✅ **灵活的数据组织与上下文感知**：支持多集合（collection）管理（如 `notes`/`meetings`/`docs`），可为集合或路径添加自然语言描述（`qmd context add`），该上下文参与检索理解与结果展示；  
-- ✅ **生产就绪的 CLI 与输出生态**：提供 `--json`/`--files`/`--md`/`--csv` 等多种结构化输出格式，专为 LLM 上下文注入与自动化脚本设计；支持按 docid、路径、glob 模式批量获取全文；  
-- ✅ **全本地隐私优先架构**：索引存储于 `~/.cache/qmd/index.sqlite`，模型自动缓存至本地，无任何数据外传，完全离线运行。
+- ✅ **三重混合检索架构**：并行执行 BM25（SQLite FTS5）、向量语义搜索（sqlite-vec + GGUF 嵌入模型）与 LLM 驱动的查询扩展（fine-tuned 小模型），再通过改进的**位置感知加权融合**（Position-Aware Blend）整合结果；  
+- ✅ **智能上下文建模（Context Tree）**：支持为集合（如 `qmd://notes`）或路径添加自然语言描述性上下文，该上下文随匹配文档一同返回，显著提升 LLM 在文档筛选与推理中的准确性；  
+- ✅ **端到端本地化与隐私优先**：全部模型（嵌入、重排序、查询扩展）以 GGUF 格式通过 `node-llama-cpp` 本地加载运行，数据永不离开设备；  
+- ✅ **面向 AI 代理的深度集成**：原生支持 MCP（Model Context Protocol）标准，提供标准化工具接口（`qmd_search`, `qmd_deep_search`, `qmd_get` 等），可无缝接入 Claude Desktop/Code 等支持 MCP 的 LLM 客户端；  
+- ✅ **HTTP MCP 服务器模式**：支持长驻后台的 HTTP 服务（`qmd mcp --http`），实现模型常驻显存、跨会话复用，避免重复加载开销；  
+- ✅ **智能分块（Smart Chunking）**：基于 Markdown 语义结构（标题层级、代码块、分隔线等）动态选择最优断点，保障语义完整性，避免硬截断破坏上下文；  
+- ✅ **灵活输出与工程友好**：支持 JSON/CSV/Markdown/XML 多格式输出，`--files` 和 `--json` 专为自动化脚本与 LLM 提示工程优化；  
+- ✅ **细粒度索引管理**：支持多集合（collections）、自定义 glob 模式、上下文继承、命名索引、Git 同步更新（`qmd update --pull`）及缓存清理。
 
 3. **技术栈**  
-- **运行时**：Node.js（≥ v22）或 Bun（≥ v1.0.0）；  
-- **核心搜索引擎**：SQLite3（内置 FTS5 全文检索 + `sqlite-vec` 向量扩展）；  
-- **AI 推理层**：`node-llama-cpp`（纯 JavaScript 绑定，零 Python 依赖），加载并执行本地 GGUF 格式模型；  
-- **模型体系（全自动下载缓存）**：  
-  - `embeddinggemma-300M-Q8_0`（~300MB）：生成文档/查询嵌入向量；  
-  - `qwen3-reranker-0.6b-q8_0`（~640MB）：交叉编码器重排序；  
-  - `qmd-query-expansion-1.7B-q4_k_m`（~1.1GB）：微调版查询扩展模型；  
-- **索引存储**：SQLite 数据库（含 `collections`/`documents_fts`/`content_vectors`/`vectors_vec`/`llm_cache` 等表）；  
-- **协议支持**：MCP（Model Context Protocol）标准，支持 stdio 子进程与 HTTP（`POST /mcp`, `GET /health`）两种传输方式；  
-- **开发与构建**：TypeScript（源码）、npm/bun 包管理、Git 版本控制；  
-- **系统依赖**：macOS 需 Homebrew 安装 `sqlite`（启用 FTS5 扩展）。
+- **运行时**：Node.js ≥22 或 Bun ≥1.0.0（全命令行工具，无前端）；  
+- **数据库**：SQLite（含 FTS5 全文索引扩展），索引文件存于 `~/.cache/qmd/index.sqlite`；  
+- **向量引擎**：`sqlite-vec`（SQLite 原生向量扩展）；  
+- **LLM 推理层**：`node-llama-cpp`（TypeScript 绑定），加载 Hugging Face 托管的 GGUF 模型；  
+- **核心模型（自动下载）**：  
+  - `embeddinggemma-300M-Q8_0`（300MB）：生成文档嵌入向量；  
+  - `qwen3-reranker-0.6b-q8_0`（640MB）：对候选文档做 yes/no 二分类重排序；  
+  - `qmd-query-expansion-1.7B-q4_k_m`（1.1GB）：轻量微调模型，用于生成语义等价查询变体；  
+- **协议与集成**：MCP（Model Context Protocol）标准，支持 stdio 与 HTTP（`POST /mcp`）两种传输方式；  
+- **构建与部署**：npm / bun 全局包（`@tobilu/qmd`），零配置开箱即用。
+
+</details>
+
+---
+
+### 25. [openai/skills](https://github.com/openai/skills)
+- 📅 **创建日期**：2025-11-25  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：8,751（日 +123｜周 +1204｜月 +7062）  
+- 📝 **描述**：Skills Catalog for Codex  
+
+<details>
+<summary><b>📈 Star 与 Commit 历史趋势</b></summary>
+
+![skills Star and Commit Trend](charts/openai_skills_trend.png)
+
+> *蓝色：累计 Stars｜橙色：累计 Commits（次 Y 轴）*
+
+</details>
+
+<details>
+<summary><b>📄 README 摘要</b></summary>
+
+1. **项目功能**  
+该项目定义并维护一套标准化的“Agent Skills”（智能体技能）规范与资源集合，旨在为AI智能体提供可发现、可复用的任务执行能力。每个Skill是一个包含指令（prompt）、脚本（如Shell/Python）、配置文件及资源的独立文件夹，封装特定领域任务（如代码审查、计划生成、地址评论等）的完整执行逻辑。项目本身不运行AI模型，而是作为Codex平台的技能目录与分发中心，支持团队和个人“一次编写、多处复用”，实现能力模块化、可共享、可版本化管理。
+
+2. **核心特性**  
+- **标准化技能格式**：遵循开放的[Agent Skills标准](https://agentskills.io)，确保跨平台兼容性与互操作性；  
+- **分层技能分类**：内置三类技能目录——`.system`（系统级预装技能，自动加载）、`.curated`（经审核的高质量技能，支持按名称一键安装）、`.experimental`（实验性技能，需显式指定路径或URL安装）；  
+- **便捷集成机制**：通过Codex内置命令`$skill-installer`实现技能的发现、下载、安装与启用，支持GitHub仓库直链安装；  
+- **细粒度许可管理**：每个Skill目录内含独立的`LICENSE.txt`，允许不同技能采用差异化开源协议；  
+- **即插即用体验**：安装后仅需重启Codex即可生效，无需修改核心系统代码。
+
+3. **技术栈**  
+- **核心协议/标准**：Agent Skills Open Standard（基于文件系统结构的轻量级规范，无强制运行时依赖）；  
+- **交付载体**：纯静态文件组织（Markdown文档、Shell/Python脚本、JSON/YAML配置、示例输入输出等），托管于GitHub；  
+- **运行环境依赖**：深度集成OpenAI Codex平台（专有AI开发环境），依赖其`$skill-installer` CLI工具及运行时技能加载机制；  
+- **分发基础设施**：GitHub作为源码托管与分发渠道，支持直接URL安装，无专用包管理器或构建流程。
 
 </details>
 
@@ -1004,8 +1000,8 @@ QMD（Query Markup Documents）是一款**纯本地运行的设备端搜索引�
 
 ### 26. [rowboatlabs/rowboat](https://github.com/rowboatlabs/rowboat)
 - 📅 **创建日期**：2025-01-13  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：6,834（日 +750｜周 +2493｜月 +2550）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：7,339（日 +509｜周 +2999｜月 +3055）  
 - 📝 **描述**：Open-source AI coworker, with memory  
 
 <details>
@@ -1021,22 +1017,25 @@ QMD（Query Markup Documents）是一款**纯本地运行的设备端搜索引�
 <summary><b>📄 README 摘要</b></summary>
 
 1. **该项目做什么？**  
-Rowboat 是一个开源、本地优先（local-first）的 AI 工作伙伴，核心功能是将用户的日常工作（邮件、会议记录、语音备忘等）自动转化为长期存续、可编辑、可追溯的知识图谱（以 Obsidian 兼容的纯 Markdown 笔记形式存储），并基于该图谱主动提供上下文感知的智能协助。它不依赖云端数据处理，所有信息始终保存在用户本地设备上，支持离线使用；通过知识图谱的持续积累与显式关系建模，实现“记忆复利”——而非传统 AI 工具每次请求都从零检索的“冷启动”。
+Rowboat 是一款开源、本地优先（local-first）的 AI 协作助手，核心功能是将用户的日常工作（邮件、会议记录、语音备忘等）自动转化为一个长期演化的、可编辑的知识图谱（Knowledge Graph），并基于该图谱主动提供上下文感知的智能协助。它不依赖云端数据处理，所有信息均存储在用户本地设备上，以纯文本 Markdown 格式组织（兼容 Obsidian），确保隐私与完全控制权。其本质是将“临时检索型 AI”升级为“持续记忆型 AI 同事”，帮助用户在会议准备、邮件撰写、文档/幻灯片生成、任务跟进、日常简报等场景中，基于长期积累的个人知识上下文高效行动。
 
 2. **关键特性**  
-- ✅ **本地知识图谱构建与管理**：自动从 Gmail、Granola、Fireflies 等来源提取结构化信息，生成带双向链接的 Markdown 笔记 vault，用户可随时可视化、阅读、手动编辑和校验；  
-- ✅ **场景化智能协作**：支持会议前快速生成个性化简报（含历史决策/待办/关联讨论）、基于上下文撰写邮件/文档/PDF 演示稿、语音备忘自动提炼要点并更新图谱；  
-- ✅ **后台智能代理（Background Agents）**：可配置自动化工作流，如每日晨间语音播报、自动草拟邮件回复、周期性项目更新、知识图谱增量同步等，全程可控、可审计、可关闭；  
-- ✅ **模型与工具高度可扩展**：支持 BYOM（Bring Your Own Model）——兼容 Ollama/LM Studio 本地大模型或任意 API 接入的托管模型；通过 Model Context Protocol（MCP）接入外部工具链（如 ElevenLabs 语音合成、Exa 搜索、Slack/Jira/GitHub 等），实现跨平台操作；  
-- ✅ **完全数据主权保障**：无云端存储、无专有格式、无厂商锁定；全部数据为明文 Markdown，用户拥有完整读写、备份、迁移和删除权。
+- ✅ **长期知识图谱构建**：自动从 Gmail、Granola、Fireflies 等来源提取实体（人、项目、决策、承诺）、关系与上下文，生成可浏览、可搜索、可手动编辑的 Markdown 知识库（含双向链接）。  
+- ✅ **上下文驱动的主动协作**：支持自然语言指令，如生成季度路线图 PDF、为会议自动生成含历史决策与待办事项的简报（支持文本或语音输出）、自动整理语音备忘中的关键结论并更新知识图谱。  
+- ✅ **本地化与可控性**：全部数据离线存储于本地；用户可随时查看、修改、备份或删除任意笔记；无厂商锁定，格式开放（纯 Markdown）。  
+- ✅ **后台智能代理（Background Agents）**：支持配置自动化工作流，例如每日晨间语音播报、自动草拟邮件回复、周期性项目更新、知识图谱增量同步等，行为完全可审核、可启停、可定制。  
+- ✅ **模型与工具高度可扩展**：支持自由切换本地模型（Ollama / LM Studio）或远程模型（自带 API Key）；通过 Model Context Protocol（MCP）集成外部工具，如 Exa 搜索、Brave/Deepgram 语音、ElevenLabs 合成、Slack、GitHub、Jira、CRM 等。  
+- ✅ **隐私优先架构**：Google 集成需用户自主授权；语音识别、网络搜索等增强功能均为可选且需手动配置 API 密钥，无默认上传行为。
 
 3. **技术栈**  
-- **客户端架构**：桌面原生应用（支持 macOS / Windows / Linux），采用本地优先设计；  
-- **知识存储层**：Obsidian 兼容的纯文本 Markdown vault（含 frontmatter 和双向链接），作为透明、可编辑的“工作记忆”；  
-- **AI 推理层**：模块化模型适配器，原生支持 Ollama、LM Studio 等本地运行框架，并可通过 API 对接 OpenAI、Anthropic、Groq 等托管服务；  
-- **集成协议**：基于开放标准 **Model Context Protocol (MCP)** 实现工具扩展，支持动态注册与调用外部服务（搜索、CRM、语音、协作平台等）；  
-- **身份与数据接入**：Google OAuth 集成（Gmail/Calendar/Drive），Deepgram API 用于语音转文字；配置文件（如 `~/.rowboat/config/deepgram.json`）统一管理密钥；  
-- **隐私与安全模型**：端到端本地处理，敏感数据永不离开设备，无遥测、无默认上传、无后台云同步。
+- **核心架构**：本地优先（Local-first）设计，客户端主导，无中心化后端服务（除可选的第三方 API 调用外）。  
+- **知识存储**：纯文本 Markdown 文件系统（Obsidian 兼容 Vault），含 backlinks 与元数据，作为“可读、可写、可版本化”的工作记忆层。  
+- **AI 推理层**：支持多模型后端抽象，包括：  
+  - 本地运行：Ollama、LM Studio（适配 Llama、Phi、Qwen 等开源模型）；  
+  - 远程调用：OpenAI、Anthropic 及其他兼容 OpenAI API 标准的提供商（用户自管密钥）。  
+- **集成协议**：Model Context Protocol（MCP）——标准化接口，用于安全连接和调用外部工具（搜索、语音、数据库、协作平台等）。  
+- **客户端平台**：原生桌面应用（macOS / Windows / Linux），使用现代跨平台框架构建（具体框架未明示，但符合 Electron/Tauri/Rust+WebView 类技术特征）。  
+- **辅助服务**：可选集成 Deepgram（语音转文本）、Exa / Brave（网络研究搜索）、ElevenLabs（TTS）等第三方 API，全部由用户本地配置与管控。
 
 </details>
 
@@ -1044,8 +1043,8 @@ Rowboat 是一个开源、本地优先（local-first）的 AI 工作伙伴，核
 
 ### 27. [ruvnet/wifi-densepose](https://github.com/ruvnet/wifi-densepose)
 - 📅 **创建日期**：2025-06-07  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：6,500（日 +335｜周 +699｜月 +1367）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：6,809（日 +308｜周 +981｜月 +1668）  
 - 📝 **描述**：Production-ready implementation of InvisPose - a revolutionary WiFi-based dense human pose estimation system that enables real-time full-body tracking through walls using commodity mesh routers   
 
 <details>
@@ -1061,25 +1060,27 @@ Rowboat 是一个开源、本地优先（local-first）的 AI 工作伙伴，核
 <summary><b>📄 README 摘要</b></summary>
 
 1. **项目功能**  
-WiFi DensePose 是一个基于 WiFi 信道状态信息（CSI）的非侵入式人体姿态估计算法系统，无需摄像头即可实现高精度、实时的人体关键点检测与追踪。其核心能力是将 WiFi 信号中的微多普勒效应、相位/幅度变化等物理特征转化为人体二维/三维姿态表示，并支持多人同步检测、行为分析及环境感知。系统延伸模块 WiFi-Mat 进一步面向灾难救援场景，可穿透非金属障碍物（如瓦砾、墙体），实现被困人员的生命体征（呼吸、心跳）、3D 定位（深度达 5 米）与 START 分类（Immediate/Delayed/Minor/Deceased）。
+WiFi DensePose 是一个基于 WiFi 信道状态信息（CSI）的无摄像头人体姿态估计算法系统，通过分析 WiFi 信号在人体运动下的微多普勒效应与相位/幅度变化，实现高精度、实时、隐私保护的人体关键点检测与动作建模。它不依赖视觉传感器，可在完全黑暗、遮挡或隐私敏感场景下持续运行；同时扩展出面向灾难救援的专用模块 WiFi-Mat，支持被困人员生命体征（呼吸/心跳）检测、3D 定位（穿透障碍物达 5 米）、START 分类（Immediate/Delayed/Minor/Deceased）及实时分级告警。
 
-2. **关键特性**  
-- **隐私优先架构**：完全不依赖视觉设备，仅通过商用 WiFi 路由器采集 CSI 数据，满足医疗、居家等敏感场景合规要求；  
-- **超低延迟实时性**：Python 版全流水线延迟约 15ms（≈67 FPS），Rust 版优化至 **18.47 微秒（≈54,000 FPS）**，支持亚毫秒级运动检测；  
-- **多目标鲁棒追踪**：支持最多 10 人同时检测与跨帧身份关联，具备抗遮挡、低信噪比环境适应能力；  
-- **垂直领域深度适配**：预置医疗监护（跌倒检测）、健身指导、智能家居交互、安防监控及灾难响应（WiFi-Mat）等专用模型与业务逻辑；  
-- **企业级生产就绪**：提供带认证（JWT/OAuth2）、速率限制、Prometheus 监控、日志审计的 REST API 与 WebSocket 实时流接口；  
-- **硬件无关性与可部署性**：兼容主流支持 CSI 提取的商用路由器（ASUS/Netgear/TP-Link/Ubiquiti 等），支持 Docker 容器化、WASM 边缘部署（Rust 版）及 GPU 加速；  
-- **全链路可验证性**：数学层面严格验证相位解卷绕、幅度 RMS、微多普勒频移等信号处理环节，误差趋近于零；  
-- **完整分析闭环**：集成活动识别、空间占用统计、轨迹热力图、异常事件告警（如跌倒、长时间静止）等高级分析能力。
+2. **核心特性**  
+- **隐私优先架构**：纯射频感知，零摄像头介入，符合 GDPR/HIPAA 等隐私合规要求；  
+- **超低延迟实时处理**：Python 版全链路延迟 ≤15ms（≈67 FPS），Rust 版优化至 **18.47 微秒**（≈54,000 FPS），速度提升约 810 倍；  
+- **多目标鲁棒追踪**：支持最多 10 人同步跟踪与 ID 持续关联；  
+- **领域自适应能力**：预置医疗监护、健身指导、智能家居行为分析、安防入侵识别等场景化模型与规则引擎；  
+- **企业级服务框架**：提供带身份认证、速率限制、Prometheus 监控集成的 FastAPI REST 接口 + WebSocket 实时流（`/ws/pose/stream`）；  
+- **灾备专项能力（WiFi-Mat）**：具备微多普勒生命体征解析、 rubble 环境下三维定位、自动伤情分诊与多级应急响应机制；  
+- **全栈可验证性**：数学层面严格验证相位解卷绕、幅值 RMS、多普勒频移等核心信号处理模块（误差趋近于零）；  
+- **硬件无关部署**：兼容主流商用 WiFi 路由器（ASUS/Netgear/TP-Link/Ubiquiti 等支持 CSI 提取的型号）；  
+- **完备可观测性**：内置跌倒检测、活动识别、空间占用统计、实时流式分析等开箱即用分析能力。
 
 3. **技术栈**  
-- **主语言与运行时**：Python 3.8+（v1 主干）、Rust（v2 高性能核心，含 `wifi-densepose-rs`、`wifi-densepose-mat` 子包）；  
-- **后端框架**：FastAPI（Python 版 REST/WebSocket 服务）、Tokio + Warp（Rust 版异步服务）；  
-- **AI 模型层**：基于 CSI 时序数据训练的轻量化 DensePose 类神经网络（支持 PyTorch/TensorRT 推理），含 CSI 预处理、相位净化、特征提取专用模块；  
-- **基础设施**：Docker 容器化部署、PyPI 包管理、CI/CD（GitHub Actions）、100% 单元/集成测试覆盖率（Python pytest / Rust cargo test）；  
-- **硬件接口**：Linux CSI 工具链（如 Nexmon、CSI Tool）、WiFi 驱动层抽象，支持 2.4GHz/5GHz 双频段多天线 MIMO 信号采集；  
-- **扩展生态**：CLI 工具（`wifi-densepose` 命令）、Python SDK、REST API 文档（Swagger UI）、WebSocket 流客户端示例、DDD 架构设计文档（ADR/领域模型）。
+- **主语言与后端框架**：Python 3.8+（v1 主干） + FastAPI 0.95+（REST API / WebSocket / 中间件）；Rust（v2 高性能内核，含 `wifi-densepose-rs`、`wifi-densepose-signal`、`wifi-densepose-mat` 子包）；  
+- **AI 模型层**：基于 CSI 序列的轻量化 DensePose 类神经网络（专为射频特征设计，非 CV 领域迁移模型）；  
+- **信号处理**：自研 CSI 预处理流水线（含相位校正、噪声抑制、时频特征提取）、微多普勒谱分析、相干性建模；  
+- **基础设施**：Docker 容器化部署（官方镜像 `ruvnet/wifi-densepose`）、支持 WASM（Rust 版）、CLI 工具链（`wifi-densepose` 命令）、SQLite/PostgreSQL 数据库抽象层；  
+- **测试与质量保障**：100% Python 单元/集成测试覆盖率 + Rust 107 个单元测试 + 数学正确性验证（ADR 文档驱动开发）；  
+- **前端与交互**：FastAPI 自动生成 Swagger UI（`/docs`）+ Python SDK（`WiFiDensePoseClient`）+ WebSocket 流式客户端示例；  
+- **硬件接口**：Linux CSI 提取驱动（如 Nexmon/Cypress）、跨平台 WiFi 接口抽象层。
 
 </details>
 
@@ -1087,8 +1088,8 @@ WiFi DensePose 是一个基于 WiFi 信道状态信息（CSI）的非侵入式�
 
 ### 28. [pydantic/monty](https://github.com/pydantic/monty)
 - 📅 **创建日期**：2023-05-28  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：5,339（日 +94｜周 +2555｜月 +5338）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：5,422（日 +82｜周 +1454｜月 +5421）  
 - 📝 **描述**：A minimal, secure Python interpreter written in Rust for use by AI  
 
 <details>
@@ -1104,76 +1105,36 @@ WiFi DensePose 是一个基于 WiFi 信道状态信息（CSI）的非侵入式�
 <summary><b>📄 README 摘要</b></summary>
 
 1. **项目功能**  
-Monty 是一个专为 AI 代理（LLM）设计的极简、安全的 Python 解释器，完全用 Rust 编写。其核心目标是**安全、高效地执行由大语言模型生成的 Python 代码**，替代传统基于容器（如 Docker）的沙箱方案。它不追求完整 Python 兼容性，而是聚焦于“AI 编写的代码”这一特定场景：允许 LLM 以 Python 函数调用形式表达工具使用逻辑（如 `get_weather("London")`），由 Monty 在严格受控环境下解析、类型检查、执行并返回结果，同时杜绝对宿主机的未授权访问（文件系统、网络、环境变量等）。
+Monty 是一个专为 AI 代理（LLM）设计的极简、安全的 Python 解释器，完全用 Rust 编写。其核心目标是**安全、高效地执行由大语言模型生成的 Python 代码**，替代传统容器沙箱（如 Docker）或高开销方案。它不追求 Python 兼容性，而是聚焦于“AI 写代码”这一单一场景：让 LLM 以 Python 函数调用形式表达逻辑（如调用工具函数），由 Monty 在受控环境中低延迟、可中断、可审计地执行，杜绝对宿主机的文件系统、网络、环境变量等任意访问。
 
 2. **关键特性**  
-- ✅ **极致安全隔离**：默认禁用所有宿主资源访问，仅通过显式声明的 `external_functions`（开发者可控的白名单函数）与外部交互；支持细粒度资源限制（内存、栈深度、执行时间）。  
-- ✅ **超低延迟启动**：冷启动耗时低于 1 微秒（μs），远优于容器（~195ms）或 WASM（~66ms）。  
-- ✅ **类型安全执行**：内置 [ty](https://docs.astral.sh/ty/) 类型检查器，支持现代 Python 类型提示（`typing`, `asyncio`, `dataclasses`, `json` 等），可在运行前验证代码正确性。  
-- ✅ **状态快照与恢复**：支持将解释器状态（`MontySnapshot`）序列化为字节流，持久化至文件或数据库，并在任意时刻/进程恢复执行（`dump()` / `load()`）。  
-- ✅ **多语言绑定**：提供原生 Python、Rust 和 JavaScript/TypeScript 接口，无 CPython 依赖，可嵌入各类运行时。  
-- ✅ **同步/异步混合执行**：支持 `async` 代码调用宿主端同步或异步函数，实现灵活的 I/O 协作。  
-- ✅ **标准输出捕获**：自动收集 `stdout`/`stderr` 并返回给调用方。  
-- ❌ **明确限制**：不支持标准库大部分模块（仅 `sys`, `typing`, `asyncio` 等少数）、无第三方包（如 Pydantic）、暂不支持类定义（`class`）和 `match` 语句，**非通用 Python 替代品**。
+- ✅ **极致启动性能**：从代码到执行结果仅需 <1 微秒（μs），比容器方案（~195ms）快数万倍；  
+- ✅ **强安全隔离**：默认禁用所有宿主资源访问（IO/网络/环境变量），仅通过显式声明的 `external_functions` 提供可控的宿主交互能力；  
+- ✅ **细粒度资源管控**：支持限制内存占用、堆分配次数、调用栈深度和执行时间，超限时自动中止；  
+- ✅ **类型检查集成**：内置 [ty](https://docs.astral.sh/ty/) 类型检查器，支持现代 Python 类型提示（`typing`, `asyncio`, `dataclasses`, `json` 等）；  
+- ✅ **状态快照与恢复**：可在任意外部函数调用点将解释器状态序列化为字节（`dump()`），跨进程/跨会话持久化并 `resume()` 继续执行；  
+- ✅ **多语言绑定**：原生支持 Rust、Python 和 JavaScript/TypeScript 调用，无 CPython 依赖；  
+- ✅ **同步/异步统一支持**：可执行 `async` 代码，并通过宿主提供的 `async` 或 `sync` 外部函数完成 I/O；  
+- ✅ **标准输出捕获**：完整收集 `stdout`/`stderr` 并返回给调用方；  
+- ❌ **明确限制**：不支持标准库大部分模块（仅 `sys`/`typing`/`asyncio` 等少数）、无第三方包（如 Pydantic）、暂不支持 `class`/`match` 语句（计划支持）。
 
 3. **技术栈**  
-- **核心语言**：Rust（保证内存安全、零成本抽象、高性能及跨平台能力）  
-- **Python 绑定**：`pyo3`（Python <-> Rust 互操作）  
-- **JavaScript 绑定**：`wasm-bindgen`（编译为 WebAssembly，支持浏览器/Node.js）  
-- **类型检查**：集成 [ty](https://docs.astral.sh/ty/)（Rust 实现的高性能 Python 类型检查器）  
-- **序列化**：Rust `bincode`（高效二进制序列化，用于 `dump()`/`load()`）  
-- **构建与分发**：`maturin`（Python 包构建）、`wasm-pack`（WASM 构建）、`uv`（Python 依赖管理）  
-- **基础设施**：GitHub Actions（CI）、Codecov（覆盖率）、CodSpeed（性能监控）、Slack（社区协作）
+- **核心语言**：Rust（高性能、内存安全、零成本抽象，保障解释器底层可靠性与速度）；  
+- **Python 绑定**：通过 `pyo3` 构建 `pydantic-monty` PyPI 包，提供 `Monty` 类及 `run_monty_async` 等高层 API；  
+- **JavaScript 绑定**：通过 `wasm-bindgen` 或 `napi-rs`（文档未明示但明确支持 JS 调用）；  
+- **类型检查引擎**：集成 [ty](https://docs.astral.sh/ty/)（Rust 编写的高性能 Python 类型检查器），编译进单体二进制；  
+- **序列化机制**：基于 Rust 的 `bincode` 或类似零拷贝二进制格式实现 `dump()`/`load()`；  
+- **构建与分发**：CI 使用 GitHub Actions，覆盖率由 Codecov，性能监控由 Codspeed，发布至 PyPI/npm/crates.io；  
+- **无依赖设计**：不依赖 CPython 解释器、不依赖系统 Python 环境，可嵌入任意 Rust/Python/JS 运行时。
 
 </details>
 
 ---
 
-### 29. [moonshine-ai/moonshine](https://github.com/moonshine-ai/moonshine)
-- 📅 **创建日期**：2024-10-04  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：3,828（日 +322｜周 +698｜月 +755）  
-- 📝 **描述**：Fast and accurate automatic speech recognition (ASR) for edge devices  
-
-<details>
-<summary><b>📈 Star 与 Commit 历史趋势</b></summary>
-
-![moonshine Star and Commit Trend](charts/moonshine-ai_moonshine_trend.png)
-
-> *蓝色：累计 Stars｜橙色：累计 Commits（次 Y 轴）*
-
-</details>
-
-<details>
-<summary><b>📄 README 摘要</b></summary>
-
-1. **项目功能**  
-Moonshine Voice 是一个面向实时语音应用的开源 AI 工具包，专为在**设备端（on-device）** 运行而设计。它支持低延迟、隐私优先的语音交互，无需联网、账户、API 密钥或云端依赖。核心用途包括：实时语音转文字（ASR）、说话人区分（声纹识别/二值化）、自然语言语义驱动的指令识别（intent recognition），并原生适配直播式语音流——即在用户说话过程中持续处理音频、动态更新结果，而非等待整句/整段说完。
-
-2. **关键特性**  
-- ✅ **超低延迟流式处理**：采用灵活输入窗口（非 Whisper 固定 30 秒），支持增量音频追加与状态缓存（encoder/decoder 缓存），显著降低端到端延迟（如 Moonshine Tiny 仅需 50ms @ Mac）；  
-- ✅ **全平台统一 SDK**：同一套 API 覆盖 Python、iOS（Swift）、Android（Java/Kotlin）、macOS、Windows、Linux、Raspberry Pi、IoT 设备及可穿戴设备；  
-- ✅ **多语言高精度模型体系**：提供英语、西班牙语、中文（普通话）、日语、韩语、越南语、乌克兰语、阿拉伯语等**语言专属模型**（非多语种混训），在同等参数量下显著优于 Whisper（如 Moonshine Medium Streaming WER 6.65% < Whisper Large V3 的 7.44%）；  
-- ✅ **开箱即用的高层抽象**：内置麦克风采集、语音活动检测（VAD）、ASR、说话人区分、意图识别全流程，开发者仅需监听事件（如 `TranscriptEvent`、`IntentTriggered`）即可构建完整语音应用；  
-- ✅ **极致轻量化与边缘友好**：模型体积最小仅 26MB（Tiny Streaming），可在树莓派等资源受限设备高效运行；  
-- ✅ **完全离线 & 隐私优先**：所有音频处理均在本地完成，无数据上传，满足 GDPR/CCPA 等合规要求。
-
-3. **技术栈**  
-- **核心引擎**：高度优化的 C++ 跨平台底层库（`core/`），基于 **ONNX Runtime** 实现高性能推理，确保各平台一致行为与效率；  
-- **模型格式**：ONNX 格式模型，支持量化与硬件加速（如 Apple Neural Engine、Android NNAPI、x86 AVX）；  
-- **绑定层**：为各平台提供原生接口封装——Python（PyBind11）、iOS/macOS（Swift Package Manager）、Android（AAR/Maven）、Windows（C++/MSVC）、Linux（CMake 构建）；  
-- **音频处理**：集成平台原生音频采集（如 iOS AVAudioEngine、Android AudioRecord、Python sounddevice）；  
-- **开发与部署**：支持 CMake 构建系统、跨平台 CI/CD、预编译二进制分发（pip / SwiftPM / Maven / .zip 示例包）；  
-- **研究基础**：模型全部自研训练，基于原创架构（非 Whisper 微调），论文发表于 arXiv（如 2602.12241、2410.15608、2509.02523）。
-
-</details>
-
----
-
-### 30. [ThePrimeagen/99](https://github.com/ThePrimeagen/99)
+### 29. [ThePrimeagen/99](https://github.com/ThePrimeagen/99)
 - 📅 **创建日期**：2025-11-22  
-- 🔄 **最近更新**：2026-02-15  
-- ⭐ **Stars**：3,820（日 +22｜周 +292｜月 +2784）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：3,846（日 +26｜周 +246｜月 +2805）  
 - 📝 **描述**：Neovim AI agent done right  
 
 <details>
@@ -1189,150 +1150,30 @@ Moonshine Voice 是一个面向实时语音应用的开源 AI 工具包，专为
 <summary><b>📄 README 摘要</b></summary>
 
 1. **项目功能**  
-该项目（`99`）是一个专为 Neovim 设计的轻量级、面向开发者的 AI 编程助手客户端，旨在提供受控、上下文感知的 AI 交互体验。它不追求通用问答能力，而是聚焦于**代码编辑场景中的精准辅助**：通过视觉选择（visual selection）、文件引用（`@file`）和技能规则引用（`#rule`）动态注入上下文，将用户请求定向至本地运行的 AI CLI 工具（如 `opencode`、`claude` 或 `cursor-agent`），执行代码补全、重构、解释等任务，并将结果智能地内联替换回编辑器中。其核心理念是“限制 AI 请求范围”，仅在开发者明确触发（如 `<leader>9v`）且提供结构化上下文时才调用 AI，避免干扰常规编码流程。
-
-2. **关键特性**  
-- **上下文感知提示（Prompt-aware Context Injection）**：支持在提示缓冲区中输入 `#` 自动补全自定义 `SKILL.md` 规则（如 Vim 操作、调试技巧），输入 `@` 模糊搜索并引用当前项目文件，所选内容自动注入 AI 请求上下文。  
-- **多 AI 后端支持**：原生集成 `OpenCodeProvider`（默认）、`ClaudeCodeProvider` 和 `CursorAgentProvider`，可灵活切换 CLI 工具及模型（如 `claude-sonnet-4-5`）。  
-- **Neovim 原生集成**：深度适配 Neovim 键绑定（如 `v` 模式下 `<leader>9v` 触发视觉选择请求）、日志系统（`view_logs()` / `prev_request_logs()`）、与 `cmp` 补全框架协同工作。  
-- **项目级智能上下文发现**：自动沿目录树向上查找 `AGENT.md` 等配置文件，动态加载项目专属指令与约束。  
-- **调试与可观测性**：内置分级日志（DEBUG 级别输出到指定文件）、一键查看最近请求日志、支持手动清除敏感字段（如 `query`），便于问题复现与反馈。  
-- **Alpha 阶段务实设计**：明确声明 API 不稳定、提示词待优化、仅支持 TS/Lua 语言解析，聚焦解决实际编码痛点（如函数体替换错位、注释重复、大文件处理等已知问题）。
-
-3. **技术栈**  
-- **核心语言**：Lua（Neovim 插件主体，基于 Lua 5.1+ 运行时）  
-- **前端/编辑器层**：Neovim（要求 v0.9+，依赖 Treesitter 进行基础语法分析，但当前视觉选择仍以整文件发送为主）  
-- **补全框架**：`cmp`（唯一当前支持的补全源，用于 `#` 和 `@` 的模糊搜索与自动补全）  
-- **AI 后端协议**：通过调用外部 CLI 工具实现，依赖用户本地安装的 `opencode`、`claude` 或 `cursor-agent`，采用标准输入/输出或进程间通信传递请求与响应。  
-- **文件系统与路径处理**：使用 Neovim 内置 `vim.fs` 和 `vim.uv` 模块进行跨平台路径操作与当前工作目录（`cwd`）管理。  
-- **日志与调试**：基于文件写入的异步日志系统（`/tmp/xxx.99.debug`），无外部依赖。
-
-</details>
-
----
-
-### 31. [steipete/gogcli](https://github.com/steipete/gogcli)
-- 📅 **创建日期**：2025-12-12  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：2,985（日 +580｜周 +1480｜月 +2523）  
-- 📝 **描述**：Google Suite CLI: Gmail, GCal, GDrive, GContacts.  
-
-<details>
-<summary><b>📈 Star 与 Commit 历史趋势</b></summary>
-
-![gogcli Star and Commit Trend](charts/steipete_gogcli_trend.png)
-
-> *蓝色：累计 Stars｜橙色：累计 Commits（次 Y 轴）*
-
-</details>
-
-<details>
-<summary><b>📄 README 摘要</b></summary>
-
-1. **项目功能**  
-`gogcli` 是一个面向终端的高性能、脚本友好的 Google Workspace 命令行工具，旨在将完整的 Google 云服务生态（Gmail、Calendar、Chat、Classroom、Drive、Docs/Sheets/Slides/Forms、Apps Script、Contacts、Tasks、People、Groups、Keep 等）无缝集成到命令行环境中。它支持多账户并行管理、细粒度权限控制与自动化工作流，核心定位是“在终端中完成所有 Google 工作”——无需浏览器，即可完成邮件收发、日程调度、文档操作、课程管理、团队协作、数据同步等任务，并原生适配 CI/CD、脚本编排和 AI 代理等非交互式场景。
-
-2. **关键特性**  
-- **全服务覆盖**：深度集成 17+ Google 服务（含 Workspace 专属服务如 Groups、Keep、Classroom），提供搜索、创建、读取、更新、删除及高级操作（如 Calendar 冲突检测/提议新时间、Gmail 邮件追踪、Sheets 单元格格式化、Forms 响应分析、Apps Script 函数执行等）。  
-- **安全与权限优先**：默认采用最小权限认证（`--readonly` / `--drive-scope` 控制作用域）、自动刷新令牌、OS 原生密钥环（macOS Keychain / Linux Secret Service / Windows Credential Manager）或可配置加密磁盘密钥环存储凭证；支持 Workspace 域级委派服务账号（Domain-wide Delegation），适用于企业级自动化。  
-- **开发者友好设计**：默认 JSON 输出（`--json`）、稳定 TSV 输出（`--plain`）、结构化错误码、完整子命令层级帮助系统；支持多 OAuth 客户端隔离、账户别名、域名自动路由、命令白名单（`--enable-commands`）实现沙箱化运行；提供 Cloudflare Worker 后端支持邮件打开追踪。  
-
-3. **技术栈**  
-- **主语言**：Go（高效、静态编译、跨平台二进制分发，支持 macOS/Linux/Windows）；  
-- **认证与密钥管理**：`github.com/99designs/keyring`（统一抽象各平台密钥环）、Google OAuth2.0 流程（含 headless 远程授权支持）、JWT 服务账号令牌签发；  
-- **API 集成**：直接调用 Google 官方 REST API（Gmail、Calendar、Drive、Classroom、Chat、Sheets、Forms、Apps Script、People、Tasks、Cloud Identity、Keep 等），严格遵循各服务的 scope 权限模型；  
-- **构建与分发**：原生支持 Homebrew（macOS/Linux）、AUR（Arch Linux），提供 `make` 构建流程；配置文件采用 JSON5 格式（支持注释与宽松语法）；  
-- **基础设施辅助**：邮件追踪依赖轻量级 Cloudflare Worker 后端（非核心组件，可选启用）。
-
-</details>
-
----
-
-### 32. [github/gh-aw](https://github.com/github/gh-aw)
-- 📅 **创建日期**：2025-08-12  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：2,736（日 +306｜周 +2239｜月 +2435）  
-- 📝 **描述**：GitHub Agentic Workflows  
-
-<details>
-<summary><b>📈 Star 与 Commit 历史趋势</b></summary>
-
-![gh-aw Star and Commit Trend](charts/github_gh-aw_trend.png)
-
-> *蓝色：累计 Stars｜橙色：累计 Commits（次 Y 轴）*
-
-</details>
-
-<details>
-<summary><b>📄 README 摘要</b></summary>
-
-1. **该项目的功能**  
-GitHub Agentic Workflows 是一个将自然语言编写的“智能体式工作流”（agentic workflows）集成到 GitHub Actions 中的框架。它允许用户以 Markdown 格式（而非传统 YAML）用接近自然语言的方式定义具备自主决策能力的自动化流程（如代码审查、PR 分析、依赖更新、文档生成等），并由 AI 代理（agent）在受控环境中解析、规划和执行这些任务，从而扩展 GitHub Actions 的能力边界，实现更高级别的自动化。
+该项目（`99`）是一个专为 Neovim 设计的轻量级、面向工作流的 AI 客户端，旨在为熟练开发者提供**受控、上下文感知、低干扰的 AI 编程辅助**。它不追求通用问答，而是聚焦于工程化场景：通过结构化提示（Prompt）、自动注入规则（`#rules`）与文件（`@files`）、视觉选区处理等方式，将 AI 请求严格限定在代码理解、编辑与调试等特定任务范围内；强调“不替代思考，只增强执行”，明确区分「Neovim 内专注技能任务」与「通用查询应使用 opencode 等独立工具」。
 
 2. **核心特性**  
-- **自然语言驱动的工作流定义**：支持使用 Markdown 编写声明式、意图导向的流程逻辑，降低 AI 工作流编写门槛；  
-- **多层安全防护体系（Guardrails）**：默认仅授予只读权限；所有写操作必须通过经严格校验的 `safe-outputs` 显式触发；集成沙箱执行、输入清洗、网络隔离、SHA 哈希锁定的供应链依赖、工具白名单、编译时静态验证；  
-- **细粒度访问与审批控制**：支持按团队成员授权、关键操作强制人工审批（human approval gates）；  
-- **配套安全基础设施**：深度集成 Agent Workflow Firewall（AWF，提供基于域名的网络出口管控与日志审计）和 MCP Gateway（统一代理 Model Context Protocol 调用，实现集中化访问治理）；  
-- **生产就绪型架构设计**：基于威胁建模构建，强调“AI 安全优先”，明确要求人类持续监督，并警示“使用风险自担”。
+- ✅ **结构化 Prompt 补全系统**：支持 `#` 触发自定义技能规则（如 `vim/SKILL.md`）自动补全，`@` 触发项目内文件模糊搜索并注入内容至 AI 上下文；依赖 `cmp` 补全引擎集成。  
+- ✅ **多模态交互 API**：当前提供 `visual()`（基于可视选区发起请求）、`stop_all_requests()`（中止所有进行中请求）；规划中包含 `search`（语义搜索）与 `debug`（AI 辅助调试）能力。  
+- ✅ **多后端 AI 提供商支持**：原生兼容 `opencode`（默认）、`claude` 和 `cursor-agent` CLI 工具，可自由切换 provider 与模型（如 `claude-sonnet-4-5`），配置解耦清晰。  
+- ✅ **项目上下文智能感知**：自动沿目录树向上查找 `AGENT.md` 等配置文件，动态注入当前项目专属指令与约束；支持自定义规则路径、文件过滤、大小限制等精细控制。  
+- ✅ **可追溯调试机制**：内置分级日志（DEBUG 级别）、按请求分片存储、`view_logs()` / `prev_request_logs()` 等便捷查看接口，便于问题复现与协作排查（需手动脱敏敏感字段）。  
 
 3. **技术栈**  
-- **运行时平台**：GitHub Actions（作为底层执行引擎）；  
-- **工作流格式**：自定义 Markdown DSL（非标准 YAML），需经专用解析器/编译器转换为可执行指令；  
-- **安全中间件**：Agent Workflow Firewall（Rust/Go 实现的网络策略网关）、MCP Gateway（HTTP 层协议路由网关）；  
-- **依赖管理**：采用 SHA-256 哈希固定（SHA-pinned）机制确保第三方依赖不可篡改；  
-- **部署形态**：以 GitHub 扩展（Extension）形式分发，支持仓库级安装与配置；  
-- **配套生态**：依托 GitHub Docs（github.github.com 域名托管文档）、Discord 社区及 GitHub Discussions 进行协作与反馈。
+- **宿主环境**：Neovim（≥0.9+，深度依赖 Lua API 与 Treesitter）  
+- **核心语言**：Lua（主逻辑、插件配置、API 封装） + TypeScript（部分规则/技能文档示例，非运行时依赖）  
+- **补全框架**：`cmp`（唯一当前支持的补全源，用于 `#`/`@` 补全）  
+- **AI 后端协议**：基于标准 CLI 工具的进程通信（`opencode`/`claude`/`cursor-agent`），不绑定具体模型或云服务  
+- **辅助能力**：Treesitter（用于代码结构分析，当前存在选区范围不精准等已知问题）、`vim.uv`（异步 I/O）、`vim.fs`（跨平台文件系统操作）
 
 </details>
 
 ---
 
-### 33. [Jeffallan/claude-skills](https://github.com/Jeffallan/claude-skills)
-- 📅 **创建日期**：2025-10-20  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：2,710（日 +201｜周 +2304｜月 +2677）  
-- 📝 **描述**：66 Specialized Skills for Full-Stack Developers. Transform Claude Code into your expert pair programmer.  
-
-<details>
-<summary><b>📈 Star 与 Commit 历史趋势</b></summary>
-
-![claude-skills Star and Commit Trend](charts/Jeffallan_claude-skills_trend.png)
-
-> *蓝色：累计 Stars｜橙色：累计 Commits（次 Y 轴）*
-
-</details>
-
-<details>
-<summary><b>📄 README 摘要</b></summary>
-
-1. **项目功能**  
-该项目是一个专为 Anthropic Claude Code（Claude 编程插件）设计的高级技能增强套件，旨在将 Claude 转变为面向全栈开发者的智能工程协作者。它不提供独立运行的应用或服务，而是通过插件机制深度集成到 Claude Code 环境中，自动识别用户开发意图（如“用 NestJS 实现 JWT 认证”），动态激活对应技术领域的专家技能，并按需加载结构化参考文档（如 `references/authentication.md`），从而实现上下文感知的精准响应与任务驱动的多技能协同。
-
-2. **核心特性**  
-- **66 项专业化技能**：覆盖 12 大技术领域（含编程语言、前后端框架、基础设施、API 设计、测试、DevOps、安全、数据/ML、云平台等），每项技能封装领域知识、最佳实践与可执行提示模板；  
-- **9 个端到端项目工作流命令**：支持从需求发现、架构设计、功能开发、缺陷排查、安全加固到 Jira/Confluence 集成的完整研发生命周期管理；  
-- **上下文工程能力**：通过 `/common-ground` 命令显式揭示并校准 Claude 对项目状态、技术栈、约束条件等隐含假设，提升响应可靠性；  
-- **渐进式信息披露（Progressive Disclosure）**：根据任务复杂度分层提供信息——基础请求返回简洁方案，深度交互时自动展开原理、配置细节与验证步骤；  
-- **多技能协同工作流**：支持组合调用多个技能（如“Feature Forge → Architecture Designer → Test Master”）完成复杂工程任务，形成链式智能协作；  
-- **企业级集成支持**：原生适配 Atlassian MCP（Model Context Protocol）服务器，实现与 Jira、Confluence 的双向同步与流程自动化。
-
-3. **技术栈**  
-- **运行环境**：Anthropic Claude Code 插件平台（基于 MCP 协议）；  
-- **核心协议**：Atlassian Model Context Protocol（MCP），用于标准化模型与工具/上下文的数据交换；  
-- **内容组织**：纯文本 Markdown 技能定义（`skills/*/SKILL.md`）与引用材料（`skills/*/references/`），共 365+ 参考文件，强调可读性、可维护性与版本可控性；  
-- **构建与验证**：GitHub Actions CI 流水线（`ci.yml`），保障技能更新的稳定性与兼容性；  
-- **部署分发**：通过 Claude 插件市场（`/plugin marketplace add`）及本地安装（`/plugin install`）两种方式交付；  
-- **文档与生态**：基于 GitHub Pages 托管静态文档（`jeffallan.github.io/claude-skills`），并与多个开源精选列表（如 `awesome-claude-code`、`awesome-claude-skills`）深度联动。
-
-</details>
-
----
-
-### 34. [alibaba/zvec](https://github.com/alibaba/zvec)
+### 30. [alibaba/zvec](https://github.com/alibaba/zvec)
 - 📅 **创建日期**：2025-12-05  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：2,326（日 +1058｜周 +1964｜月 +2305）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：3,601（日 +1246｜周 +3199｜月 +3579）  
 - 📝 **描述**：A lightweight, lightning-fast, in-process vector database  
 
 <details>
@@ -1348,35 +1189,35 @@ GitHub Agentic Workflows 是一个将自然语言编写的“智能体式工作�
 <summary><b>📄 README 摘要</b></summary>
 
 1. **项目功能**  
-Zvec 是一个开源的、嵌入式（in-process）向量数据库，专为轻量化、低延迟、高吞吐的相似性搜索场景设计。它无需独立服务进程或网络通信，直接以内存库形式集成到应用程序中（如 Python/Node.js 服务、Jupyter Notebook、CLI 工具甚至边缘设备），提供生产级的向量检索能力。其核心能力是基于 Alibaba 自研的成熟向量搜索引擎 Proxima，实现对十亿级向量的毫秒级近似最近邻（ANN）搜索。
+Zvec 是一个开源的、进程内（in-process）向量数据库，专为嵌入式部署设计，无需独立服务进程或复杂配置。它直接集成到应用程序中，提供低延迟、高吞吐的相似性搜索能力，适用于笔记本、Web 服务、CLI 工具乃至边缘设备等多样化运行环境。其核心能力是基于向量（包括稠密与稀疏向量）进行毫秒级的近似最近邻（ANN）检索，并支持语义搜索与结构化过滤相结合的混合查询。
 
 2. **关键特性**  
-- **极致性能**：支持毫秒级响应，可高效处理数十亿规模向量的相似性搜索；  
-- **开箱即用**：零配置、无服务依赖，安装后数秒即可完成建库、插入与查询；  
-- **混合向量支持**：原生支持 dense（FP32/FP16）和 sparse 向量，并允许单次查询同时处理多向量（multi-vector queries）；  
-- **混合搜索（Hybrid Search）**：支持将向量语义相似度与结构化字段过滤（如标签、时间范围等）无缝结合，提升结果精准度；  
-- **全平台兼容**：官方支持 Linux（x86_64 / ARM64）与 macOS（ARM64），通过预编译二进制包实现跨平台开箱运行。
+- **极致性能**：依托阿里巴巴工业级向量引擎 Proxima，可对数十亿级向量实现毫秒级响应；  
+- **开箱即用**：零服务器依赖、零配置启动，安装后数秒即可完成建库、插入与查询；  
+- **多模态向量支持**：原生兼容稠密向量（如 FP32/FP16）和稀疏向量，并支持单次查询中混合使用多个向量字段（multi-vector queries）；  
+- **混合搜索（Hybrid Search）**：允许在向量相似度检索基础上叠加布尔逻辑过滤（如 `metadata.age > 25 AND category == "tech"`），提升结果精准度；  
+- **跨平台轻量部署**：作为库而非服务运行，支持 Linux（x86_64 / ARM64）和 macOS（ARM64），体积小、资源占用低、无外部依赖。
 
 3. **技术栈**  
-- **底层引擎**：基于阿里巴巴自研高性能向量检索引擎 **Proxima**（C++ 实现，经大规模业务验证）；  
+- **底层引擎**：深度集成并优化自阿里巴巴自研的高性能向量检索引擎 **Proxima**（C++ 实现，经大规模生产验证）；  
 - **语言绑定**：提供 **Python（3.10–3.12）** 和 **Node.js** 官方 SDK，通过 FFI 或原生扩展桥接底层 C++ 核心；  
-- **构建与分发**：采用 Docker 构建 CI 流水线（覆盖 Linux x86_64/ARM64、macOS ARM64），发布至 PyPI（`zvec`）和 npm（`@zvec/zvec`）；  
-- **基础设施**：CI/CD 基于 GitHub Actions，代码覆盖率由 Codecov 监控，许可证为 Apache 2.0。
+- **构建与分发**：采用 CI/CD 自动化构建多平台 wheel（PyPI）及 npm 包，覆盖 Linux x86_64/ARM64、macOS ARM64；  
+- **基础设施**：CI 使用 GitHub Actions（多平台 Docker 及原生环境），代码覆盖率由 Codecov 统计，许可证为 Apache 2.0。
 
 </details>
 
 ---
 
-### 35. [microsoft/litebox](https://github.com/microsoft/litebox)
-- 📅 **创建日期**：2024-12-11  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：2,158（日 +47｜周 +744｜月 +2155）  
-- 📝 **描述**：A security-focused library OS supporting kernel- and user-mode execution  
+### 31. [steipete/gogcli](https://github.com/steipete/gogcli)
+- 📅 **创建日期**：2025-12-12  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：3,509（日 +521｜周 +1957｜月 +3033）  
+- 📝 **描述**：Google Suite CLI: Gmail, GCal, GDrive, GContacts.  
 
 <details>
 <summary><b>📈 Star 与 Commit 历史趋势</b></summary>
 
-![litebox Star and Commit Trend](charts/microsoft_litebox_trend.png)
+![gogcli Star and Commit Trend](charts/steipete_gogcli_trend.png)
 
 > *蓝色：累计 Stars｜橙色：累计 Commits（次 Y 轴）*
 
@@ -1386,19 +1227,178 @@ Zvec 是一个开源的、嵌入式（in-process）向量数据库，专为轻�
 <summary><b>📄 README 摘要</b></summary>
 
 1. **项目功能**  
-LiteBox 是一个面向安全的轻量级库操作系统（library OS），核心目标是通过极大缩减与宿主机（host）的接口暴露面来显著降低攻击面。它以沙箱化（sandboxing）为核心能力，支持在多种底层平台（如 Linux、Windows、SEV-SNP、OP-TE、LVBS 等）上安全、隔离地运行程序，并能在异构环境中实现跨系统兼容执行（例如：直接运行未经修改的 Linux 程序于 Windows 上）。
+`gogcli` 是一个面向终端的高性能、脚本友好的命令行工具，旨在将 Google Workspace 生态（Gmail、Calendar、Chat、Classroom、Drive、Docs、Sheets、Slides、Forms、Apps Script、Contacts、Tasks、People、Groups、Keep 等）无缝集成至命令行环境。它支持多账户管理、细粒度权限控制与自动化工作流，核心定位是“在终端中使用 Google 服务”——所有操作均可通过 CLI 完成，并原生支持 JSON/TSV 输出，专为开发者、运维人员和自动化代理（如 CI/CD、定时任务、AI Agent）设计。
 
 2. **关键特性**  
-- **极简宿主接口设计**：严格限制与底层系统的交互通道，从架构层面减小受攻击风险；  
-- **南北向抽象解耦**：提供类 Unix 风格的 Rust 化“北向”API（受 `nix`/`rustix` 启发），与可插拔的“南向”`Platform` 接口分离，实现高灵活性与可移植性；  
-- **多场景兼容**：同时支持内核态与非内核态部署，适配包括传统 OS、机密计算（SEV-SNP）、可信执行环境（OP-TEE）及新型安全基板（LVBS）等多种运行时平台；  
-- **跨平台二进制兼容**：支持运行未修改的 Linux ELF 程序于非 Linux 系统（如 Windows），或在 Linux 上对应用进行强隔离沙箱化。
+- **全栈 Google Workspace 支持**：覆盖 17+ 服务，包括 Gmail（搜索/发送/标签/附件/推送监听）、Calendar（事件管理/冲突检测/OOO/重复/提醒）、Classroom（课程/作业/学生/监护人）、Chat（空间/消息/DM）、Drive（文件上传/下载/权限/共享磁盘）、Sheets/Docs/Slides（读写/导出/格式化）、Forms（创建/响应分析）、Apps Script（项目管理/函数执行）、Keep（仅 Workspace，需服务账号）、Groups（组织级群组管理）等；  
+- **安全与权限精细化**：支持最小权限认证（`--readonly`、`--drive-scope file/readonly/full`），OAuth 作用域按需申请；内置 Workspace 服务账号（domain-wide delegation）支持，优先级高于 OAuth；  
+- **多账户与灵活认证**：支持多账户并存、别名映射（`auth alias`）、多 OAuth 客户端隔离（`--client`）、域名自动匹配、头less 远程授权（`--manual` / `--remote`）；  
+- **安全凭证管理**：默认使用系统密钥环（macOS Keychain / Linux Secret Service / Windows Credential Manager），可选加密本地密钥环（`keyring_backend=file`），支持非交互式环境（通过 `GOG_KEYRING_PASSWORD`）；  
+- **自动化就绪**：JSON-first 输出（`--json`）、稳定 TSV 输出（`--plain`）、命令白名单（`--enable-commands` 或 `GOG_ENABLE_COMMANDS`）、自动 token 刷新、本地时间工具、解析友好字段（如 Calendar 输出含星期几）；  
+- **增强功能**：邮件打开追踪（集成 Cloudflare Worker 后端）、本地/UTC 时间快速显示、服务范围矩阵文档化、配置文件（JSON5 格式，支持注释）、完整 CLI 帮助体系（`GOG_HELP=full`）。
 
 3. **技术栈**  
-- 主要编程语言：Rust（强调内存安全与零成本抽象）；  
-- 系统接口层：基于 `nix` 和 `rustix` 设计哲学的自定义 POSIX-like 北向系统调用抽象；  
-- 底层平台适配层：通过可替换的 `Platform` trait 实现对不同南向平台（如 Linux syscall、Windows NT API、SEV-SNP hypercall、OP-TEE TEE Client API、LVBS 运行时等）的统一接入；  
-- 构建与分发：依赖 Rust 生态工具链（Cargo）、MIT 许可证，无外部 C 运行时强依赖，符合 library OS 典型的静态链接与最小依赖原则。
+- **主语言**：Go（基于 Go 编写，构建为单二进制，跨平台支持 macOS/Linux/Windows）；  
+- **认证与安全**：OAuth 2.0（Desktop App 流）、Google Service Account（Domain-wide Delegation）、`github.com/99designs/keyring` 密钥环抽象层；  
+- **API 集成**：直接调用 Google 官方 REST API（Gmail API、Calendar API、Drive API、People API、Tasks API、Sheets API、Forms API、Apps Script API、Cloud Identity API、Keep API 等），严格遵循各服务的 scope 要求；  
+- **构建与分发**：支持 Homebrew（macOS/Linux）、AUR（Arch Linux）、源码编译（`make`）；  
+- **配置与扩展**：JSON5 格式配置文件、环境变量驱动行为（`GOG_ACCOUNT`, `GOG_JSON`, `GOG_ENABLE_COMMANDS` 等）、自动生成的服务 scope 矩阵文档；  
+- **辅助基础设施**：邮件追踪依赖轻量 Cloudflare Worker 后端（独立部署）。
+
+</details>
+
+---
+
+### 32. [github/gh-aw](https://github.com/github/gh-aw)
+- 📅 **创建日期**：2025-08-12  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：2,969（日 +225｜周 +2051｜月 +2668）  
+- 📝 **描述**：GitHub Agentic Workflows  
+
+<details>
+<summary><b>📈 Star 与 Commit 历史趋势</b></summary>
+
+![gh-aw Star and Commit Trend](charts/github_gh-aw_trend.png)
+
+> *蓝色：累计 Stars｜橙色：累计 Commits（次 Y 轴）*
+
+</details>
+
+<details>
+<summary><b>📄 README 摘要</b></summary>
+
+1. **项目功能**  
+该项目（GitHub Agentic Workflows）允许用户使用自然语言编写的 Markdown 文件定义“智能体式工作流”（agentic workflows），并直接在 GitHub Actions 环境中执行。其核心目标是将 AI 智能体（agent）的能力与 GitHub 原生 CI/CD 基础设施深度集成，使开发者可通过声明式、类人类语言的方式描述复杂自动化任务（如代码审查、问题分类、PR 总结、依赖分析等），由 AI 驱动动态决策与执行，同时严格限定在安全可控的边界内运行。
+
+2. **关键特性**  
+- ✅ **自然语言驱动**：工作流以易读的 Markdown 编写，支持语义化指令（如“分析此 PR 中的代码变更并指出潜在风险”），无需编写 YAML 或脚本逻辑；  
+- ✅ **默认只读 + 安全输出机制**：所有工作流默认以只读权限运行；写操作（如提交、评论、合并）仅通过经严格校验的 `safe-outputs` 显式触发，防止意外或恶意修改；  
+- ✅ **多层安全防护体系**：包括沙箱化执行环境、输入内容清洗、网络隔离（默认禁用外网访问）、供应链安全（依赖项 SHA 固定校验）、工具白名单、编译时静态验证；  
+- ✅ **细粒度访问控制**：支持按团队成员授权、关键操作强制人工审批（human approval gates），实现人机协同治理；  
+- ✅ **生态扩展能力**：与配套项目深度集成——Agent Workflow Firewall（AWF）提供基于域名的网络出口管控与审计日志；MCP Gateway 统一代理 Model Context Protocol 调用，实现模型服务访问的集中鉴权与治理。
+
+3. **技术栈**  
+- **运行平台**：原生构建于 GitHub Actions 之上，复用其 runner 基础设施与事件触发机制；  
+- **智能体框架**：基于 Model Context Protocol（MCP）标准构建，支持对接各类大模型服务（文档未指定具体模型供应商，但强调协议标准化与网关抽象）；  
+- **安全中间件**：自研 Guardrails 引擎（含沙箱、输入过滤、权限策略引擎）、AWF（Rust/Go 实现的网络防火墙）、MCP Gateway（HTTP 反向代理+认证网关）；  
+- **工程规范**：采用 SHA-pinned 依赖管理保障供应链安全；工作流文件为 Markdown 格式，经专用解析器编译为可验证、可审计的执行计划；  
+- **部署形态**：以 GitHub 扩展（Extension）形式安装，与 GitHub.com 前端及后端服务深度集成，非独立托管服务。
+
+</details>
+
+---
+
+### 33. [Jeffallan/claude-skills](https://github.com/Jeffallan/claude-skills)
+- 📅 **创建日期**：2025-10-20  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：2,870（日 +158｜周 +2402｜月 +2836）  
+- 📝 **描述**：66 Specialized Skills for Full-Stack Developers. Transform Claude Code into your expert pair programmer.  
+
+<details>
+<summary><b>📈 Star 与 Commit 历史趋势</b></summary>
+
+![claude-skills Star and Commit Trend](charts/Jeffallan_claude-skills_trend.png)
+
+> *蓝色：累计 Stars｜橙色：累计 Commits（次 Y 轴）*
+
+</details>
+
+<details>
+<summary><b>📄 README 摘要</b></summary>
+
+1. **项目功能**  
+该项目是一个专为 Anthropic Claude Code（Claude 编程插件）设计的高级技能增强套件，旨在将 Claude 转变为面向全栈开发者的智能协作伙伴。它不提供独立运行的应用或服务，而是通过插件机制深度集成到 Claude Code 环境中，自动识别用户开发意图（如“用 NestJS 实现 JWT 认证”），动态激活对应技术领域的专家技能，并加载精准的上下文参考文档（如 `references/authentication.md`），从而显著提升代码生成、调试、测试、安全加固和架构设计等环节的专业性与准确性。同时支持端到端项目管理流程，可联动 Jira 和 Confluence 执行从需求发现、开发、评审到复盘的 9 个标准化工作流。
+
+2. **核心特性**  
+- **66 项精细化技能**：覆盖 12 大技术领域（含编程语言、前后端框架、基础设施、API 设计、测试策略、DevOps、安全工程、数据/ML、云平台等），每项技能均附带结构化知识库（共 365+ 参考文件）；  
+- **上下文感知自动激活**：基于自然语言请求语义实时匹配并触发最相关技能（如识别“Server Components”即启用 React Expert 并载入服务端组件文档）；  
+- **多技能协同工作流**：预置 9 套复合型任务流程（如“功能开发”= Feature Forge + Architecture Designer + Fullstack Guardian + Test Master + DevOps Engineer），实现跨角色、跨阶段的自动化协作；  
+- **上下文工程能力**：通过 `/common-ground` 命令显式揭示并校准 Claude 对项目上下文的隐含假设，增强推理可靠性；  
+- **企业级项目集成**：原生支持 Atlassian MCP（Model Context Protocol）服务器，无缝对接 Jira（需求/缺陷跟踪）与 Confluence（文档协同）；  
+- **渐进式信息披露（Progressive Disclosure）**：按需加载深度技术细节，避免信息过载，兼顾新手引导与专家效率。
+
+3. **技术栈**  
+- **运行环境**：Anthropic Claude Code 插件平台（基于 MCP 协议）；  
+- **后端集成依赖**：Atlassian MCP Server（用于 Jira/Confluence 工作流联动）；  
+- **内容组织**：纯静态 Markdown 技能文档（`skills/*/SKILL.md`）与参考材料（`skills/*/references/`），无运行时后端服务；  
+- **构建与分发**：GitHub Actions CI 流水线（`ci.yml`），通过 `/plugin marketplace add` 和 `/plugin install` 命令完成插件安装；  
+- **开发与扩展**：支持本地技能开发（见 `docs/local_skill_development.md`），采用 MIT 开源协议，社区驱动演进（被多个 Awesome 列表收录）。
+
+</details>
+
+---
+
+### 34. [letta-ai/letta-code](https://github.com/letta-ai/letta-code)
+- 📅 **创建日期**：2025-10-25  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：1,452（日 +135｜周 +441｜月 +598）  
+- 📝 **描述**：The memory-first coding agent  
+
+<details>
+<summary><b>📈 Star 与 Commit 历史趋势</b></summary>
+
+![letta-code Star and Commit Trend](charts/letta-ai_letta-code_trend.png)
+
+> *蓝色：累计 Stars｜橙色：累计 Commits（次 Y 轴）*
+
+</details>
+
+<details>
+<summary><b>📄 README 摘要</b></summary>
+
+1. **项目功能**  
+Letta Code 是一个以“记忆优先”（memory-first）为核心的编程辅助工具，本质上是一个持久化、可跨会话学习的 AI 编程代理（agent）。它不依赖于一次性、孤立的对话会话，而是通过长期存在的智能体持续积累上下文、代码知识与用户偏好；该代理可跨不同大语言模型（如 Claude Sonnet/Opus 4.5、GPT-5.2-Codex、Gemini 3 Pro、GLM-4.7 等）无缝迁移使用，支持本地或远程 LLM 后端（包括 Letta 官方 API 或用户自托管 Docker 服务），实现真正可携带、可演化的编程协作者体验。
+
+2. **核心特性**  
+- **持久化智能体（Persistent Agent）**：同一 agent 跨会话存在，记忆与能力持续累积，非每次对话重置状态。  
+- **主动记忆管理**：提供 `/init` 初始化记忆系统、`/remember` 显式注入关键知识、`/clear` 仅清空当前对话线程（thread）但保留长期记忆。  
+- **技能驱动扩展（Skills & Skill Learning）**：支持本地 `.skills` 目录加载复用模块化能力，并具备自主“技能学习”能力——通过 `/skill` 命令让 agent 从当前交互轨迹中自动归纳、封装新技能。  
+- **多模型即插即用**：通过 `/model` 实时切换后端模型；通过 `/connect` 配置 OpenAI、Anthropic 等私有 API 密钥及第三方编码服务（如 Codex、zAI、Minimax），支持免费使用策略。  
+- **全平台部署支持**：提供 npm 全局包（`@letta-ai/letta-code`）、Arch Linux AUR 包（含稳定版与 nightly 版），并兼容自托管 Docker 服务器（通过 `LETTA_BASE_URL` 配置）。
+
+3. **技术栈**  
+- **运行时与分发**：Node.js（npm 包管理），支持全局 CLI 工具；Arch Linux AUR 构建（yay 等 AUR Helper）。  
+- **核心架构**：基于 Letta API 构建，采用 agent-centric 设计，强调状态持久化与跨模型抽象层。  
+- **后端集成**：原生兼容主流 LLM 服务商（OpenAI、Anthropic、Google Gemini、Zhipu GLM）及专业编码 API（Codex、zAI、Minimax）；支持连接 Letta 官方云服务或用户自部署 Docker 服务。  
+- **扩展机制**：基于文件系统的技能模块（`.skills/` 目录），结合动态技能学习算法实现 agent 自演化能力。
+
+</details>
+
+---
+
+### 35. [carlvellotti/claude-code-pm-course](https://github.com/carlvellotti/claude-code-pm-course)
+- 📅 **创建日期**：2025-10-17  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：1,365（日 +41｜周 +708｜月 +1009）  
+- 📝 **描述**：Interactive course teaching Product Managers how to use Claude Code effectively  
+
+<details>
+<summary><b>📈 Star 与 Commit 历史趋势</b></summary>
+
+![claude-code-pm-course Star and Commit Trend](charts/carlvellotti_claude-code-pm-course_trend.png)
+
+> *蓝色：累计 Stars｜橙色：累计 Commits（次 Y 轴）*
+
+</details>
+
+<details>
+<summary><b>📄 README 摘要</b></summary>
+
+1. **该项目做什么？**  
+本项目是一个面向产品经理（PM）的交互式实战课程，旨在系统性地教授如何将 Anthropic 推出的 AI 编程与协作工具 **Claude Code** 深度融入日常产品工作流。它不侧重于代码开发，而是聚焦于 PM 的核心任务——如撰写 PRD、分析用户研究与数据、制定产品策略、处理会议纪要、多视角评审等——通过 Claude Code 实现更高效、高质量、可复用的智能协同。课程以“边学边做”为设计原则，所有内容均在 Claude Code 环境中实时交互执行，强调 AI 作为“思考伙伴”（thinking partner）的角色，而非简单自动化工具。
+
+2. **关键特性**  
+- **模块化渐进式学习路径**：涵盖从环境搭建（Module 0）→ 基础能力（Module 1：文件可视化、@-提及上下文、并行 Agent、自定义子代理、CLAUDE.md 项目记忆）→ 高阶 PM 场景（Module 2：PRD 撰写、数据驱动决策、竞对与战略分析）的完整闭环。  
+- **真场景驱动的交互训练**：提供 `/start-1-1` 等内置指令，支持在 Claude Code 中一键启动引导式实操，每步均有明确任务、预期输出和上下文约束。  
+- **结构化知识沉淀机制**：引入 `CLAUDE.md` 作为项目级记忆与行为配置文件，支持持久化定制 AI 角色（如工程师/高管/UX 评审员）、工作规范与领域知识。  
+- **双轨使用模式**：既支持沉浸式“交互轨道”（推荐，需本地克隆+运行），也提供各模块独立的 `REFERENCE_GUIDE.md` 作为速查参考手册。  
+- **强安全与教学引导设计**：明确禁止未经提示的 npm 安装/构建等操作，强制用户遵循课程节奏，确保学习过程可控、无副作用，凸显教学意图优先。
+
+3. **技术栈**  
+- **核心平台**：[Claude Code](https://github.com/anthropics/claude-code)（Anthropic 官方推出的本地化 AI 协作环境，基于 VS Code 架构深度定制，支持 Agent 编排、多文件上下文理解、自然语言指令驱动操作）。  
+- **编辑器/可视化依赖**（可选但推荐）：Nimbalyst、Obsidian 或 VS Code（用于 Module 1.2 的文件空间可视化与导航）。  
+- **课程交付载体**：纯 Markdown 文档（含结构化目录、指令标记、说明文本），无前端框架或后端服务；所有交互逻辑由 Claude Code 内置能力解析执行。  
+- **运行环境**：跨平台支持（macOS / Windows / Linux），依赖基础命令行操作能力，**无需 Node.js 运行时、Web 服务器或数据库**（课程明确禁用 `npm install` 和 `npm run build`）。
 
 </details>
 
@@ -1406,8 +1406,8 @@ LiteBox 是一个面向安全的轻量级库操作系统（library OS），核�
 
 ### 36. [SynkraAI/aios-core](https://github.com/SynkraAI/aios-core)
 - 📅 **创建日期**：2025-12-09  
-- 🔄 **最近更新**：2026-02-16  
-- ⭐ **Stars**：793（日 +183｜周 +631｜月 +773）  
+- 🔄 **最近更新**：2026-02-17  
+- ⭐ **Stars**：990（日 +196｜周 +826｜月 +970）  
 - 📝 **描述**：Synkra AIOS: AI-Orchestrated System for Full Stack Development - Core Framework v4.0  
 
 <details>
@@ -1423,27 +1423,24 @@ LiteBox 是一个面向安全的轻量级库操作系统（library OS），核�
 <summary><b>📄 README 摘要</b></summary>
 
 1. **该项目做什么？**  
-Synkra AIOS 是一个面向全栈软件开发的**AI 原生、自演化、代理驱动（Agentic）操作系统框架**。它并非通用大模型调用工具或任务调度器，而是构建了一套结构化、可协作、具备领域专业知识的 AI 代理团队（Squads），通过严格分阶段的智能工作流，实现从需求分析、架构设计到编码、测试、修复与知识沉淀的端到端自主开发闭环。其核心目标是系统性解决 AI 辅助开发中的两大顽疾：**规划不一致（inconsistent planning）** 和 **上下文丢失（context loss）**，使 AI 开发具备工程级可靠性与可追溯性。
+Synkra AIOS 是一个面向全栈软件开发的**自修改型 AI 代理框架（Auto-Modifiable Agentic Framework）**，核心目标是实现真正意义上的“AI 驱动的敏捷开发”。它不将 AI 视为简单命令执行器，而是构建由多个专业化、角色明确的 AI 代理（Agents）组成的协作团队（Squads），通过结构化工作流完成端到端的软件工程闭环：从需求分析（PRD）、系统架构设计，到细化用户故事、代码实现、测试验证及持续迭代。其本质是将传统敏捷团队（PM/Analyst/Architect/Dev/QA/Scrum Master）的能力编码为可组合、可复用、上下文感知的 AI 代理，并在 CLI 优先的架构下实现自动化协同。
 
 2. **关键特性**  
-- **双阶段代理协同工作流**：  
-  - **规划阶段（Web UI 驱动）**：`@analyst`、`@pm`、`@architect`、`@ux-expert` 等代理协同生成高保真 PRD 文档与技术架构规范，支持 human-in-the-loop 迭代精炼；  
-  - **开发阶段（IDE 驱动）**：`@sm` 将规划成果转化为含完整上下文、实现细节与架构约束的“超详细用户故事文件”，供 `@dev` 直接执行，`@qa` 进行多阶段结构化评审，`@po` 管理需求闭环。  
-- **CLI First 架构哲学**：CLI 是唯一事实源（source of truth），所有智能决策、执行与自动化均发生于此；UI 仅用于观察与轻量管理，Observability（SSE 实时看板、日志、时间线）用于理解 CLI 行为而非控制。  
-- **自主开发引擎（ADE）**：v1.0 引入七大核心 Epic（如 Worktree Manager、Spec Pipeline、Execution Engine、Recovery System、QA Evolution、Memory Layer），支持需求→可执行规约→代码生成→自检修复→知识沉淀的全自动闭环。  
-- **跨域 Squads 扩展能力**：框架天然支持非技术领域，提供预置的创意写作、商业策略、健康福祉、教育等专业代理 Squad，并支持用户自定义领域代理。  
-- **现代化开发者体验**：交互式安装向导（@clack/prompts）、跨平台 CLI（含 dry-run / health check / auto-fix）、IDE 深度集成（Codex/Windsurf/Cursor/Claude Code 规则预置）、一键项目初始化与零配置升级（`npx aios-core@latest install`）。  
+- **双阶段智能工作流**：  
+  - **规划阶段（Planning Workflow）**：`@analyst`、`@architect`、`@pm` 等代理协作生成高度一致、人类可审阅的 PRD 与架构文档，依托高级提示工程与 human-in-the-loop 迭代优化；  
+  - **开发阶段（Development Cycle）**：`@sm`（Scrum Master）将规划成果转化为富含上下文、技术约束与架构指引的“超详细用户故事文件”，供 `@dev` 和 `@qa` 代理精准执行，彻底解决 AI 开发中常见的**规划不一致**与**上下文丢失**两大痛点。  
+- **CLI First 架构原则**：CLI 是唯一真相源（source of truth），所有智能决策、流程执行与自动化均发生于此；UI 仅为可选观察层（Observability），Dashboard 仅用于监控 CLI 行为，绝不参与控制。  
+- **跨 IDE 生命周期钩子（Lifecycle Hooks）支持**：深度适配 Claude Code（完整钩子）、Gemini CLI（高覆盖）、Codex CLI（部分支持），并提供针对 Cursor、GitHub Copilot、AntiGravity 的定制化集成方案（如规则注入、MCP 协议、工作流驱动），确保代理行为在不同环境中的上下文连续性与自动化能力。  
+- **现代化交互式安装与维护体验**：内置基于 `@clack/prompts` 的彩色交互式安装向导，支持组件选择、包管理器切换、Git 初始化、依赖安装、健康检查及一键升级（含自动备份与增量更新），全面覆盖 macOS/Windows/Linux。  
+- **领域无关的 Squad 扩展能力**：框架抽象出通用代理范式，支持快速构建非技术领域 Squads（如创意写作、商业策略、心理健康、教育等），实现“自然语言即开发界面”的跨域应用。
 
 3. **技术栈**  
 - **运行时**：Node.js ≥18.0.0（推荐 v20+）  
-- **包管理**：npm（默认）、支持 yarn / pnpm  
-- **核心依赖**：  
-  - CLI 框架：`commander`  
-  - 交互式 UI：`@clack/prompts`（现代彩色终端界面）  
-  - 进程/文件操作：`execa`、`fs-extra`  
-  - 工具库：`picocolors`（轻量着色）、`glob` 等  
-- **协议与集成**：GitHub CLI（团队协作）、Git worktrees（ADE 分支隔离）、SSE（服务端事件用于实时可观测性）  
-- **IDE 支持**：深度适配 Codex CLI、Windsurf、Cursor、Claude Code，通过预置规则文件（`.windsurf/global-rules.md`、`.cursor/global-rules.md`、`.claude/CLAUDE.md`、`AGENTS.md`）实现代理命令识别、故事驱动工作流、自动复选框追踪、测试模式与 AIOS 编码规范。
+- **核心依赖**：`commander`（CLI 框架）、`execa`（进程执行）、`fs-extra`（文件系统操作）、`@clack/prompts`（交互式 CLI UI）、`picocolors`（终端着色）  
+- **IDE 集成协议**：原生支持 MCP（Model Context Protocol）、自定义规则文件（`.claude/CLAUDE.md`, `.cursor/global-rules.md`, `AGENTS.md`, `.gemini/rules/`）、Slash Commands（如 `/aios-dev`）、以及基于文件系统的上下文传递机制（如通过历史故事文件传递指令与反馈）  
+- **可观测性**：基于 Server-Sent Events（SSE）的实时 Dashboard、结构化日志、性能指标与时间线追踪  
+- **构建与发布**：npm 包管理（`aios-core` 发布于 npmjs.com）、GitHub Actions CI/CD、Codecov 代码覆盖率  
+- **许可证**：MIT 开源协议
 
 </details>
 
